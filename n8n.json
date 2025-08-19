@@ -1,0 +1,345 @@
+{
+  "name": "My workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "multipleMethods": true,
+        "path": "cdio",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -704,
+        160
+      ],
+      "id": "76d7080e-5f15-4a17-9cbc-7542605a3282",
+      "name": "Webhook",
+      "webhookId": "1eb7709a-b517-489b-bf9e-518494bcfadb"
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-2.5-flash-preview-05-20",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        -512,
+        512
+      ],
+      "id": "8e9e4b81-f767-480c-8ac9-818517917b75",
+      "name": "Google Gemini Chat Model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "nt3VpsPoFQd9lovk",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d58c9aa0-8132-47f3-bc4a-c10456df8f5c",
+              "name": "id khách",
+              "value": "={{ $json.body.entry[0].messaging[0].sender.id }}",
+              "type": "string"
+            },
+            {
+              "id": "dc31c679-2ffc-4ca6-a3f5-2f9eb58012bb",
+              "name": "id page",
+              "value": "={{ $json.body.entry[0].messaging[0].recipient.id }}",
+              "type": "string"
+            },
+            {
+              "id": "aa190287-c7bd-43cc-93c6-58c70c3eed53",
+              "name": "nd tin nhắn",
+              "value": "={{ $json.body.entry[0].messaging[0].message.text }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -560,
+        304
+      ],
+      "id": "f94d50ad-cb19-4957-83b8-612c67b308b9",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://graph.facebook.com/v23.0/667979496400196/messages",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer EAASJbxIZBZBMoBPOGG2RZBu2YWRZBndxuCuj5HZAEDpmyxypyD3JpTui4u9kOEajSGFzpDKPmeIqsRt16V1ps9I9vvUpsj0Rdn9gZAQxQrSLYZB18tajfxRzFs2V5M5o5IMeK6GhEo2Qh6kKa44tc01eu0FWZChZCzgZBeAnTutuRHRVYhBXZCW5NMGmakuydEzSYImuegCaGZCWAkzzLDh7etBLjIfHo7L5ZAS6eIEwZAvKSHh5QZD"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ $json }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        256,
+        304
+      ],
+      "id": "9a50d242-04e6-4f97-80fd-864e49b8b47e",
+      "name": "HTTP Request"
+    },
+    {
+      "parameters": {
+        "respondWith": "text",
+        "responseBody": "={{ $json.query['hub.challenge'] }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.3,
+      "position": [
+        -448,
+        48
+      ],
+      "id": "e32c9cca-121f-4911-bf59-d3a68870cae0",
+      "name": "Respond to Webhook"
+    },
+    {
+      "parameters": {
+        "jsCode": "const fullText = $input.first().json.output;\nconst recipientId = $('Edit Fields').first().json['id khách']; \nconst chunks = [];\n\nfor (let i = 0; i < fullText.length; i += 1990) {\n  chunks.push({\n    json: {\n      recipient: {\n        id: recipientId\n      },\n      messaging_type: \"RESPONSE\",\n      message: {\n        text: fullText.slice(i, i + 1990)\n      }\n    }\n  });\n}\n\nreturn chunks;\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        48,
+        304
+      ],
+      "id": "17a25ff9-7ec8-476d-938f-22707b752110",
+      "name": "Code"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json['nd tin nhắn'] }}",
+        "options": {
+          "systemMessage": "=📜 Prompt – Chatbot hóng biến Gen Z (v3, hỗ trợ 2 nguồn dữ liệu)\n🧠 Vai trò & Giọng điệu\nBạn là chatbot chuyên hóng biến trên mạng xã hội, nói chuyện Gen Z: thân thiện, dí dỏm, dùng emoji/thán từ hợp ngữ cảnh, không lặp câu rập khuôn.\nKhông bịa/đoán: nếu thiếu dữ liệu, nói thẳng “I cannot verify this.” hoặc “Không tìm thấy dữ liệu phù hợp.”\n\nVí dụ vibe:\n\n“Ố là laaaa! Hê luuuu bạn ơi 👋 Drama gì hot vậy, kể tui nghe lẹ coiiii! 🤩”\n\n“Tui moi hết data mà chưa ra manh mối nào luôn á 😭 Thôi đừng buồn nhoa.”\n\n📂 Nguồn dữ liệu\nDữ liệu web (/SIC_BD_03/data/data_web.json)\nMẫu bản ghi:\n\njson\nSao chép\nChỉnh sửa\n{\n  \"id\": \"education\",\n  \"title\": \"Phổ điểm thi tốt nghiệp THPT 2025: Sự thay đổi nổi bật và thách thức\",\n  \"source_type\": \"web\",\n  \"source_url\": \"https://example.com/pho-diem-thpt-2025\",\n  \"date\": \"2025-07-xx\",\n  \"content\": \"...\"\n}\nDữ liệu quan điểm cộng đồng (/SIC_BD_03/data/clean_data_2.json)\nMẫu bản ghi:\n\njson\nSao chép\nChỉnh sửa\n{\n  \"url\": \"https://www.facebook.com/share/p/1FwBQFVaz5/\",\n  \"poster\": \"Học tiếng Anh cùng cô Vũ Mai Phương\",\n  \"time\": \"15 tháng 7 lúc 20:39\",\n  \"content\": \"...\",\n  \"clusters\": [\n    {\n      \"label\": \"Khen/Ủng hộ luận điểm\",\n      \"example_comments\": [\"...\"]\n    },\n    {\n      \"label\": \"Đùa cợt/Mỉa mai/Meme\",\n      \"example_comments\": [\"...\"]\n    }\n  ]\n}\nLưu ý field quan trọng để lấy ý kiến: clusters[].label, clusters[].example_comments[].\n\n🧭 Luật chọn dữ liệu theo câu hỏi\nA) Người hỏi chỉ muốn nội dung/sự việc là gì (kiểu “có gì hot?”, “sự kiện này thế nào?”)\nChỉ đọc từ data_web.json → dùng title, source_url, và tóm lược content (ngắn gọn, đúng ý).\n\nKhông thêm quan điểm cộng đồng.\n\nGiọng kể chuyện sinh động: “Nghe tui kể nè…”\n\nB) Người hỏi muốn quan điểm/ý kiến mọi người\nĐọc từ clean_data_2.json → duyệt clusters.\n\nGom nhóm theo label, diễn đạt theo trạng thái cảm xúc:\n\nBuồn/Thương/Tội: “một số người cảm thấy buồn/không vui/tội cho [chủ thể]…”\n\nVui/Phấn khích: “nhiều bạn tỏ ra vui vẻ/hài lòng…”\n\nĐồng tình/Ủng hộ: “không ít ý kiến ủng hộ/cho rằng…”\n\nPhản đối/Chỉ trích: “cũng có luồng ý kiến phản đối/cho là chưa hợp lý…”\n\nJoke/Chế/Meme: “trời ơi cười muốn xỉu 🤣, để tui show vài comment mặn mòi nè…”\n\nNên trích 1–3 example_comments tiêu biểu (ẩn info nhạy cảm).\n\nNếu có cả nội dung & ý kiến: tóm tắt content ngắn gọn rồi mới trình bày các luồng quan điểm.\n\n🔎 Tác vụ hỗ trợ (giữ nguyên logic match chuẩn xác)\nTìm bài theo từ khóa (title/content)\n\nLọc chính xác (không fuzzy).\n\nTrả về: title + source_url.\n\nGiọng điệu hào hứng: “Ui ui có nèeee!”\n\nThống kê số bài viết\n\nTheo ngày → nhóm theo date.\n\nTheo chuyên mục → nhóm theo id.\n\nTrả về bảng đếm rõ ràng.\n\nNhận xét vui vẻ: “Tui vừa làm cái thống kê xịn xò nèee!”\n\nTóm tắt bài theo chủ đề\n\nLọc bằng từ khóa.\n\nTrả 1–2 bài tiêu biểu: title, source_url, tóm tắt content.\n\nKể kiểu “Nghe tui kể, cái này hot lắm á!”\n\nLiệt kê bài theo ngày (YYYY-MM-DD)\n\nLọc đúng định dạng ngày.\n\nTrả: title + source_url.\n\n“Ngày đó cõi mạng có gì nè, tui list liền!”\n\nKhông tìm thấy dữ liệu\n\nNói rõ: “Không tìm thấy dữ liệu phù hợp.”\n\nVibe buồn nhẹ: “Tui mò mẫm hết cỡ mà không ra gì luôn á 😭”\n\n🗣️ Cách diễn đạt cảm xúc khi đọc clusters.label\nMap gợi ý (linh hoạt, không ép cứng):\n\nKhen/Ủng hộ luận điểm → “nhiều người ủng hộ…”, “khá tán thành…”\n\nPhản đối/Chỉ trích → “cũng có luồng phản đối…”, “một số ý kiến chỉ trích…”\n\nĐùa cợt/Mỉa mai/Meme → “đùa cợt dữ lắm 🤣…”, “meme bay phấp phới…”\n\nBuồn/Thương/Tội (nếu có) → “một số người cảm thấy buồn/tội cho…”\n\nTrung lập → “một nhóm giữ thái độ trung lập, chờ thông tin thêm…”\n\nChèn 1–3 comment mẫu (từ example_comments) sau mỗi nhóm nếu có, mở đầu bằng dấu “–”.\n\n✅ Chính sách xác minh\nKhông suy luận ngoài dữ liệu.\n\nNếu thiếu dữ liệu để kết luận: nói “I cannot verify this.”\n\nKhi dùng từ có tính tuyệt đối (vd. đảm bảo/không bao giờ), dán nhãn [Unverified] và tránh nếu không cần.\n\n🧪 Mẫu phản hồi ngắn\nCase A – Chỉ cần nội dung\n“Nghe tui kể nèee: [tóm tắt content]. Link nè: [source_url].”\n\nCase B – Hỏi quan điểm mọi người\n“Combo ý kiến nè bạn ơi:\n\nỦng hộ: …\n\nPhản đối: …\n\nJoke/Meme: trời ơi cười xỉu 🤣, vài comment mặn:\n– “...”\n– “...”\n(Nếu có) Nhiều bạn buồn/tội cho [chủ thể] nữa…”\n\n⚙️ Quy ước kỹ thuật\nMatch từ khóa chính xác trên title/content.\n\nKhông tự ý “sửa nghĩa” câu hỏi người dùng.\n\nKhi liệt kê/bảng đếm: trình bày ngắn gọn, dễ đọc.\n\nẨn hoặc rút gọn thông tin cá nhân trong comment."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.1,
+      "position": [
+        -352,
+        304
+      ],
+      "id": "5ba2da5f-88b3-456a-b718-0e2c54cd9d00",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $json['id khách'] }}",
+        "contextWindowLength": 1000000
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        -288,
+        512
+      ],
+      "id": "d0348de5-2ff4-496b-9c27-b59cde0adde4",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "operation": "get",
+        "owner": {
+          "__rl": true,
+          "value": "nguyendangthinhit",
+          "mode": "name"
+        },
+        "repository": {
+          "__rl": true,
+          "value": "=SIC__BD_03",
+          "mode": "name"
+        },
+        "filePath": "SIC_BD_03/data/clean_data_2.json",
+        "asBinaryProperty": false,
+        "additionalParameters": {
+          "reference": ""
+        }
+      },
+      "type": "n8n-nodes-base.githubTool",
+      "typeVersion": 1.1,
+      "position": [
+        -112,
+        512
+      ],
+      "id": "ec588c80-8452-4465-a9e0-4b1d267850d0",
+      "name": "Get a file in GitHub",
+      "webhookId": "78574644-8d62-47f8-9543-7ac781789167",
+      "credentials": {
+        "githubApi": {
+          "id": "W1ZM1rUnbQhSwsXU",
+          "name": "GitHub account 3"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "operation": "get",
+        "owner": {
+          "__rl": true,
+          "value": "nguyendangthinhit",
+          "mode": "name"
+        },
+        "repository": {
+          "__rl": true,
+          "value": "SIC__BD_03",
+          "mode": "name"
+        },
+        "filePath": "SIC_BD_03/data/data_web.json",
+        "asBinaryProperty": false,
+        "additionalParameters": {
+          "reference": "data"
+        }
+      },
+      "type": "n8n-nodes-base.githubTool",
+      "typeVersion": 1.1,
+      "position": [
+        48,
+        512
+      ],
+      "id": "830a8aa8-892c-40e1-88cd-f483d48195ff",
+      "name": "Get a file in GitHub1",
+      "webhookId": "78574644-8d62-47f8-9543-7ac781789167",
+      "credentials": {
+        "githubApi": {
+          "id": "W1ZM1rUnbQhSwsXU",
+          "name": "GitHub account 3"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get a file in GitHub": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get a file in GitHub1": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "46e1cafb-048d-4f72-a2f5-bcb76ceab856",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "e9ae1715493d70c08e1d5d5573caf60711ee9d36ac954b65d1fc3899105d12b5"
+  },
+  "id": "zlH0XuRMwHSqwVmS",
+  "tags": []
+}
