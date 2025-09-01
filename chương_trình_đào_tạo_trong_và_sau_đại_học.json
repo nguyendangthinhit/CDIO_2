@@ -1,0 +1,557 @@
+[
+    {
+        "Bậc Đại học":"Công nghệ Phần mềm (Đạt kiểm định ABET)",
+        "Bậc Thạc sĩ":"Thạc sĩ Khoa học Máy tính",
+        "Bậc Tiến sĩ":"Tiến sĩ Quan hệ Quốc tế"
+    },
+    {
+        "Bậc Đại học":"Thiết kế Games và Multimedia",
+        "Bậc Thạc sĩ":"Thạc sĩ Kỹ thuật Phần mềm",
+        "Bậc Tiến sĩ":"Tiến sĩ Kỹ thuật Xây dựng"
+    },
+    {
+        "Bậc Đại học":"An toàn Thông tin",
+        "Bậc Thạc sĩ":"Thạc sĩ Hệ thống thông tin quản lý",
+        "Bậc Tiến sĩ":"Tiến sĩ Tài chính Ngân hàng"
+    },
+    {
+        "Bậc Đại học":"Khoa học Máy tính",
+        "Bậc Thạc sĩ":"Thạc sĩ Xây dựng",
+        "Bậc Tiến sĩ":"Tiến sĩ Kế toán"
+    },
+    {
+        "Bậc Đại học":"Kỹ thuật Máy tính",
+        "Bậc Thạc sĩ":"Thạc sĩ Kỹ thuật Điện tử",
+        "Bậc Tiến sĩ":"Tiến sĩ Quản trị Kinh doanh"
+    },
+    {
+        "Bậc Đại học":"Trí tuệ Nhân tạo (HP)",
+        "Bậc Thạc sĩ":"Thạc sĩ Kỹ thuật Môi trường",
+        "Bậc Tiến sĩ":"Tiến sĩ Khoa học Máy tính"
+    },
+    {
+        "Bậc Đại học":"Khoa học Dữ liệu",
+        "Bậc Thạc sĩ":"Thạc sĩ Quản trị Kinh doanh",
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Big Data & Machine Learning (HP)",
+        "Bậc Thạc sĩ":"Thạc sĩ Kế toán",
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Kỹ thuật Mạng (Đạt kiểm định ABET)",
+        "Bậc Thạc sĩ":"Thạc sĩ Tài chính Ngân hàng",
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Mạng máy tính & Truyền thông Dữ liệu",
+        "Bậc Thạc sĩ":"Thạc sĩ Quan hệ Quốc tế",
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Điện Tự động",
+        "Bậc Thạc sĩ":"Thạc sĩ Tổ chức Quản lý Dược",
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Điện tử - Viễn thông",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Điện - Điện tử chuẩn PNU",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Thiết kế Vi mạch Bán dẫn",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Công nghệ Kỹ thuật Ô tô",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Điện Cơ Ô tô",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Kỹ thuật Điều khiển & Tự động hóa",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Cơ Điện tử chuẩn PNU",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Kỹ thuật Điện",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Công nghệ Chế tạo Máy",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Thiết kế Đồ họa",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Thiết kế Mỹ thuật số",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Thiết kế Thời trang",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Kiến trúc Công trình",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Thiết kế Nội thất",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Xây dựng Dân dụng & Công nghiệp",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Xây dựng Cầu đường",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Công nghệ Quản lý Xây dựng",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Công nghệ & Kỹ thuật Môi trường",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Công nghệ Thực phẩm (Đạt kiểm định ABET)",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Quản lý Tài nguyên & Môi trường",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Quản trị Kinh doanh Tổng hợp",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Quản trị Kinh doanh Bất động sản",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Quản trị Kinh doanh Quốc tế (Ngoại thương)",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Phân tích Kinh doanh (Business Analytics)",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Thương mại Điện tử",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Quản trị Nhân lực",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Logistics & Quản lý Chuỗi cung ứng",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Quản trị Kinh doanh Marketing",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Digital Marketing",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Kinh doanh Thương mại",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Tài chính Doanh nghiệp",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Ngân hàng",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Kinh tế Đầu tư",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Kinh tế Quốc tế",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Kế toán Doanh nghiệp",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Kế toán Quản trị (HP)",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Kế toán Kiểm toán",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Công nghệ Tài chính (Fintech)",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Tiếng Anh Biên-Phiên dịch",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Tiếng Anh Du lịch",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Tiếng Anh Thương mại",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Tiếng Trung Biên-Phiên dịch",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Tiếng Trung Du lịch",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Tiếng Trung Thương mại",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Tiếng Hàn Biên-Phiên dịch",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Tiếng Hàn Du lịch",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Tiếng Hàn Thương mại",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Tiếng Nhật Biên-Phiên dịch",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Tiếng Nhật Du lịch",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Tiếng Nhật Thương mại",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Văn Báo chí",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Việt Nam học",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Truyền thông Đa phương tiện",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Quan hệ Quốc tế (Tiếng Anh)",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Quan hệ Quốc tế (HP)",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Quan hệ Công chúng",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Luật Kinh tế",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Luật Kinh doanh (HP)",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Luật học",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Quản trị Du lịch & Khách sạn",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Quản trị Khách sạn Quốc tế (PSU)",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Quản trị Du lịch & Dịch vụ Hàng không",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Hướng dẫn Du lịch Quốc tế (tiếng Anh)",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Hướng dẫn Du lịch Quốc tế (tiếng Hàn)",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Hướng dẫn Du lịch Quốc tế (tiếng Trung)",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Quản trị Du lịch & Lữ hành",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Quản trị Du lịch & Lữ hành chuẩn PSU",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Quản trị Sự kiện & Giải trí",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Quản trị Nhà hàng Quốc tế (PSU)",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Smart Tourism (Du lịch thông minh)",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Quản lý & Khởi sự Doanh nghiệp Nhỏ & Vừa (SME)",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Bác sĩ Đa khoa",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Bác sĩ RĂNG-HÀM-MẶT",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Điều dưỡng Đa khoa",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Dược Sỹ (Đại học)",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Công nghệ Sinh học",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Kỹ thuật Y sinh",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Xét nghiệm Y học",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Công nghệ Phần mềm chuẩn CMU (Đạt kiểm định ABET)",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"An ninh Mạng chuẩn CMU",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Hệ thống Thông tin quản lý chuẩn CMU (Đạt kiểm định ABET)",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Quản trị Kinh doanh chuẩn PSU",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Tài chính - Ngân hàng chuẩn PSU",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Kế toán Kiểm toán chuẩn PSU",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Xây dựng Dân dụng & Công nghiệp chuẩn CSU",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Kiến trúc Công trình chuẩn CSU",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Quản trị Doanh nghiệp (HP)",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Quản trị Marketing & Chiến lược (HP)",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Quản trị Tài chính (HP)",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Logistics & Quản lý Chuỗi cung ứng (HP)",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Công nghệ Phần mềm",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Điện tử - Viễn thông",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Kỹ thuật Điều khiển & Tự động hóa",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Công nghệ Kỹ thuật Ô tô",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Xây dựng Dân dụng & Công nghiệp",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Kiến trúc Công trình",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Thiết kế Đồ họa",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Công nghệ Thực phẩm",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Điều dưỡng Đa khoa",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    },
+    {
+        "Bậc Đại học":"Y học Cổ truyền",
+        "Bậc Thạc sĩ":null,
+        "Bậc Tiến sĩ":null
+    }
+]

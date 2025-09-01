@@ -1,0 +1,79 @@
+[
+    {
+        "STT":1.0,
+        "Nhóm năng lực \/ Sở trường":"Toán – Lý – Hóa, tư duy logic, công nghệ",
+        "Tổ hợp xét tuyển phù hợp":"A00 (Toán – Lý – Hóa), A01 (Toán – Lý – Anh), C01 (Văn – Toán – Lý)",
+        "Ngành học gợi ý tại ĐH Duy Tân":"- Kỹ thuật Phần mềm\n- Khoa học Máy tính\n- Trí tuệ Nhân tạo\n- An toàn Thông tin\n- Khoa học Dữ liệu\n- Công nghệ Thông tin (Game & Multimedia)\n- Hệ thống Thông tin Quản lý",
+        "Nghề nghiệp tương lai":"Kỹ sư phần mềm, Data Scientist, Chuyên gia AI, An ninh mạng, Lập trình viên game"
+    },
+    {
+        "STT":2.0,
+        "Nhóm năng lực \/ Sở trường":"Sinh học, Hóa học, yêu thích Y tế – Sức khỏe",
+        "Tổ hợp xét tuyển phù hợp":"B00 (Toán – Hóa – Sinh), A00 (Toán – Lý – Hóa)",
+        "Ngành học gợi ý tại ĐH Duy Tân":"- Y khoa\n- Răng – Hàm – Mặt\n- Dược học\n- Điều dưỡng\n- Kỹ thuật Xét nghiệm Y học\n- Kỹ thuật Hình ảnh Y học\n- Quản lý Bệnh viện",
+        "Nghề nghiệp tương lai":"Bác sĩ, Dược sĩ, Điều dưỡng viên, KTV xét nghiệm\/hình ảnh, Quản lý y tế"
+    },
+    {
+        "STT":3.0,
+        "Nhóm năng lực \/ Sở trường":"Vẽ, mỹ thuật, sáng tạo nghệ thuật",
+        "Tổ hợp xét tuyển phù hợp":"V00 (Toán – Lý – Vẽ), H01 (Toán – Văn – Vẽ), C00 (Văn – Sử – Địa)",
+        "Ngành học gợi ý tại ĐH Duy Tân":"- Kiến trúc\n- Thiết kế Đồ họa\n- Thiết kế Thời trang\n- Thiết kế Nội thất\n- Mỹ thuật ứng dụng",
+        "Nghề nghiệp tương lai":"Kiến trúc sư, Nhà thiết kế đồ họa, Thiết kế nội thất, Nhà thiết kế thời trang"
+    },
+    {
+        "STT":4.0,
+        "Nhóm năng lực \/ Sở trường":"Ngôn ngữ, Văn học, giao tiếp",
+        "Tổ hợp xét tuyển phù hợp":"D01 (Toán – Văn – Anh), C00 (Văn – Sử – Địa), C03 (Văn – Toán – Sử)",
+        "Ngành học gợi ý tại ĐH Duy Tân":"- Ngôn ngữ Anh\n- Ngôn ngữ Trung Quốc\n- Ngôn ngữ Nhật\n- Ngôn ngữ Hàn\n- Quan hệ Quốc tế\n- Truyền thông Đa phương tiện\n- Quan hệ Công chúng",
+        "Nghề nghiệp tương lai":"Biên – Phiên dịch viên, Giáo viên ngoại ngữ, Nhà báo, PR, Truyền thông, Ngoại giao"
+    },
+    {
+        "STT":5.0,
+        "Nhóm năng lực \/ Sở trường":"Kinh tế – Quản lý – Xã hội học",
+        "Tổ hợp xét tuyển phù hợp":"A01 (Toán – Lý – Anh), C01 (Văn – Toán – Lý), C02 (Văn – Toán – Hóa), C03 (Văn – Toán – Sử), D01 (Toán – Văn – Anh)",
+        "Ngành học gợi ý tại ĐH Duy Tân":"- Quản trị Kinh doanh\n- Marketing\n- Tài chính – Ngân hàng\n- Kế toán\n- Luật Kinh tế\n- Kinh doanh Quốc tế\n- Thương mại Điện tử\n- Logistics & Quản lý Chuỗi cung ứng",
+        "Nghề nghiệp tương lai":"Nhà quản lý, Chuyên viên Marketing, Kiểm toán viên, Luật sư, Chuyên viên logistics"
+    },
+    {
+        "STT":6.0,
+        "Nhóm năng lực \/ Sở trường":"Kỹ thuật – Cơ khí – Điện tử",
+        "Tổ hợp xét tuyển phù hợp":"A00 (Toán – Lý – Hóa), A01 (Toán – Lý – Anh), C01 (Văn – Toán – Lý)",
+        "Ngành học gợi ý tại ĐH Duy Tân":"- Công nghệ Kỹ thuật Ô tô\n- Công nghệ Cơ khí\n- Công nghệ Kỹ thuật Điện – Điện tử\n- Công nghệ Kỹ thuật Cơ Điện tử\n- Điều khiển & Tự động hóa\n- Năng lượng tái tạo",
+        "Nghề nghiệp tương lai":"Kỹ sư cơ khí, Kỹ sư ô tô, Kỹ sư điện – điện tử, Kỹ sư tự động hóa"
+    },
+    {
+        "STT":7.0,
+        "Nhóm năng lực \/ Sở trường":"Xã hội – Du lịch – Dịch vụ",
+        "Tổ hợp xét tuyển phù hợp":"D01 (Toán – Văn – Anh), C00 (Văn – Sử – Địa)",
+        "Ngành học gợi ý tại ĐH Duy Tân":"- Du lịch\n- Quản trị Khách sạn\n- Quản trị Nhà hàng & Dịch vụ ăn uống\n- Quản trị Lữ hành\n- Việt Nam học (hướng Du lịch – Văn hóa)\n- Quản lý Sự kiện",
+        "Nghề nghiệp tương lai":"Hướng dẫn viên du lịch, Quản lý khách sạn, Chuyên viên tổ chức sự kiện"
+    },
+    {
+        "STT":8.0,
+        "Nhóm năng lực \/ Sở trường":"Môi trường – Công nghệ sinh học",
+        "Tổ hợp xét tuyển phù hợp":"B00 (Toán – Hóa – Sinh), C02 (Văn – Toán – Hóa), A00 (Toán – Lý – Hóa)",
+        "Ngành học gợi ý tại ĐH Duy Tân":"- Công nghệ Sinh học\n- Khoa học Môi trường\n- Công nghệ Thực phẩm\n- Công nghệ Hóa học",
+        "Nghề nghiệp tương lai":"Nhà nghiên cứu sinh học, Kỹ sư môi trường, Chuyên gia thực phẩm"
+    },
+    {
+        "STT":9.0,
+        "Nhóm năng lực \/ Sở trường":"Kỹ năng số, Sáng tạo nội dung số",
+        "Tổ hợp xét tuyển phù hợp":"A01 (Toán – Lý – Anh), D01 (Toán – Văn – Anh), C01 (Văn – Toán – Lý)",
+        "Ngành học gợi ý tại ĐH Duy Tân":"- Truyền thông Đa phương tiện\n- Công nghệ Truyền thông\n- Công nghệ Game\n- Thương mại Điện tử\n- Công nghệ Marketing số",
+        "Nghề nghiệp tương lai":"Digital Marketer, Content Creator, Nhà phát triển game, Chuyên viên truyền thông"
+    },
+    {
+        "STT":10.0,
+        "Nhóm năng lực \/ Sở trường":"Yêu thích pháp luật, xã hội, chính trị",
+        "Tổ hợp xét tuyển phù hợp":"C00 (Văn – Sử – Địa), C03 (Văn – Toán – Sử), D01 (Toán – Văn – Anh)",
+        "Ngành học gợi ý tại ĐH Duy Tân":"- Luật\n- Luật Kinh tế\n- Quan hệ Quốc tế\n- Quản lý Nhà nước",
+        "Nghề nghiệp tương lai":"Luật sư, Thẩm phán, Công chứng viên, Nhà nghiên cứu luật, Cán bộ quản lý nhà nước"
+    },
+    {
+        "STT":null,
+        "Nhóm năng lực \/ Sở trường":"dùng nlp xử lý và tạo các mẫu , các câu hỏi và từ có liên quan ",
+        "Tổ hợp xét tuyển phù hợp":null,
+        "Ngành học gợi ý tại ĐH Duy Tân":null,
+        "Nghề nghiệp tương lai":null
+    }
+]

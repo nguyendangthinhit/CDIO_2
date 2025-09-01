@@ -1,0 +1,122 @@
+[
+    {
+        "Nhóm ưu tiên":"UT1",
+        "Đối tượng":"1",
+        "Mô tả":"Công dân Việt Nam là người dân tộc thiểu số có hộ khẩu thường trú (trong thời gian học THPT hoặc trung cấp) trên 18 tháng tại Khu vực 1 (KV1) gồm: Các xã khu vực 1, 2, 3 thuộc vùng dân tộc và miền núi theo quy định được áp dụng trong thời gian thí sinh học THPT hoặc trung cấp; các xã đặc biệt khó khăn vùng bãi ngang ven biển và hải đảo; các xã đặc biệt khó khăn, xã biên giới, xã an toàn khu vào diện đầu tư của Chương trình 135 theo quy định của Thủ tướng Chính phủ.",
+        "Điểm ưu tiên":2,
+        "Điều kiện":"Khu vực 1: Các xã đặc biệt khó khăn, xã biên giới, an toàn khu",
+        "Hồ sơ yêu cầu":"Giấy khai sinh hoặc giấy tờ hợp pháp chứng minh"
+    },
+    {
+        "Nhóm ưu tiên":"UT1",
+        "Đối tượng":"2",
+        "Mô tả":"Công nhân trực tiếp sản xuất đã làm việc liên tục 5 năm trở lên, trong đó có ít nhất 2 năm là chiến sĩ thi đua được cấp tỉnh trở lên công nhận và cấp bằng khen",
+        "Điểm ưu tiên":2,
+        "Điều kiện":"Được cấp tỉnh trở lên công nhận và cấp bằng khen",
+        "Hồ sơ yêu cầu":"Giấy khen cấp tỉnh"
+    },
+    {
+        "Nhóm ưu tiên":"UT1",
+        "Đối tượng":"3",
+        "Mô tả":"Thương binh, bệnh binh, người có “Giấy chứng nhận người được hưởng chính sách như thương binh”; Quân nhân; sĩ quan, hạ sĩ quan, chiến sĩ nghĩa vụ trong Công an nhân dân tại ngũ được cử đi học có thời gian phục vụ từ 12 tháng trở lên tại Khu vực 1; Quân nhân; sĩ quan, hạ sĩ quan, chiến sĩ nghĩa vụ trong Công an nhân dân tại ngũ được cử đi học có thời gian phục vụ từ 18 tháng trở lên; Quân nhân; sĩ quan, hạ sĩ quan, chiến sĩ nghĩa vụ trong Công an nhân dân đã xuất ngũ, được công nhận hoàn thành nghĩa vụ phục vụ tại ngũ theo quy định; Các đối tượng ưu tiên quy định tại điểm i, k, l, m khoản 1 Điều 2 Pháp lệnh số 26\/2005\/PL-UBTVQH11 ngày 29 tháng 6 năm 2005 được sửa đổi, bổ sung theo Pháp lệnh số 04\/2012\/UBTVQH13 ngày 16 tháng 7 năm 2012 của Ủy ban thường vụ Quốc hội về việc ưu đãi người có công với cách mạng.",
+        "Điểm ưu tiên":2,
+        "Điều kiện":"Quân nhân hoặc công an phục vụ từ 12 tháng trở lên tại Khu vực 1",
+        "Hồ sơ yêu cầu":"Giấy chứng nhận, giấy tờ phục vụ tại ngũ"
+    },
+    {
+        "Nhóm ưu tiên":"UT1",
+        "Đối tượng":"4",
+        "Mô tả":"Con liệt sĩ; Con thương binh bị suy giảm khả năng lao động từ 81% trở lên; Con bệnh binh bị suy giảm khả năng lao động từ 81% trở lên; Con của người hoạt động kháng chiến bị nhiễm chất độc hoá học có tỷ lệ suy giảm khả năng lao động 81% trở lên; Con của người được cấp “Giấy chứng nhận người hưởng chính sách như thương binh” mà người được cấp “Giấy chứng nhận người hưởng chính sách như thương binh” bị suy giảm khả năng lao động 81% trở lên; Con của Anh hùng lực lượng vũ trang, con của Anh hùng lao động; Con đẻ của người hoạt động kháng chiến bị dị dạng, dị tật do hậu quả của chất độc hóa học đang hưởng trợ cấp hằng tháng; Con của người có công với cách mạng quy định tại điểm a, b, d khoản 1 Điều 2 Pháp lệnh số 26\/2005\/PL-UBTVQH11 ngày 29 tháng 6 năm 2005 được sửa đổi, bổ sung theo Pháp lệnh số 04\/2012\/UBTVQH13 ngày 16 tháng 7 năm 2012 về việc ưu đãi người có công với cách mạng.",
+        "Điểm ưu tiên":2,
+        "Điều kiện":"Con của người có công với cách mạng",
+        "Hồ sơ yêu cầu":"Giấy chứng nhận người có công"
+    },
+    {
+        "Nhóm ưu tiên":"UT2",
+        "Đối tượng":"5",
+        "Mô tả":"Thanh niên xung phong tập trung được cử đi học; Quân nhân; sĩ quan, hạ sĩ quan, chiến sĩ nghĩa vụ trong Công an nhân dân tại ngũ được cử đi học có thời gian phục vụ dưới 12 tháng ở Khu vực 1 và dưới 18 tháng ở khu vực khác; Chỉ huy trưởng, Chỉ huy phó ban chỉ huy quân sự xã, phường, thị trấn; Thôn đội trưởng, Trung đội trưởng Dân quân tự vệ nòng cốt, Dân quân tự vệ đã hoàn thành nghĩa vụ tham gia Dân quân tự vệ nòng cốt từ 12 tháng trở lên, dự thi vào ngành Quân sự cơ sở. Thời hạn tối đa được hưởng ưu tiên là 18 tháng kể từ ngày ký quyết định xuất ngũ đến ngày dự thi hay ĐKXT.",
+        "Điểm ưu tiên":1,
+        "Điều kiện":"Được cử đi học",
+        "Hồ sơ yêu cầu":"Giấy cử đi học"
+    },
+    {
+        "Nhóm ưu tiên":"UT2",
+        "Đối tượng":"6",
+        "Mô tả":"Công dân Việt Nam là người dân tộc thiểu số có hộ khẩu thường trú ở ngoài khu vực đã quy định thuộc đối tượng 01; Con thương binh, con bệnh binh, con của người được hưởng chính sách như thương binh bị suy giảm khả năng lao động dưới 81%; Con của người hoạt động kháng chiến bị nhiễm chất độc hóa học có tỷ lệ suy giảm khả năng lao động dưới 81%; Con của người hoạt động cách mạng, hoạt động kháng chiến bị địch bắt tù, đày; Con của người hoạt động kháng chiến giải phóng dân tộc, bảo vệ Tổ quốc và làm nghĩa vụ quốc tế có giấy chứng nhận được hưởng chế độ ưu tiên theo quy định tại Nghị định số 31\/2013\/NĐ-CP ngày 09 tháng 4 năm 2013 của Chính phủ quy định chi tiết, hướng dẫn thi hành một số điều của Pháp lệnh Ưu đãi người có công với cách mạng; Con của người có công giúp đỡ cách mạng.",
+        "Điểm ưu tiên":1,
+        "Điều kiện":"Con thương binh, con bệnh binh, con người có công",
+        "Hồ sơ yêu cầu":"Giấy tờ hợp pháp chứng minh"
+    },
+    {
+        "Nhóm ưu tiên":"UT2",
+        "Đối tượng":"7",
+        "Mô tả":"Người khuyết tật nặng có giấy xác nhận khuyết tật của cơ quan có thẩm quyền cấp theo quy định tại Thông tư liên tịch số 37\/2012\/TTLT-BLĐTBXH-BYT-BTC-BGDĐT ngày 28 tháng 12 năm 2012 của Bộ Lao động - Thương binh và Xã hội, Bộ Y tế, Bộ Tài chính và Bộ GDĐT quy định về việc xác định mức độ khuyết tật do Hội đồng xác định mức độ khuyết tật thực hiện.",
+        "Điểm ưu tiên":1,
+        "Điều kiện":"Có giấy xác nhận khuyết tật",
+        "Hồ sơ yêu cầu":"Giấy xác nhận khuyết tật"
+    },
+    {
+        "Nhóm ưu tiên":"UT2",
+        "Đối tượng":"7",
+        "Mô tả":"Người lao động ưu tú thuộc tất cả các thành phần kinh tế được từ cấp tỉnh, Bộ trở lên công nhận danh hiệu thợ giỏi, nghệ nhân, được cấp bằng hoặc huy hiệu Lao động sáng tạo của Tổng Liên đoàn Lao động Việt Nam hoặc Trung ương Đoàn TNCS Hồ Chí Minh; Giáo viên đã giảng dạy đủ 3 năm trở lên thi vào các ngành sư phạm; Trung cấp dược, y sĩ, điều dưỡng viên, kỹ thuật viên đã công tác đủ 3 năm trở lên thi vào nhóm ngành sức khỏe.",
+        "Điểm ưu tiên":1,
+        "Điều kiện":"Được cấp bằng lao động sáng tạo, giáo viên đã giảng dạy đủ 3 năm",
+        "Hồ sơ yêu cầu":"Giấy chứng nhận lao động sáng tạo, hợp đồng lao động"
+    },
+    {
+        "Nhóm ưu tiên":"KV1",
+        "Đối tượng":"KV1",
+        "Mô tả":"Các đối tượng học tại Khu vực 1: Áp dụng cho thí sinh sinh sống tại các xã thuộc vùng dân tộc thiểu số và miền núi (gồm các khu vực 1, 2, 3), các xã đặc biệt khó khăn thuộc vùng ven biển, bãi ngang, hải đảo và những xã giáp biên giới theo quy định của Chính phủ.",
+        "Điểm ưu tiên":0.75,
+        "Điều kiện":"Sống tại Khu vực 1",
+        "Hồ sơ yêu cầu":"Giấy tờ chứng minh khu vực"
+    },
+    {
+        "Nhóm ưu tiên":"KV2-NT",
+        "Đối tượng":"KV2-NT",
+        "Mô tả":"Các đối tượng học tại Khu vực 2 nông thôn: Bao gồm các huyện nằm ngoài khu vực thành phố trực thuộc Trung ương, không thuộc KV1, KV2 hay KV3.",
+        "Điểm ưu tiên":0.5,
+        "Điều kiện":"Sống tại Khu vực 2 nông thôn (KV2-NT)",
+        "Hồ sơ yêu cầu":"Giấy tờ chứng minh khu vực"
+    },
+    {
+        "Nhóm ưu tiên":"KV2",
+        "Đối tượng":"KV2",
+        "Mô tả":"Các đối tượng học tại Khu vực 2: Gồm các thị xã, thành phố trực thuộc tỉnh và các huyện ngoại thành của các thành phố trực thuộc Trung ương.",
+        "Điểm ưu tiên":0.25,
+        "Điều kiện":"Sống tại Khu vực 2",
+        "Hồ sơ yêu cầu":"Giấy tờ chứng minh khu vực"
+    },
+    {
+        "Nhóm ưu tiên":"KV3",
+        "Đối tượng":"KV3",
+        "Mô tả":"Các đối tượng học tại Khu vực 3: Là những quận nội thành của các thành phố trực thuộc Trung ương.",
+        "Điểm ưu tiên":0,
+        "Điều kiện":"Sống tại Khu vực 3",
+        "Hồ sơ yêu cầu":"Giấy tờ chứng minh khu vực"
+    },
+    {
+        "Nhóm ưu tiên":"DB1",
+        "Đối tượng":"Khu vực",
+        "Mô tả":"Các xã khu vực 3 và các xã có thôn đặc biệt khó khăn thuộc vùng dân tộc và miền núi theo Quyết định số 447\/QĐ-UBDT ngày 19\/9\/2013, Quyết định số 68\/QĐ-UBDT ngày 19\/3\/2014 và Quyết định số 601\/QĐ-UBDT ngày 29\/10\/2015 của Bộ trưởng, Chủ nhiệm Ủy ban Dân tộc; các xã đặc biệt khó khăn vùng bãi ngang ven biển và hải đảo giai đoạn 2013-2015 được quy định tại Quyết định số 539\/QĐ-TTg ngày 01\/4\/2013 của Thủ tướng Chính phủ, Quyết định số 2311\/QĐ-TTg ngày 18\/12\/2015 về việc công nhận xã đảo thuộc tỉnh Kiên Giang, Quyết định số 2312\/QĐ-TTg ngày 18\/12\/2015 về việc công nhận xã đảo thuộc tỉnh Khánh Hòa; Quyết định số 202\/QĐ-TTg ngày 01\/2\/2016 về việc công nhận xã đảo thuộc tỉnh Bình Thuận, Quyết định số 810\/QĐ-TTg ngày 13\/5\/2016 về việc công nhận xã đảo thuộc tỉnh Trà Vinh; các xã đặc biệt khó khăn, xã biên giới, xã an toàn khu vào diện đầu tư của Chương trình 135 năm 2014 và năm 2015 được quy định tại Quyết định số 2405\/QĐ-TTg ngày 10\/12\/2013 của Thủ tướng Chính phủ và Quyết định số 495\/QĐ-TTg ngày 08\/04\/2014 của Thủ tướng Chính phủ điều chỉnh, bổ sung Quyết định số 2405\/QĐ-TTg ngày 10\/12\/2013; các xã đặc biệt khó khăn, xã biên giới, xã an toàn khu vào diện đầu tư của chương trình 135 giai đoạn 2016-2020 được quy định tại Quyết định số 204\/QĐ-TTg ngày 01\/02\/2016 của Thủ tướng Chính phủ.",
+        "Điểm ưu tiên":"Điểm tùy thuộc vào điều kiện xét",
+        "Điều kiện":"Các xã theo Quyết định của Thủ tướng Chính phủ",
+        "Hồ sơ yêu cầu":"Giấy chứng nhận khu vực"
+    },
+    {
+        "Nhóm ưu tiên":"DB2",
+        "Đối tượng":"Khu vực",
+        "Mô tả":"Nếu trong 3 năm học THPT (hoặc trong thời gian học trung cấp) có chuyển trường thì thời gian học ở khu vực nào lâu hơn được hưởng ưu tiên theo khu vực đó. Nếu mỗi năm học một trường thuộc các khu vực có mức ưu tiên khác nhau hoặc nửa thời gian học ở trường này, nửa thời gian học ở trường kia thì tốt nghiệp ở khu vực nào, hưởng ưu tiên theo khu vực đó. Quy định này áp dụng cho tất cả thí sinh, kể cả thí sinh đã tốt nghiệp từ trước năm tuyển sinh.",
+        "Điểm ưu tiên":"Điểm tùy thuộc vào điều kiện xét",
+        "Điều kiện":"Học tại khu vực có ưu tiên",
+        "Hồ sơ yêu cầu":"Giấy tờ chứng minh nơi học"
+    },
+    {
+        "Nhóm ưu tiên":"DB3",
+        "Đối tượng":"Khu vực",
+        "Mô tả":"Nếu trong 3 năm học THPT (hoặc trong thời gian học trung cấp) có chuyển trường thì thời gian học ở khu vực nào lâu hơn được hưởng ưu tiên theo khu vực đó. Nếu mỗi năm học một trường thuộc các khu vực có mức ưu tiên khác nhau hoặc nửa thời gian học ở trường này, nửa thời gian học ở trường kia thì tốt nghiệp ở khu vực nào, hưởng ưu tiên theo khu vực đó. Quy định này áp dụng cho tất cả thí sinh, kể cả thí sinh đã tốt nghiệp từ trước năm tuyển sinh.",
+        "Điểm ưu tiên":"Điểm tùy thuộc vào điều kiện xét",
+        "Điều kiện":"Học ở trường thuộc các khu vực có thay đổi mức ưu tiên",
+        "Hồ sơ yêu cầu":"Mã trường, Giấy chứng nhận khu vực"
+    }
+]

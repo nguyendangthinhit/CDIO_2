@@ -1,0 +1,74 @@
+[
+    {
+        "STT":1,
+        "Loại học bổng":"Học bổng Toàn phần\/Bán phần dựa trên kết quả thi THPT 2025",
+        "Tiêu chí xét tuyển":"Toàn phần: điểm thi >= 25. Bán phần: điểm thi >=23",
+        "Giá trị học bổng":"Toàn phần: miễn 100% học phí. Bán phần: miễn 50% học phí.",
+        "Số lượng":"Trường Công nghệ & Kỹ thuật: 4 suất (Toàn phần), 4 suất (Bán phần). Trường Ngôn ngữ & XHNV: 2 suất (Toàn phần), 2 suất (Bán phần). Trường Kinh tế: 2 suất (Toàn phần), 2 suất (Bán phần). Khoa Y Dược: 2 suất (Toàn phần), 2 suất (Bán phần).",
+        "Điều kiện và quy định":"- Không áp dụng cho ngành Y, Răng Hàm Mặt. - Được giảm trực tiếp vào học phí. -  Không tính điểm ưu tiên khu vực\/đối tượng. - Không được chuyển nhượng hoặc quy đổi thành tiền mặt. - Thí sinh đạt nhiều tiêu chí sẽ nhận mức học bổng cao nhất. - Để duy trì, sinh viên cần đạt GPA hàng năm: Khối Kỹ thuật: 3.2\/4.0 (Toàn phần), 3.0\/4.0 (Bán phần). Khối Kinh tế: 3.4\/4.0 (Toàn phần), 3.2\/4.0 (Bán phần). - Chỉ cấp trong thời gian khóa học chính thức, không áp dụng cho thí sinh nhập học trễ hạn."
+    },
+    {
+        "STT":2,
+        "Loại học bổng":"Học bổng cho Thí sinh Đạt giải cấp Tỉnh\/Thành phố",
+        "Tiêu chí xét tuyển":"Đạt giải Nhất, Nhì, Ba trong kỳ thi học sinh giỏi cấp tỉnh\/thành phố hoặc Hội thi Khoa học Kỹ thuật",
+        "Giá trị học bổng":"Giải Nhất: 70% học phí năm đầu tiên. Giải Nhì: 50% học phí năm đầu tiên. Giải Ba: 30% học phí năm đầu tiên",
+        "Số lượng":"Không xác định",
+        "Điều kiện và quy định":"- Được giảm trực tiếp vào học phí. - Không được chuyển nhượng. - Thí sinh đạt nhiều tiêu chí sẽ nhận mức học bổng cao nhất. - Ưu tiên xét cho thí sinh đăng ký và nhập học trước 17h00 ngày 30\/8\/2025. - Không áp dụng cho các chương trình du học tại chỗ."
+    },
+    {
+        "STT":3,
+        "Loại học bổng":"Học bổng cho ngành Kiến trúc chuẩn CSU hoặc Xây dựng chuẩn CSU",
+        "Tiêu chí xét tuyển":"Trúng tuyển vào các chuyên ngành thuộc Kiến trúc chuẩn CSU hoặc Xây dựng chuẩn CSU",
+        "Giá trị học bổng":"Miễn 20% học phí",
+        "Số lượng":"Không xác định",
+        "Điều kiện và quy định":"- Được giảm trực tiếp vào học phí. - Không được chuyển nhượng hoặc quy đổi thành tiền mặt. - Thí sinh chuyển ngành không thuộc danh mục ngành trên sẽ không được hưởng chính sách này. - Thí sinh đạt nhiều tiêu chí sẽ nhận mức học bổng cao nhất. - Để duy trì, sinh viên cần đạt GPA hàng năm từ 2.5\/4.0."
+    },
+    {
+        "STT":4,
+        "Loại học bổng":"Học bổng Tài năng cho Chương trình Tài năng thuộc Viện Quản lý Nam Khuê (Sinh viên Việt Nam)",
+        "Tiêu chí xét tuyển":"Toàn phần: đạt giải Nhất, Nhì, Ba trong kỳ thi học sinh giỏi quốc gia hoặc Hội thi Khoa học Kỹ thuật hoặc điểm thi >= 25 và điểm tiếng Anh >= 7 hoặc IELTS > =5.5. Bán phần: đạt giải Khuyến Khích trong kỳ thi học sinh giỏi quốc gia hoặc Hội thi Khoa học Kỹ thuật hoặc điểm thi >= 23 và điểm tiếng Anh >= 6 hoặc IELTS >= 5.5",
+        "Giá trị học bổng":"Toàn phần: miễn 100% học phí. Bán phần: miễn 50% học phí.",
+        "Số lượng":"Toàn phần: 45 suất. Bán phần: 45 suất",
+        "Điều kiện và quy định":"- Xét theo thứ tự nộp hồ sơ. - Chỉ cấp trong thời gian khóa học chính thức, không áp dụng cho thí sinh nhập học trễ hạn. - Không được chuyển nhượng. - Thí sinh đạt nhiều tiêu chí sẽ nhận mức học bổng cao nhất. - Để duy trì, sinh viên cần đạt GPA hàng năm: Khối Kỹ thuật: 3.2\/4.0 (Toàn phần), 3.0\/4.0 (Bán phần). Khối Xã hội\/Kinh tế: 3.4\/4.0 (Toàn phần), 3.2\/4.0 (Bán phần). - Nếu bỏ học\/chuyển trường trong năm 1 hoặc đầu năm 2 phải bồi thường học phí năm đầu tiên."
+    },
+    {
+        "STT":5,
+        "Loại học bổng":"Học bổng Tài năng cho Chương trình Tài năng thuộc Viện Quản lý Nam Khuê (Sinh viên Lào)",
+        "Tiêu chí xét tuyển":"Tốt nghiệp THPT và có quốc tịch Lào.",
+        "Giá trị học bổng":"Toàn phần: miễn 100% học phí. Bán phần: miễn 50% học phí. Miễn phí gói tiếng Anh hoặc tiếng Việt bổ trợ cho năm học thứ nhất cho tất cả các đối tượng",
+        "Số lượng":"Toàn phần: 30 suất. Bán phần: 60 suất",
+        "Điều kiện và quy định":"- Xét theo thứ tự nộp hồ sơ. - Chỉ cấp trong thời gian khóa học chính thức, không áp dụng cho thí sinh nhập học trễ hạn. - Không được chuyển nhượng. - Thí sinh đạt nhiều tiêu chí sẽ nhận mức học bổng cao nhất."
+    },
+    {
+        "STT":6,
+        "Loại học bổng":"Học bổng Tài năng cho Chương trình Tiên tiến & Quốc tế CMU, PSU, CSU, PNU",
+        "Tiêu chí xét tuyển":"Trúng tuyển vào các chương trình Tiên tiến & Quốc tế CMU, PSU, CSU, PNU có điểm thi >= 25",
+        "Giá trị học bổng":"Miễn 100% học phí",
+        "Số lượng":"5 suất mỗi chuyên ngành cụ thể",
+        "Điều kiện và quy định":"- Xét theo thứ tự nộp hồ sơ. - Không tính điểm ưu tiên khu vực\/đối tượng. - Không được chuyển nhượng. - Thí sinh đạt nhiều tiêu chí sẽ nhận mức học bổng cao nhất. - Để duy trì, sinh viên cần đạt GPA hàng năm: Khối Kỹ thuật: 3.2\/4.0. Khối Kinh tế: 3.4\/4.0."
+    },
+    {
+        "STT":7,
+        "Loại học bổng":"Học bổng theo Phương thức Xét tuyển Học bạ THPT",
+        "Tiêu chí xét tuyển":"Trúng tuyển theo phương thức học bạ có tổng điểm 3 môn lớp 12 đạt ≥ 25 điểm",
+        "Giá trị học bổng":"≥ 27 điểm: 2.500.000 VNĐ. ≥ 26 điểm: 2.000.000 VNĐ. ≥ 25 điểm: 1.500.000 VNĐ",
+        "Số lượng":"≥ 27 điểm: 200 suất. ≥ 26 điểm: 150 suất. ≥ 25 điểm: 100 suất",
+        "Điều kiện và quy định":"- Không áp dụng cho khối ngành Y, Răng Hàm Mặt, Dược. - Xét theo thứ tự nộp hồ sơ. - Không được chuyển nhượng. - Thí sinh đạt nhiều tiêu chí sẽ nhận mức học bổng cao nhất. - Không áp dụng cho các chương trình du học tại chỗ."
+    },
+    {
+        "STT":8,
+        "Loại học bổng":"Học bổng cho chương trình Đại học Troy (Hoa Kỳ) tại Đại học Duy Tân",
+        "Tiêu chí xét tuyển":"Toàn phần: đạt giải Nhất, Nhì, Ba trong kỳ thi học sinh giỏi quốc gia hoặc Hội thi Khoa học Kỹ thuật hoặc điểm thi >= 26 và điểm tiếng Anh >= 7 hoặc IELTS >= 5.5; điểm Toán và 1 môn khác không phải một trong những môn sau: Ngoại ngữ, Địa lý, Lịch sử, Sinh học, Giáo dục công dân >= 17 và IELTS >= 6.0. Bán phần: đạt giải Khuyến Khích trong kỳ thi học sinh giỏi quốc gia hoặc Hội thi Khoa học Kỹ thuật và điểm tiếng Anh >= 6 hoặc IELTS >=5.5; điểm thi >= 24 và điểm tiếng Anh >= 7; điểm Toán và 1 môn khác không phải một trong những môn sau: Ngoại ngữ, Địa lý, Lịch sử, Sinh học, Giáo dục công dân >= 16 và IELTS >= 6.0. Nhân tài: IELTS >= 6.0",
+        "Giá trị học bổng":"Toàn phần: miễn 100% học phí. Bán phần: miễn 50% học phí. Nhân tài: miễn 30% học phí",
+        "Số lượng":"Toàn phần: 10 suất cho người Việt Nam. Bán phần: 25 suất. Nhân tài: 15 suất",
+        "Điều kiện và quy định":"- Xét theo thứ tự nộp hồ sơ. - Không tính điểm ưu tiên khu vực\/đối tượng. - Điểm IELTS phải còn thời hạn. - Không được chuyển nhượng hoặc quy đổi thành tiền mặt. - Thí sinh đạt nhiều tiêu chí sẽ nhận mức học bổng cao nhất. - Để duy trì, sinh viên cần đạt GPA hàng năm: Khối Kỹ thuật: 3.2 (Toàn phần), 3.0 (Bán phần và Nhân tài). Khối Kinh tế: 3.4 (Toàn phần), 3.2 (Bán phần và Nhân tài). - Nếu bỏ học\/chuyển trường trong năm 1 hoặc đầu năm 2 phải bồi thường học phí năm đầu và phí lớp bổ trợ tiếng Anh (nếu có)."
+    },
+    {
+        "STT":9,
+        "Loại học bổng":"Học bổng cho ngành Kiến trúc, Xây dựng, Môi trường & Công nghệ Sinh học",
+        "Tiêu chí xét tuyển":"Trúng tuyển vào các chuyên ngành thuộc ngành Kiến trúc, Xây dựng, Môi trường & Công nghệ Sinh học.",
+        "Giá trị học bổng":"Miễn 30% học phí",
+        "Số lượng":"Không xác định",
+        "Điều kiện và quy định":"- Được giảm trực tiếp vào học phí. - Không được chuyển nhượng hoặc quy đổi thành tiền mặt. - Thí sinh chuyển ngành không thuộc danh mục ngành trên sẽ không được hưởng chính sách này. - Thí sinh đạt nhiều tiêu chí sẽ nhận mức học bổng cao nhất. - Để duy trì, sinh viên cần đạt điểm trung bình tích lũy hàng năm từ 3.0\/4.0"
+    }
+]

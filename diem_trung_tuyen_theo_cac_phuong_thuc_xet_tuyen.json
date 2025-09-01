@@ -1,0 +1,51 @@
+[
+    {
+        "NGÀNH\/CHUYÊN NGÀNH":"Y Khoa (có kết quả học tập cả năm lớp 12 đạt đánh giá mức TỐT (xếp loại GIỎI) hoặc điểm xét tốt nghiệp THPT từ 8,0 điểm trở lên)",
+        "KẾT QUẢ THI THPT":">=20.5",
+        "HỌC BẠ THPT":">=24",
+        "ĐGNL ĐHQG TP.HCM":">=700",
+        "KỲ THI V-SAT":">=300"
+    },
+    {
+        "NGÀNH\/CHUYÊN NGÀNH":"Răng-Hàm-Mặt (có kết quả học tập cả năm lớp 12 đạt đánh giá mức TỐT (xếp loại GIỎI) hoặc điểm xét tốt nghiệp THPT từ 8,0 điểm trở lên)",
+        "KẾT QUẢ THI THPT":">=20.5",
+        "HỌC BẠ THPT":">=24",
+        "ĐGNL ĐHQG TP.HCM":">=700",
+        "KỲ THI V-SAT":">=300"
+    },
+    {
+        "NGÀNH\/CHUYÊN NGÀNH":"Dược (có kết quả học tập cả năm lớp 12 đạt đánh giá mức TỐT (xếp loại GIỎI) hoặc điểm xét tốt nghiệp THPT từ 8,0 điểm trở lên)",
+        "KẾT QUẢ THI THPT":">=19",
+        "HỌC BẠ THPT":">=24",
+        "ĐGNL ĐHQG TP.HCM":">=700",
+        "KỲ THI V-SAT":">=300"
+    },
+    {
+        "NGÀNH\/CHUYÊN NGÀNH":"Điều dưỡng (có kết quả học tập cả năm lớp 12 đạt đánh giá mức Khá (xếp loại Khá) hoặc điểm xét tốt nghiệp THPT từ 6,5 điểm trở lên)",
+        "KẾT QUẢ THI THPT":">=17",
+        "HỌC BẠ THPT":">=19.5",
+        "ĐGNL ĐHQG TP.HCM":">=650",
+        "KỲ THI V-SAT":">=250"
+    },
+    {
+        "NGÀNH\/CHUYÊN NGÀNH":"Xét nghiệm Y học (có kết quả học tập cả năm lớp 12 đạt đánh giá mức Khá (xếp loại Khá) hoặc điểm xét tốt nghiệp THPT từ 6,5 điểm trở lên)",
+        "KẾT QUẢ THI THPT":">=17",
+        "HỌC BẠ THPT":">=19.5",
+        "ĐGNL ĐHQG TP.HCM":">=650",
+        "KỲ THI V-SAT":">=250"
+    },
+    {
+        "NGÀNH\/CHUYÊN NGÀNH":"Kiến trúc (Điểm môn Vẽ nhân hệ số 2)",
+        "KẾT QUẢ THI THPT":">=20",
+        "HỌC BẠ THPT":">=22",
+        "ĐGNL ĐHQG TP.HCM":"Không xét",
+        "KỲ THI V-SAT":"Không xét"
+    },
+    {
+        "NGÀNH\/CHUYÊN NGÀNH":"Các ngành còn lại",
+        "KẾT QUẢ THI THPT":">=15",
+        "HỌC BẠ THPT":">=18",
+        "ĐGNL ĐHQG TP.HCM":">=600",
+        "KỲ THI V-SAT":">=225"
+    }
+]

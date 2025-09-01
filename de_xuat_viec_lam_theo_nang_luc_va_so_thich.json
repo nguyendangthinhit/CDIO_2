@@ -1,0 +1,50 @@
+[
+    {
+        "Nhóm (RIASEC)":"R – Realistic (Thực tế)",
+        "Đặc điểm – Sở thích học sinh":"Thích vận động, làm việc tay chân, máy móc, dụng cụ, ngoài trời",
+        "Hoạt động yêu thích":"Chơi thể thao, lắp ráp, sửa chữa, nông nghiệp, kỹ thuật",
+        "Nghề nghiệp ":"Cơ khí, Kỹ thuật điện – điện tử, Xây dựng, Công nghệ ô tô, Thể thao",
+        "Ngành học phù hợp":null,
+        "Nguồn tham khảo":"O*NET – Realistic"
+    },
+    {
+        "Nhóm (RIASEC)":"I – Investigative (Khám phá)",
+        "Đặc điểm – Sở thích học sinh":"Thích tư duy logic, phân tích, nghiên cứu, giải quyết vấn đề",
+        "Hoạt động yêu thích":"Làm thí nghiệm, giải toán, nghiên cứu khoa học",
+        "Nghề nghiệp ":"Khoa học tự nhiên, Y dược, CNTT, Khoa học dữ liệu, Sinh học, Toán – Tin",
+        "Ngành học phù hợp":null,
+        "Nguồn tham khảo":"O*NET – Investigative"
+    },
+    {
+        "Nhóm (RIASEC)":"A – Artistic (Nghệ thuật)",
+        "Đặc điểm – Sở thích học sinh":"Thích sáng tạo, tự do, thẩm mỹ, nghệ thuật",
+        "Hoạt động yêu thích":"Vẽ tranh, thiết kế, chụp ảnh, viết văn, âm nhạc",
+        "Nghề nghiệp ":"Thiết kế đồ họa, Truyền thông đa phương tiện, Kiến trúc, Báo chí, Nghệ thuật biểu diễn",
+        "Ngành học phù hợp":null,
+        "Nguồn tham khảo":"O*NET – Artistic"
+    },
+    {
+        "Nhóm (RIASEC)":"S – Social (Xã hội)",
+        "Đặc điểm – Sở thích học sinh":"Thích giúp đỡ, chăm sóc, giao tiếp, giảng dạy",
+        "Hoạt động yêu thích":"Tham gia CLB, hoạt động tình nguyện, thuyết trình",
+        "Nghề nghiệp ":"Sư phạm, Tâm lý học, Công tác xã hội, Y tế, Điều dưỡng, Du lịch – Nhà hàng – Khách sạn",
+        "Ngành học phù hợp":null,
+        "Nguồn tham khảo":"O*NET – Social"
+    },
+    {
+        "Nhóm (RIASEC)":"E – Enterprising (Quản lý – Lãnh đạo)",
+        "Đặc điểm – Sở thích học sinh":"Thích dẫn dắt, quản lý, kinh doanh, thuyết phục",
+        "Hoạt động yêu thích":"Kinh doanh nhỏ, tổ chức sự kiện, bán hàng",
+        "Nghề nghiệp ":"Quản trị kinh doanh, Marketing, Luật, Quan hệ công chúng (PR), Quản trị nhân lực",
+        "Ngành học phù hợp":null,
+        "Nguồn tham khảo":"O*NET – Enterprising"
+    },
+    {
+        "Nhóm (RIASEC)":"C – Conventional (Nguyên tắc – Trật tự)",
+        "Đặc điểm – Sở thích học sinh":"Thích làm việc theo quy trình, chính xác, dữ liệu, tài liệu",
+        "Hoạt động yêu thích":"Ghi chép, sắp xếp hồ sơ, làm kế hoạch, tính toán",
+        "Nghề nghiệp ":"Kế toán – Kiểm toán, Tài chính – Ngân hàng, Hành chính văn phòng, Phân tích dữ liệu",
+        "Ngành học phù hợp":null,
+        "Nguồn tham khảo":"O*NET – Conventional"
+    }
+]
