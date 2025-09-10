@@ -1,0 +1,317 @@
+{
+  "name": "My workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "multipleMethods": true,
+        "path": "cdio2",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -800,
+        0
+      ],
+      "id": "46668780-44cc-49de-b0b0-643a1377dd9d",
+      "name": "Webhook",
+      "webhookId": "1eb7709a-b517-489b-bf9e-518494bcfadb"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d58c9aa0-8132-47f3-bc4a-c10456df8f5c",
+              "name": "id khách",
+              "value": "={{ $json.body.entry[0].messaging[0].sender.id }}",
+              "type": "string"
+            },
+            {
+              "id": "dc31c679-2ffc-4ca6-a3f5-2f9eb58012bb",
+              "name": "id page",
+              "value": "={{ $json.body.entry[0].messaging[0].recipient.id }}",
+              "type": "string"
+            },
+            {
+              "id": "aa190287-c7bd-43cc-93c6-58c70c3eed53",
+              "name": "nd tin nhắn",
+              "value": "={{ $json.body.entry[0].messaging[0].message.text }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -464,
+        96
+      ],
+      "id": "fa3d1e51-a08b-425a-a1e8-d45c91d3b223",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "respondWith": "text",
+        "responseBody": "={{ $json.query['hub.challenge'] }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.3,
+      "position": [
+        -464,
+        -80
+      ],
+      "id": "95baa4c5-e644-4fd0-807e-992025237ef7",
+      "name": "Respond to Webhook"
+    },
+    {
+      "parameters": {
+        "jsCode": "const fullText = $input.first().json.output; \nconst recipientId = $('Edit Fields').first().json['id khách']; \nconst chunks = []; \nfor (let i = 0; i < fullText.length; i += 1890) { \n  chunks.push({ json: { recipient: { id: recipientId }, \n                       messaging_type: \"RESPONSE\", \n                       message: { text: fullText.slice(i, i + 1890) } \n                      } \n              }); \n} \nreturn chunks;"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        96,
+        96
+      ],
+      "id": "d43a24ad-1c04-4bc3-bc94-b44a930c7ee1",
+      "name": "Code",
+      "executeOnce": false
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json['nd tin nhắn'] }}",
+        "options": {
+          "systemMessage": "=Bạn là trợ lý tư vấn tuyển sinh của Đại học Duy Tân.  \nDữ liệu của bạn được lưu trong một file JSON lớn, trong đó mỗi key là một bộ dữ liệu riêng.  \nVí dụ: \n- \"thong_tin_dai_hoc_duy_tan\" chứa thông tin lịch sử, thành lập trường, các mốc quan trọng.  \n- \"truong_khoa_truc_thuoc\" chứa thông tin về hiệu trưởng, trưởng khoa, chủ tịch HĐQT qua các thời kỳ.  \n\nNhiệm vụ của bạn:  \n- Khi người dùng hỏi về các thông tin liên quan đến trường (lịch sử thành lập, hiệu trưởng, chủ tịch, cán bộ, chỉ tiêu tuyển sinh, cơ cấu tổ chức), hãy phân loại câu hỏi này vào nhóm **\"thong_tin_truong\"**.  \n- Với nhóm này, bạn chỉ được phép dùng dữ liệu từ **[\"thong_tin_dai_hoc_duy_tan\", \"truong_khoa_truc_thuoc\"]** để trả lời.  \n- Nếu dữ liệu không có trong các key này, hãy trả lời: \"I cannot verify this.\"  \n- Trả lời ngắn gọn, súc tích, có thể dùng bullet cho dễ đọc.  \n"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.1,
+      "position": [
+        -240,
+        96
+      ],
+      "id": "c71e56bb-4834-45e5-ad68-8b37d5de6981",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $json['id khách'] }}",
+        "contextWindowLength": 10000
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        -160,
+        320
+      ],
+      "id": "d522be27-20dd-4233-b192-dc5f286fa2f6",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "operation": "get",
+        "owner": {
+          "__rl": true,
+          "value": "nguyendangthinhit",
+          "mode": "name"
+        },
+        "repository": {
+          "__rl": true,
+          "value": "=SIC__BD_03",
+          "mode": "name"
+        },
+        "filePath": "SIC_BD_03/data/clean_data_2.json",
+        "asBinaryProperty": false,
+        "additionalParameters": {
+          "reference": ""
+        }
+      },
+      "type": "n8n-nodes-base.githubTool",
+      "typeVersion": 1.1,
+      "position": [
+        336,
+        528
+      ],
+      "id": "27a27b29-9ead-48df-8e32-695d443faa08",
+      "name": "Get a file in GitHub",
+      "webhookId": "78574644-8d62-47f8-9543-7ac781789167",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "operation": "get",
+        "owner": {
+          "__rl": true,
+          "value": "nguyendangthinhit",
+          "mode": "name"
+        },
+        "repository": {
+          "__rl": true,
+          "value": "CDIO_2",
+          "mode": "name"
+        },
+        "filePath": "data.json",
+        "asBinaryProperty": false,
+        "additionalParameters": {}
+      },
+      "type": "n8n-nodes-base.githubTool",
+      "typeVersion": 1.1,
+      "position": [
+        112,
+        288
+      ],
+      "id": "f514ccfb-5fea-458d-8c4f-4462aa387ba1",
+      "name": "Get a file in GitHub1",
+      "webhookId": "78574644-8d62-47f8-9543-7ac781789167",
+      "credentials": {
+        "githubApi": {
+          "id": "Xt3FaiK7lm83U5E3",
+          "name": "GitHub account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        -464,
+        272
+      ],
+      "id": "2d20374c-507d-4271-8ad4-b7bc54a6f55e",
+      "name": "Google Gemini Chat Model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "jXr577FZeBtcLMA1",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://graph.facebook.com/v23.0/{{ $('Webhook').item.json.body.entry[0].messaging[0].recipient.id }}/messages?access_token=EAAKiLjdsBY0BPWWU1p2EWnCoc78MVK78AUxywcZBt7E475Cxgxk3iLyxbXvZC5WJnK4jzYvT2LuLIdPBFxyfXOHZCdJZCYuLPlHMpI1sw3xkZBBctRDSGxZB7jQ1kUpwpgtVDgoxNVOwf5aPPI9fEX9wUedKYuJEFUvAhgN6HWQ5dQBkcgZCdr2deWKyAzXVlZBgRWKBhwZDZD",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ { \"recipient\": { \"id\": $(\"Edit Fields\").item.json[\"id khách\"] }, \"messaging_type\": \"RESPONSE\", \"message\": { \"text\": $json.message.text } } }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        320,
+        96
+      ],
+      "id": "61ffa8c3-6d46-40c7-a818-e36193af326b",
+      "name": "HTTP Request"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get a file in GitHub1": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "0a829d95-48c5-42b4-92ae-44af68572c86",
+  "meta": {
+    "instanceId": "1f147e46e664aabd5555d8f4faf5eb6a6e39fc4b727673de3534a8e40e081c39"
+  },
+  "id": "VfhgiqgIXX0yZNZ6",
+  "tags": []
+}

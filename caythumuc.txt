@@ -1,0 +1,29 @@
+CHATBOT TUYỂN SINH ĐẠI HỌC DUY TÂN
+├── Thông tin chung
+│   ├── thong_tin_dai_hoc_duy_tan
+│   ├── truong_khoa_truc_thuoc
+│   └── chuong_trinh_dao_tao_trong_va_sau_dai_hoc
+│
+└── Tuyển sinh
+    ├── thong_tin_tuyen_sinh_DTU_2025
+    │
+    ├── Chương trình đào tạo & Tuyển sinh
+    │   ├── Ngành học & Điểm chuẩn
+    │   │   ├── chi_tiet_nganh_dtu_2025
+    │   │   ├── to_hop_xet_tuyen
+    │   │   └── diem_trung_tuyen_theo_cac_phuong_thuc_xet_tuyen
+    │   │
+    │   └── Học phí & Học bổng
+    │       ├── hoc_phi_full
+    │       └── chinh_sach_hoc_bong
+    │
+    ├── Ưu tiên
+    │   ├── doi_tuong_uu_tien
+    │   └── danh_sach_cac_khu_vuc_tai_cac_tinh_thanh
+    │
+    ├── Việc làm & Cơ hội nghề nghiệp
+    │   ├── de_xuat_viec_lam_theo_nang_luc_va_so_thich
+    │   ├── de_xuat_nganh_hoc_theo_nang_luc_ca_nhan
+    │   └── map_xu_huong_theo_CN
+    │
+    └── chuyen_vien_tu_van
