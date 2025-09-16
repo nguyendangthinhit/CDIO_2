@@ -1,29 +1,35 @@
 CHATBOT TUYỂN SINH ĐẠI HỌC DUY TÂN
 ├── Thông tin chung
-│   ├── thong_tin_dai_hoc_duy_tan
-│   ├── truong_khoa_truc_thuoc
-│   └── chuong_trinh_dao_tao_trong_va_sau_dai_hoc
-│
+│   ├── thong_tin_dai_hoc_duy_tan.json
+│   ├── truong_khoa_truc_thuoc.json
+│   └── chuong_trinh_dao_tao_trong_va_sau_dai_hoc.json
+├── Mô tả ngành
+│   ├── 20250319-MÔ TẢ NGÀNH- CHUYÊN NGÀNH -TRƯỜNG CÔNG NGHỆ.json
+│   ├── 20250319-MÔ TẢ NGÀNH- CHUYÊN NGÀNH -TRƯỜNG DU LỊCH.json
+│   ├── 20250319-MÔ TẢ NGÀNH- CHUYÊN NGÀNH -TRƯỜNG KHMT.json
+│   ├── 20250319-MÔ TẢ NGÀNH- CHUYÊN NGÀNH -TRƯỜNG KINH TẾ&KINH DOANH.json
+│   ├── 20250319-MÔ TẢ NGÀNH- CHUYÊN NGÀNH -TRƯỜNG NN&XHNV.json
+│   └── 20250319-MÔ TẢ NGÀNH- CHUYÊN NGÀNH -TRƯỜNG ĐTQT.json
 └── Tuyển sinh
-    ├── thong_tin_tuyen_sinh_DTU_2025
+    ├── thong_tin_tuyen_sinh_DTU_2025.json
     │
     ├── Chương trình đào tạo & Tuyển sinh
     │   ├── Ngành học & Điểm chuẩn
-    │   │   ├── chi_tiet_nganh_dtu_2025
-    │   │   ├── to_hop_xet_tuyen
-    │   │   └── diem_trung_tuyen_theo_cac_phuong_thuc_xet_tuyen
+    │   │   ├── chi_tiet_nganh_dtu_2025.json
+    │   │   ├── to_hop_xet_tuyen.json
+    │   │   └── diem_trung_tuyen_theo_cac_phuong_thuc_xet_tuyen.json
     │   │
     │   └── Học phí & Học bổng
-    │       ├── hoc_phi_full
-    │       └── chinh_sach_hoc_bong
+    │       ├── hoc_phi_full.json
+    │       └── chinh_sach_hoc_bong.json
     │
     ├── Ưu tiên
-    │   ├── doi_tuong_uu_tien
-    │   └── danh_sach_cac_khu_vuc_tai_cac_tinh_thanh
+    │   ├── doi_tuong_uu_tien.json
+    │   └── danh_sach_cac_khu_vuc_tai_cac_tinh_thanh.json
     │
     ├── Việc làm & Cơ hội nghề nghiệp
-    │   ├── de_xuat_viec_lam_theo_nang_luc_va_so_thich
-    │   ├── de_xuat_nganh_hoc_theo_nang_luc_ca_nhan
-    │   └── map_xu_huong_theo_CN
+    │   ├── de_xuat_viec_lam_theo_nang_luc_va_so_thich.json
+    │   ├── de_xuat_nganh_hoc_theo_nang_luc_ca_nhan.json
+    │   └── map_xu_huong_theo_CN.json
     │
-    └── chuyen_vien_tu_van
+    └── chuyen_vien_tu_van.json
