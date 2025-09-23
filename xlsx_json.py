@@ -33,8 +33,6 @@ def excel_to_json(name, sheet_name=0):
 # "de_xuat_viec_lam_theo_nang_luc_va_so_thich"
 # ]
 files = [
-"xu_huong_viec_lam_2025",
-"de_xuat_viec_lam_theo_nang_luc_va_so_thich"
-]
+"truong_khoa_truc_thuoc"]
 for file in files:
     excel_to_json(file)

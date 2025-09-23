@@ -4963,8 +4963,8 @@
             "Chương trình đào tạo": "Chương trình đại trà, Chương trình quốc tế chuẩn PNU, Chương trình quốc tế chuẩn CSU"
         },
         {
-            "Trường/Khoa trực thuộc": "Khoa khoa học máy tính",
-            "Các nhóm ngành đào tạo": "KHMT, Trí tuệ nhân tạo, Big data, khoa học dữ liệu ",
+            "Trường/Khoa trực thuộc": "Trường Khoa học máy tính",
+            "Các nhóm ngành đào tạo": "Khoa học Máy tính & Phần mềm, Mạng & An toàn thông tin, Dữ liệu & Trí tuệ nhân tạo",
             "Chương trình đào tạo": "Chương trình đại trà, Chương trình quốc tế chuẩn CMU, Chương trình tài năng"
         },
         {
@@ -5001,6 +5001,99 @@
             "Trường/Khoa trực thuộc": "Trung tâm kỹ thuật và công nghệ Việt - Nhật ",
             "Các nhóm ngành đào tạo": "Công nghệ thông tin; Kỹ thuật – Công nghệ; Xây dựng – Kiến trúc; Mỹ thuật ứng dụng; Công nghệ sinh học – Thực phẩm; Khoa học sức khỏe.",
             "Chương trình đào tạo": "Chương trình Việt - Nhật"
+        }
+    ],
+    "xu_huong_viec_lam_2025": [
+        {
+            "Nghề/ngành hot": "Technology-driven roles (IT, AI, blockchain, cybersecurity)",
+            "Nhu cầu / Chuyển biến xã hội": "Chuyển đổi số, AI, blockchain và an ninh mạng phát triển → tạo nhiều việc làm mới, nhu cầu nhân lực thiếu hụt ~30%",
+            "Mức lương ước tính": "₫37,750,000/tháng (AI/Blockchain Engineer, ~4 năm KN)",
+            "Số liệu tăng trưởng / Tuyển dụng": "Việc làm AI tăng ~74%/năm tại Mỹ; Machine Learning Engineer tăng ~344% từ 2015–2022",
+            "Ngành học gợi ý": "CNTT, Khoa học máy tính, Trí tuệ nhân tạo"
+        },
+        {
+            "Nghề/ngành hot": "Green jobs – Năng lượng tái tạo, ESG, môi trường",
+            "Nhu cầu / Chuyển biến xã hội": "Biến đổi khí hậu, xu hướng năng lượng sạch, doanh nghiệp chú trọng ESG",
+            "Mức lương ước tính": "₫22,500,000/tháng (trung bình); ₫565M/năm (~₫47M/tháng)",
+            "Số liệu tăng trưởng / Tuyển dụng": "70% công ty toàn cầu có kế hoạch tuyển green workforce từ 2025",
+            "Ngành học gợi ý": "Kỹ thuật môi trường, Công nghệ kỹ thuật năng lượng tái tạo"
+        },
+        {
+            "Nghề/ngành hot": "Hybrid work (làm việc linh hoạt)",
+            "Nhu cầu / Chuyển biến xã hội": "Xu hướng làm việc kết hợp tại nhà và văn phòng, 85% nhân sự VN ưa chuộng",
+            "Mức lương ước tính": "Không cố định (tùy ngành)",
+            "Số liệu tăng trưởng / Tuyển dụng": "85% chuyên gia VN ưa thích hybrid work",
+            "Ngành học gợi ý": "Quản trị kinh doanh, Quản trị nhân sự"
+        },
+        {
+            "Nghề/ngành hot": "Reskilling/Upskilling digital skills",
+            "Nhu cầu / Chuyển biến xã hội": "Doanh nghiệp đầu tư đào tạo kỹ năng số, AI, cloud cho nhân viên",
+            "Mức lương ước tính": "Không cố định (liên quan kỹ năng bổ sung)",
+            "Số liệu tăng trưởng / Tuyển dụng": "70% nhà tuyển dụng có kế hoạch reskill workforce",
+            "Ngành học gợi ý": "CNTT, Hệ thống thông tin quản lý"
+        },
+        {
+            "Nghề/ngành hot": "Business/Sales, Marketing/Comms, Customer Service, HR",
+            "Nhu cầu / Chuyển biến xã hội": "Kinh tế tăng trưởng, nhu cầu kinh doanh – dịch vụ khách hàng cao",
+            "Mức lương ước tính": "₫8–20M/tháng (entry); >₫50M/tháng (quản lý)",
+            "Số liệu tăng trưởng / Tuyển dụng": "TopCV: Business/Sales chiếm 47.6% nhu cầu tuyển, tăng 8.3% so với 2024",
+            "Ngành học gợi ý": "Marketing, Quản trị kinh doanh, Truyền thông đa phương tiện"
+        },
+        {
+            "Nghề/ngành hot": "IT/Software",
+            "Nhu cầu / Chuyển biến xã hội": "Ngành cốt lõi trong nền kinh tế số, thiếu hụt kỹ sư phần mềm lớn",
+            "Mức lương ước tính": "₫9.7–47.5M/tháng",
+            "Số liệu tăng trưởng / Tuyển dụng": "Việt Nam thiếu 150.000 lập trình viên/năm",
+            "Ngành học gợi ý": "CNTT, Khoa học máy tính"
+        },
+        {
+            "Nghề/ngành hot": "R&D, Education, HR (ổn định)",
+            "Nhu cầu / Chuyển biến xã hội": "Nhu cầu ổn định trong nghiên cứu, giáo dục và nhân sự",
+            "Mức lương ước tính": "₫10–25M/tháng",
+            "Số liệu tăng trưởng / Tuyển dụng": "Tăng trưởng ổn định, ít biến động",
+            "Ngành học gợi ý": "Sư phạm, Quản trị nhân sự"
+        },
+        {
+            "Nghề/ngành hot": "Manufacturing, Processing",
+            "Nhu cầu / Chuyển biến xã hội": "68% công ty sản xuất mở rộng tại VN → cần nhiều lao động kỹ thuật",
+            "Mức lương ước tính": "₫8–18M/tháng",
+            "Số liệu tăng trưởng / Tuyển dụng": "68% công ty sản xuất có kế hoạch tuyển dụng thêm",
+            "Ngành học gợi ý": "Công nghệ kỹ thuật cơ khí, Công nghệ chế tạo máy"
+        },
+        {
+            "Nghề/ngành hot": "E‑commerce, Logistics, Fintech, IT",
+            "Nhu cầu / Chuyển biến xã hội": "Thương mại điện tử, tài chính số và logistics bùng nổ",
+            "Mức lương ước tính": "₫12–25M/tháng",
+            "Số liệu tăng trưởng / Tuyển dụng": "Nhu cầu nhân lực tăng mạnh nhờ e‑commerce & fintech",
+            "Ngành học gợi ý": "Logistics & Quản lý chuỗi cung ứng, Tài chính – Ngân hàng"
+        },
+        {
+            "Nghề/ngành hot": "Renewable Energy emergence",
+            "Nhu cầu / Chuyển biến xã hội": "Tăng trưởng năng lượng tái tạo, mở rộng tuyển dụng ngành liên quan",
+            "Mức lương ước tính": "₫20–47M/tháng",
+            "Số liệu tăng trưởng / Tuyển dụng": "Nhu cầu tăng trưởng cao trong lĩnh vực năng lượng tái tạo",
+            "Ngành học gợi ý": "Kỹ thuật môi trường, Công nghệ kỹ thuật năng lượng"
+        },
+        {
+            "Nghề/ngành hot": "AI-driven recruitment in HR",
+            "Nhu cầu / Chuyển biến xã hội": "Ứng dụng AI trong tuyển dụng: lọc CV, đánh giá ứng viên",
+            "Mức lương ước tính": "₫15–30M/tháng (AI HR tools, consultant)",
+            "Số liệu tăng trưởng / Tuyển dụng": "AI HR adoption tăng mạnh từ 2024–2025",
+            "Ngành học gợi ý": "Quản trị nhân sự, CNTT"
+        },
+        {
+            "Nghề/ngành hot": "AI integration in business/sales, IT, marketing, customer service, HR",
+            "Nhu cầu / Chuyển biến xã hội": "AI thúc đẩy hiệu quả kinh doanh và dịch vụ → tạo việc làm mới",
+            "Mức lương ước tính": "AI Engineers: ₫20–50M/tháng + thưởng",
+            "Số liệu tăng trưởng / Tuyển dụng": "Tuyển dụng AI Engineer tăng 60% trong Q1/2025",
+            "Ngành học gợi ý": "CNTT, Quản trị kinh doanh, Marketing"
+        },
+        {
+            "Nghề/ngành hot": "Lãnh đạo cấp cao (C-suite, Legal Head, Business Director, Marketing Head)",
+            "Nhu cầu / Chuyển biến xã hội": "Doanh nghiệp VN thiếu quản lý cấp cao, đặc biệt trong lĩnh vực pháp lý, tài chính, marketing",
+            "Mức lương ước tính": "Head of Legal ~₫330M/năm; C‑suite ~₫230–490M/năm",
+            "Số liệu tăng trưởng / Tuyển dụng": "Nhu cầu tăng trưởng 20%/năm cho các vị trí quản lý cấp cao",
+            "Ngành học gợi ý": "Luật, Quản trị kinh doanh, Marketing"
         }
     ]
 }
