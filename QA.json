@@ -1,7 +1,7 @@
 [
   {
     "question": "so sánh ngành học big data và khoa học dữ liệu",
-    "answer": "Tôi xin lỗi, tôi không có thông tin cụ thể để so sánh trực tiếp hai khái niệm này trong ngữ cảnh đào tạo của Đại học Duy Tân.",
-    "timestamp": "2025-09-23T07:57:02.206Z"
+    "answer": "Big Data (Dữ liệu lớn) và Khoa học dữ liệu là hai lĩnh vực có mối liên hệ chặt chẽ nhưng có trọng tâm khác nhau.\n\nBig Data tập trung vào việc xử lý, lưu trữ và quản lý các tập dữ liệu cực lớn, phức tạp mà các công cụ truyền thống không thể xử lý được. Lĩnh vực này liên quan đến các công nghệ và kiến trúc như Hadoop, Spark, NoSQL để thu thập, lưu trữ và xử lý dữ liệu ở quy mô lớn. Mục tiêu chính là xây dựng và duy trì cơ sở hạ tầng để làm việc với dữ liệu lớn.\n\nKhoa học dữ liệu tập trung vào việc trích xuất kiến thức và thông tin chi tiết có giá trị từ dữ liệu, bao gồm cả dữ liệu lớn. Các nhà khoa học dữ liệu sử dụng các kỹ thuật thống kê, học máy, khai phá dữ liệu và phân tích để hiểu dữ liệu, xây dựng mô hình dự đoán và đưa ra quyết định dựa trên dữ liệu. Họ thường làm việc với dữ liệu đã được thu thập và xử lý bởi các hệ thống Big Data.\n\nNói cách khác, Big Data cung cấp công cụ và hạ tầng để xử lý \"cái gì\" (dữ liệu khổng lồ), còn Khoa học dữ liệu sử dụng dữ liệu đó để trả lời \"tại sao\" và \"điều gì sẽ xảy ra\" thông qua phân tích chuyên sâu. Hai lĩnh vực này bổ trợ cho nhau, với Khoa học dữ liệu thường dựa vào khả năng xử lý của Big Data để thực hiện các phân tích phức tạp trên quy mô lớn.",
+    "timestamp": "2025-09-23T07:57:07.597Z"
   }
 ]
