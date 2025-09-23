@@ -1,7 +1,7 @@
 [
   {
     "question": "Big data có phải là chuyên ngành của khoa học dữ liệu hay không?",
-    "answer": "Big Data không phải là một chuyên ngành con của Khoa học dữ liệu mà là một lĩnh vực liên quan chặt chẽ.\n\nBig Data tập trung vào việc xử lý, lưu trữ và quản lý các tập dữ liệu cực lớn.\n\nKhoa học dữ liệu sử dụng dữ liệu, bao gồm cả dữ liệu lớn, để phân tích, xây dựng mô hình và đưa ra thông tin chi tiết.\n\nHai lĩnh vực này bổ trợ cho nhau. Các công cụ và kỹ thuật của Big Data thường được các nhà khoa học dữ liệu sử dụng để làm việc với dữ liệu quy mô lớn.",
-    "timestamp": "2025-09-23T08:00:42.206Z"
+    "answer": "Big Data không phải là chuyên ngành của Khoa học dữ liệu.\n\nBig Data là một lĩnh vực chuyên về việc xử lý, lưu trữ và quản lý các tập dữ liệu cực lớn và phức tạp.\n\nKhoa học dữ liệu là lĩnh vực sử dụng các phương pháp khoa học, quy trình, thuật toán và hệ thống để trích xuất kiến thức và thông tin chi tiết từ dữ liệu, bao gồm cả dữ liệu lớn.\n\nHai lĩnh vực này có mối quan hệ bổ trợ lẫn nhau, nơi các công nghệ Big Data cung cấp nền tảng để Khoa học dữ liệu có thể thực hiện phân tích trên quy mô lớn.",
+    "timestamp": "2025-09-23T08:00:44.007Z"
   }
 ]
