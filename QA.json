@@ -30,24 +30,6 @@
     "timestamp": "2025-09-25T16:42:59.598Z"
   },
   {
-    "user_id": "30924032227244032",
-    "question": "mình muốn biết học phí của ngành khoa học máy tính",
-    "answer": "Học phí của ngành Khoa học Máy tính là 1.035.000 VNĐ.\nNgành Khoa học Máy tính (TROY) có học phí là 3.200.000 VNĐ.",
-    "timestamp": "2025-09-25T16:43:13.458Z"
-  },
-  {
-    "user_id": "30924032227244032",
-    "question": "mình muốn biết học phí của ngành khoa học máy tính",
-    "answer": "Học phí của ngành Khoa học Máy tính là 1.035.000 VNĐ.\nNgành Khoa học Máy tính (TROY) có học phí là 3.200.000 VNĐ.",
-    "timestamp": "2025-09-25T16:43:31.711Z"
-  },
-  {
-    "user_id": "24360928576926305",
-    "question": "học phí của ngành khoa học máy tính",
-    "answer": "Để tìm thông tin học phí ngành Khoa học Máy tính, tôi cần biết bạn muốn hỏi về chương trình đào tạo Khoa học Máy tính nào (ví dụ: chương trình Khoa học Máy tính thông thường, chương trình Khoa học Máy tính Tài năng HP, hoặc chương trình liên kết quốc tế CMU, PSU)?\n\nBạn có muốn mình tư vấn chi tiết hơn không?",
-    "timestamp": "2025-09-25T16:48:26.937Z"
-  },
-  {
     "user_id": "24360928576926305",
     "question": "học phí của ngành khoa học máy tính",
     "answer": "Để tìm thông tin học phí ngành Khoa học Máy tính, tôi cần biết bạn muốn hỏi về chương trình đào tạo Khoa học Máy tính nào (ví dụ: chương trình Khoa học Máy tính thông thường, chương trình Khoa học Máy tính Tài năng HP, hoặc chương trình liên kết quốc tế CMU, PSU, TROY)?\n\nBạn có muốn mình tư vấn chi tiết hơn không?",
@@ -70,17 +52,5 @@
     "question": "mã ngành của ngành nha khoa",
     "answer": "Ngành Nha khoa có mã ngành là 7720501. Chuyên ngành là Bác sĩ Răng Hàm Mặt.",
     "timestamp": "2025-09-25T16:51:26.680Z"
-  },
-  {
-    "user_id": "24360928576926305",
-    "question": "mã ngành của ngành nha khoa",
-    "answer": "Ngành Nha khoa có mã ngành là 7720501. Chuyên ngành là Bác sĩ Răng Hàm Mặt.",
-    "timestamp": "2025-09-25T16:51:32.789Z"
-  },
-  {
-    "user_id": "24360928576926305",
-    "question": "mã ngành của ngành nha khoa",
-    "answer": "Ngành Nha khoa có mã ngành là 7720501.",
-    "timestamp": "2025-09-25T16:51:52.510Z"
   }
 ]
