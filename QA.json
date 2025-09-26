@@ -118,5 +118,11 @@
     "question": "hello",
     "answer": "Chào bạn, mình có thể giúp gì cho bạn về thông tin tuyển sinh của Đại học Duy Tân?",
     "timestamp": "2025-09-26T18:28:03.077Z"
+  },
+  {
+    "user_id": "24471930822440690",
+    "question": "ngành khoa học dữ liệu có những chuyên ngành nào vậy",
+    "answer": "Ngành Khoa học dữ liệu tại Đại học Duy Tân có những chuyên ngành sau:\n\nKhoa học Dữ liệu\nBig Data & Machine Learning (HP)",
+    "timestamp": "2025-09-26T18:28:24.449Z"
   }
 ]
