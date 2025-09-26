@@ -668,7 +668,7 @@
         }
       }
     },
-    "TRƯỜNG KHMT": {
+    "TRƯỜNG khoa học máy tính": {
       "nganh": {
         "7480103": {
           "Ngành": "Kỹ thuật Phần mềm",
@@ -739,8 +739,8 @@
             }
           ]
         },
-        "7460108": {
-          "Ngành": "Khoa học Dữ liệu",
+        "Ngành Khoa học Dữ liệu":
+        { 
           "Mã Ngành": "7460108",
           "Chuyên Ngành": [
             {
