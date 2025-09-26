@@ -96,33 +96,9 @@
     "timestamp": "2025-09-26T09:39:46.816Z"
   },
   {
-    "user_id": "24471930822440690",
-    "question": "ngành khoa học dữ liệu có những chuyên ngành nào",
-    "answer": "Ngành Khoa học dữ liệu tại Đại học Duy Tân có các chuyên ngành sau:\n\nKhoa học Dữ liệu\nBig Data & Machine Learning (HP)",
-    "timestamp": "2025-09-26T18:03:19.017Z"
-  },
-  {
     "user_id": "30924032227244032",
     "question": "hello",
     "answer": "Chào bạn, mình là chatbot tư vấn tuyển sinh của Đại học Duy Tân. Bạn có câu hỏi gì cần mình hỗ trợ không?",
     "timestamp": "2025-09-26T18:27:09.832Z"
-  },
-  {
-    "user_id": "30924032227244032",
-    "question": "ngành khoa học dữ liệu có những chuyên ngành nào vậy",
-    "answer": "Ngành Khoa học dữ liệu tại Đại học Duy Tân có các chuyên ngành sau:\n\n1. Khoa học dữ liệu\n2. Big Data & Machine Learning (HP)\n\nBạn có muốn mình tư vấn chi tiết hơn về các chuyên ngành này không?",
-    "timestamp": "2025-09-26T18:27:21.852Z"
-  },
-  {
-    "user_id": "24471930822440690",
-    "question": "hello",
-    "answer": "Chào bạn, mình có thể giúp gì cho bạn về thông tin tuyển sinh của Đại học Duy Tân?",
-    "timestamp": "2025-09-26T18:28:03.077Z"
-  },
-  {
-    "user_id": "24471930822440690",
-    "question": "ngành khoa học dữ liệu có những chuyên ngành nào vậy",
-    "answer": "Ngành Khoa học dữ liệu tại Đại học Duy Tân có những chuyên ngành sau:\n\nKhoa học Dữ liệu\nBig Data & Machine Learning (HP)",
-    "timestamp": "2025-09-26T18:28:24.449Z"
   }
 ]
