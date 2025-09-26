@@ -1,0 +1,1015 @@
+{
+  "name": "My workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "multipleMethods": true,
+        "path": "cdio2",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -368,
+        48
+      ],
+      "id": "2ab00dd7-09ae-4e40-bd20-41fc4a62698c",
+      "name": "Webhook",
+      "webhookId": "1eb7709a-b517-489b-bf9e-518494bcfadb"
+    },
+    {
+      "parameters": {
+        "respondWith": "text",
+        "responseBody": "={{ $json.query['hub.challenge'] }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.3,
+      "position": [
+        -144,
+        -64
+      ],
+      "id": "b90df58e-b801-4e63-be40-6321cefb6714",
+      "name": "Respond to Webhook"
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $json['id khách'] }}",
+        "contextWindowLength": 10000
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        880,
+        416
+      ],
+      "id": "1cce4986-6967-4968-abd3-824ad891d1e2",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        672,
+        416
+      ],
+      "id": "7bae23d2-fb3f-43b9-bbf2-7b930f76a2f6",
+      "name": "Google Gemini Chat Model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "EaLd723PGZh8CtXW",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "operation": "get",
+        "owner": {
+          "__rl": true,
+          "value": "nguyendangthinhit",
+          "mode": "name"
+        },
+        "repository": {
+          "__rl": true,
+          "value": "CDIO_2",
+          "mode": "name"
+        },
+        "filePath": "data.json",
+        "asBinaryProperty": false,
+        "additionalParameters": {}
+      },
+      "type": "n8n-nodes-base.githubTool",
+      "typeVersion": 1.1,
+      "position": [
+        1056,
+        432
+      ],
+      "id": "01cee551-7ab8-4ba5-9f03-8efe2d6da961",
+      "name": "Get a file in GitHub",
+      "webhookId": "78574644-8d62-47f8-9543-7ac781789167",
+      "credentials": {
+        "githubApi": {
+          "id": "GtvUKas3ZH4a37iO",
+          "name": "GitHub account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json['nd tin nhắn'] }}",
+        "options": {
+          "systemMessage": "=SYSTEM:\nBạn đang đóng vai chatbot tư vấn tuyển sinh của Đại học Duy Tân. \nDữ liệu mà bạn được cung cấp đã được load trực tiếp từ GitHub repository thông qua n8n, file có tên là data.json.\nDữ liệu bao gồm nhiều file JSON con gộp lại và mỗi key cấp cao sẽ chứa thông tin quan trọng như: \n- Thông tin học phí, chính sách học bổng, đối tượng ưu tiên\n- Chi tiết ngành/chuyên ngành đào tạo\n- Điểm trúng tuyển theo các phương thức xét tuyển\n- Thông tin về trường, khoa, chương trình đào tạo (trong nước và quốc tế)\n- Xu hướng việc làm và gợi ý ngành học theo năng lực, sở thích\n\nBạn cần hiểu một số từ khóa viết tắt để giải thích đúng mã ngành và chương trình:\nCMU: Carnegie Mellon University\nPSU: Pennsylvania State University\nCSU: California State University\nPNU: Purdue Northwest University\nHP: Chương trình Tài năng\nVJJ: Chương trình Việt Nhật\nTROY: Chương trình Du học tại chỗ lấy bằng Đại học Troy (Mỹ)\n\nHƯỚNG DẪN TRẢ LỜI:\n- Nếu người dùng hỏi về các thông tin liên quan đến trường (lịch sử thành lập, hiệu trưởng, chủ tịch , cán bộ, chỉ tiêu tuyển sinh, cơ cấu tổ chức), hãy phân loại câu hỏi này vào nhóm *\"thong_tin_truong\"*.  \n- Nếu người dùng hỏi về tổng số nhóm ngành hoặc các nhóm ngành đào tạo thì chỉ trả lời có bao nhiêu nhóm ngành, sau đó liệt kê tên các nhóm ngành lớn (ví dụ: Công nghệ thông tin, Khoa học máy tính, Cơ khí, Xây dựng, Y tế...).\n- Chỉ khi nào người dùng yêu cầu liệt kê chi tiết ngành trong một nhóm ngành thì mới đưa ra danh sách cụ thể.\n- Nếu người dùng hỏi dạng yes/no (có hay không) thì trả lời “có” hoặc “không”, sau đó hỏi thêm “Bạn có muốn mình tư vấn chi tiết hơn không?”.\n- Khi cần giải thích thông tin về mã ngành hay chương trình, chỉ sử dụng văn bản thuần (plain text).\n\nQUY ĐỊNH ĐỊNH DẠNG:\n- Tuyệt đối KHÔNG sử dụng định dạng Markdown (bao gồm *, -, +, #, _).\n- Tuyệt đối KHÔNG tạo bullet list hoặc numbering tự động.\n- Nếu cần xuống dòng, chỉ sử dụng ký tự xuống dòng (\\n).\n- Trả lời ngắn gọn, đúng trọng tâm.\n\nUSER PROMPT:\n{{ $json[\"user_input\"] }}\n\n\nđoạn trên từ từ check lại đã\n\nSYSTEM:\nBạn đang đóng vai chatbot tư vấn tuyển sinh của Đại học Duy Tân. \nDữ liệu mà bạn được cung cấp đã được load trực tiếp từ GitHub repository thông qua n8n, file có tên là data.json.\nDữ liệu bao gồm nhiều file JSON con gộp lại và mỗi key cấp cao sẽ chứa thông tin quan trọng như: \n- Thông tin học phí, chính sách học bổng, đối tượng ưu tiên\n- Chi tiết ngành/chuyên ngành đào tạo\n- Điểm trúng tuyển theo các phương thức xét tuyển\n- Thông tin về trường, khoa, chương trình đào tạo (trong nước và quốc tế)\n- Xu hướng việc làm và gợi ý ngành học theo năng lực, sở thích\n\nBạn cần hiểu một số từ khóa viết tắt để giải thích đúng mã ngành và chương trình:\nCMU: Carnegie Mellon University\nPSU: Pennsylvania State University\nCSU: California State University\nPNU: Purdue Northwest University\nHP: Chương trình Tài năng\nVJJ: Chương trình Việt Nhật\nTROY: Chương trình Du học tại chỗ lấy bằng Đại học Troy (Mỹ)\n\nHƯỚNG DẪN TRẢ LỜI:\nNếu trong input có trường 'cache_hit': true và 'cached_answer', điều đó có nghĩa là đã có câu trả lời tương tự trước đó. \nHãy đọc 'cached_answer' và:\n- Nếu câu trả lời vẫn phù hợp với câu hỏi hiện tại → trả lại y nguyên\n- Nếu cần tinh chỉnh → điều chỉnh cho phù hợp với context\n- Ưu tiên sử dụng thông tin từ cache trước, chỉ query GitHub data khi thực sự cần thiết\n- Nếu người dùng hỏi về các thông tin liên quan đến trường (lịch sử thành lập, hiệu trưởng, chủ tịch , cán bộ, chỉ tiêu tuyển sinh, cơ cấu tổ chức), hãy phân loại câu hỏi này vào nhóm *\"thong_tin_truong\"*.  \n- Nếu người dùng hỏi về tổng số nhóm ngành hoặc các nhóm ngành đào tạo thì chỉ trả lời có bao nhiêu nhóm ngành, sau đó liệt kê tên các nhóm ngành lớn (ví dụ: Công nghệ thông tin, Khoa học máy tính, Cơ khí, Xây dựng, Y tế...).\n- Chỉ khi nào người dùng yêu cầu liệt kê chi tiết ngành trong một nhóm ngành thì mới đưa ra danh sách cụ thể.\n- Nếu người dùng hỏi dạng yes/no (có hay không) thì trả lời “có” hoặc “không”, sau đó hỏi thêm “Bạn có muốn mình tư vấn chi tiết hơn không?”.\n- Khi cần giải thích thông tin về mã ngành hay chương trình, chỉ sử dụng văn bản thuần (plain text).\n\nQUY ĐỊNH ĐỊNH DẠNG:\n- Tuyệt đối KHÔNG sử dụng định dạng Markdown (bao gồm *, -, +, #, _).\n- Tuyệt đối KHÔNG tạo bullet list hoặc numbering tự động.\n- Nếu cần xuống dòng, chỉ sử dụng ký tự xuống dòng (\\n).\n- Trả lời ngắn gọn, đúng trọng tâm.\n\nUSER PROMPT:\n{{ $json[\"user_input\"] }}\n\n\n\nSYSTEM:\nBạn đang đóng vai chatbot tư vấn tuyển sinh của Đại học Duy Tân. \nDữ liệu mà bạn được cung cấp đã được load trực tiếp từ GitHub repository thông qua n8n, file có tên là data.json.\nDữ liệu bao gồm nhiều file JSON con gộp lại và mỗi key cấp cao sẽ chứa thông tin quan trọng như: \n- Thông tin học phí, chính sách học bổng, đối tượng ưu tiên\n- Chi tiết ngành/chuyên ngành đào tạo\n- Điểm trúng tuyển theo các phương thức xét tuyển\n- Thông tin về trường, khoa, chương trình đào tạo (trong nước và quốc tế)\n- Xu hướng việc làm và gợi ý ngành học theo năng lực, sở thích\n\nBạn cần hiểu một số từ khóa viết tắt để giải thích đúng mã ngành và chương trình:\nCMU: Carnegie Mellon University\nPSU: Pennsylvania State University\nCSU: California State University\nPNU: Purdue Northwest University\nHP: Chương trình Tài năng\nVJJ: Chương trình Việt Nhật\nTROY: Chương trình Du học tại chỗ lấy bằng Đại học Troy (Mỹ)\n\nHƯỚNG DẪN TRẢ LỜI:\nNếu trong input có trường 'cache_hit': true và 'cached_answer', điều đó có nghĩa là đã có câu trả lời tương tự trước đó. \nHãy đọc 'cached_answer' và:\n- Nếu câu trả lời vẫn phù hợp với câu hỏi hiện tại → trả lại y nguyên\n- Nếu cần tinh chỉnh → điều chỉnh cho phù hợp với context\n- Ưu tiên sử dụng thông tin từ cache trước, chỉ query GitHub data khi thực sự cần thiết\n- Nếu người dùng hỏi về các thông tin liên quan đến trường (lịch sử thành lập, hiệu trưởng, chủ tịch , cán bộ, chỉ tiêu tuyển sinh, cơ cấu tổ chức), hãy phân loại câu hỏi này vào nhóm *\"thong_tin_truong\"*.  \n- Nếu người dùng hỏi về tổng số nhóm ngành hoặc các nhóm ngành đào tạo thì chỉ trả lời có bao nhiêu nhóm ngành, sau đó liệt kê tên các nhóm ngành lớn (ví dụ: Công nghệ thông tin, Khoa học máy tính, Cơ khí, Xây dựng, Y tế...).\n- Chỉ khi nào người dùng yêu cầu liệt kê chi tiết ngành trong một nhóm ngành thì mới đưa ra danh sách cụ thể.\n- Nếu người dùng hỏi dạng yes/no (có hay không) thì trả lời “có” hoặc “không”, sau đó hỏi thêm “Bạn có muốn mình tư vấn chi tiết hơn không?”.\n- Khi cần giải thích thông tin về mã ngành hay chương trình, chỉ sử dụng văn bản thuần (plain text).\nSAU KHI ĐÃ CÓ THÔNG TIN TRẢ LỜI:\n- bạn sẽ thấy ở đầu output sẽ có 1 file GitHub khác có tên QA.json và đây sẽ là nơi mà bạn sẽ gửi nội dung của cuộc hội thoại vào đây theo như setting của node \nQUY ĐỊNH ĐỊNH DẠNG:\n- Tuyệt đối KHÔNG sử dụng định dạng Markdown (bao gồm *, -, +, #, _).\n- Tuyệt đối KHÔNG tạo bullet list hoặc numbering tự động.\n- Nếu cần xuống dòng, chỉ sử dụng ký tự xuống dòng (\\n).\n- Trả lời ngắn gọn, đúng trọng tâm.\n\nUSER PROMPT:\n{{ $json[\"user_input\"] }}\n"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.1,
+      "position": [
+        816,
+        160
+      ],
+      "id": "fa90c6cf-c811-41d1-ada8-cbccaa07ed82",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d58c9aa0-8132-47f3-bc4a-c10456df8f5c",
+              "name": "id khách",
+              "value": "={{ $json.body.entry[0].messaging[0].sender.id }}",
+              "type": "string"
+            },
+            {
+              "id": "aa190287-c7bd-43cc-93c6-58c70c3eed53",
+              "name": "nd tin nhắn",
+              "value": "={{ $json.body.entry[0].messaging[0].message.text }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -160,
+        160
+      ],
+      "id": "a2a0a2f5-610c-4ccc-b2be-86c9a867ee25",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "sortFieldsUi": {
+          "sortField": [
+            {
+              "fieldName": "order"
+            }
+          ]
+        },
+        "options": {
+          "disableDotNotation": false
+        }
+      },
+      "type": "n8n-nodes-base.sort",
+      "typeVersion": 1,
+      "position": [
+        1536,
+        0
+      ],
+      "id": "3ff45dbf-e57e-4cd3-bf51-f5c60c92d116",
+      "name": "Sort"
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "operation": "edit",
+        "owner": {
+          "__rl": true,
+          "value": "nguyendangthinhit",
+          "mode": "name"
+        },
+        "repository": {
+          "__rl": true,
+          "value": "CDIO_2",
+          "mode": "name"
+        },
+        "filePath": "QA.json",
+        "fileContent": "={{ $json.fileContent }}",
+        "commitMessage": "commit từ n8n"
+      },
+      "type": "n8n-nodes-base.github",
+      "typeVersion": 1.1,
+      "position": [
+        1520,
+        160
+      ],
+      "id": "5d880713-fda6-471f-9b62-53ce9b0a94c1",
+      "name": "Edit a file",
+      "webhookId": "d6dfb095-4f82-403a-92a0-93e7808a7d78",
+      "credentials": {
+        "githubApi": {
+          "id": "GtvUKas3ZH4a37iO",
+          "name": "GitHub account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json['nd tin nhắn'] }}",
+        "options": {
+          "systemMessage": "SYSTEM:\nBạn là một trợ lý AI có nhiệm vụ kiểm tra dữ liệu trong file QA.json (được load từ GitHub thông qua n8n). \nFile QA.json chứa danh sách các câu hỏi và câu trả lời mẫu đã được lưu trữ. \nNhiệm vụ của bạn là so sánh câu hỏi mà người dùng vừa nhập với dữ liệu trong QA.json. \n\nQUY ĐỊNH TRẢ LỜI:\n- Nếu nội dung câu hỏi đã tồn tại trong QA.json thì trả lời: \"Nội dung tin nhắn đã tồn tại\".\n- Nếu nội dung câu hỏi chưa có trong QA.json thì trả lời: \"Nội dung chưa có\".\n- Chỉ trả về đúng kết quả theo quy định trên, không thêm thông tin khác.\n\nLƯU Ý:\nVới một số câu hỏi có từ ngữ thay thế chung chung (ví dụ: \"ngành này\", \"ngành đó\", \"ngành kia\"), bạn cần dựa vào ngữ cảnh và đặc biệt là câu trả lời đã lưu trong QA.json để xác định ngành cụ thể. Nếu trong dữ liệu đã có thông tin rõ ràng về ngành (ví dụ: Digital Marketing), thì phải match đúng với ngành đó khi trả lời.\n\nUSER PROMPT:\nCâu hỏi người dùng: {{ $json[\"user_input\"] }}\nDữ liệu QA: {{ $json[\"QA\"] }}\n"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.2,
+      "position": [
+        176,
+        64
+      ],
+      "id": "fc190c31-5660-445b-b235-975a824f9c07",
+      "name": "AI Agent1"
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $json['id khách'] }}",
+        "contextWindowLength": 10000
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        240,
+        352
+      ],
+      "id": "b6d9c647-51d1-4477-9add-4c8614cc5849",
+      "name": "Simple Memory1"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        48,
+        336
+      ],
+      "id": "fb94bef2-43ec-404e-b8fa-25208b8719e8",
+      "name": "Google Gemini Chat Model1",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "EaLd723PGZh8CtXW",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "operation": "get",
+        "owner": {
+          "__rl": true,
+          "value": "nguyendangthinhit",
+          "mode": "name"
+        },
+        "repository": {
+          "__rl": true,
+          "value": "CDIO_2",
+          "mode": "name"
+        },
+        "filePath": "QA.json",
+        "asBinaryProperty": false,
+        "additionalParameters": {}
+      },
+      "type": "n8n-nodes-base.githubTool",
+      "typeVersion": 1.1,
+      "position": [
+        464,
+        320
+      ],
+      "id": "3f030399-68bd-4bd4-8cc7-c054b3025e8d",
+      "name": "Get a file in GitHub1",
+      "webhookId": "78574644-8d62-47f8-9543-7ac781789167",
+      "credentials": {
+        "githubApi": {
+          "id": "GtvUKas3ZH4a37iO",
+          "name": "GitHub account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "f4ada44d-cc4b-4733-af12-fb308ca3ff8f",
+              "leftValue": "={{ $json.output }}",
+              "rightValue": "\"Nội dung tin nhắn đã tồn tại\"",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        624,
+        0
+      ],
+      "id": "89ab4377-b3c8-4494-9523-3d4fadf9f584",
+      "name": "If"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        1120,
+        0
+      ],
+      "id": "8e2cf8f8-e556-4249-b67c-080287568723",
+      "name": "Merge"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://graph.facebook.com/v23.0/{{ $('Webhook').item.json.body.entry[0].messaging[0].recipient.id }}/messages?access_token=EAAKiLjdsBY0BPoR9ZBOHtyxdEjza3ZAwZCM6CLlojUSkBOpALWnI32ciGKIyTqQ5Pj0CkjbZCMM9STgHZALNjrGyAVVAq1ugUAEJnbAwVBhj5wl5bTSp7jQL3XJhHlZB9LJzksCZBOvt8AGBD4X4xggAQfZAYGJIuAuFYkwvWLb4AOdm4slFLfOZAoNRooasjQVe2FQ4KsgZDZD",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{$json}}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1664,
+        0
+      ],
+      "id": "fd06e4a5-8a9d-40ee-8feb-4de9ccf21f4f",
+      "name": "HTTP Request"
+    },
+    {
+      "parameters": {
+        "jsCode": "const fullText = $input.first().json.output;\nconst recipientId = $('Edit Fields').first().json['id khách'];\n\nconst items = [];\nlet orderIndex = 0; // Thêm biến đếm thứ tự riêng\n\nfor (let i = 0; i < fullText.length; i += 1890) {\n  items.push({\n    json: {\n      order: orderIndex, // Sử dụng orderIndex thay vì i\n      recipient: { id: recipientId },\n      messaging_type: \"RESPONSE\",\n      message: { text: fullText.slice(i, i + 1890) }\n    }\n  });\n  orderIndex++; // Tăng thứ tự lên 1\n}\n\nreturn items;"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1328,
+        0
+      ],
+      "id": "effc5f3b-e1ae-410e-9888-fa3792955b79",
+      "name": "Code",
+      "executeOnce": false
+    },
+    {
+      "parameters": {
+        "jsCode": "// Lấy dữ liệu QA.json và tin nhắn người dùng\nconst qaData = JSON.parse($('Get a file in GitHub1').first().json.data);\nconst userMessage = $json['nd tin nhắn']; // Lấy từ data đã combine\n\nlet foundAnswer = \"Không tìm thấy câu trả lời.\";\n\n// Tìm exact match hoặc similar match\nif (Array.isArray(qaData)) {\n  for (let item of qaData) {\n    if (item.question && \n        (item.question.toLowerCase() === userMessage.toLowerCase() ||\n         item.question.toLowerCase().includes(userMessage.toLowerCase()) ||\n         userMessage.toLowerCase().includes(item.question.toLowerCase()))) {\n      foundAnswer = item.answer;\n      break;\n    }\n  }\n}\n\nreturn [{\n  json: {\n    output: foundAnswer,\n    from_cache: true\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        880,
+        -16
+      ],
+      "id": "e7ff0e14-196b-4cac-9008-492e47e0ec55",
+      "name": "Code1",
+      "executeOnce": false
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "fdd4d80e-e644-4a26-841d-1c9ad0740b9a",
+              "name": "check_result",
+              "value": "={{ $json.output }}",
+              "type": "string"
+            },
+            {
+              "id": "abc123-def4-5678-9abc-def123456789",
+              "name": "nd tin nhắn",
+              "value": "={{ $('Edit Fields').first().json['nd tin nhắn'] }}",
+              "type": "string"
+            },
+            {
+              "id": "xyz789-abc1-2345-6789-abc123456def",
+              "name": "id khách",
+              "value": "={{ $('Edit Fields').first().json['id khách'] }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        464,
+        0
+      ],
+      "id": "95f165cd-07b6-45a3-8bd5-b0592dd2f565",
+      "name": "Combine Data"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Lấy answer từ AI Agent (thông qua Get a file node)\nconst answer = $input.first().json.output || $('AI Agent').first().json.output;\n\n// Lấy QA data hiện tại\nconst currentData = JSON.parse($input.first().json.data || '[]');\n\n// Tạo entry mới\nconst newEntry = {\n  \"question\": $('Edit Fields').first().json['nd tin nhắn'],\n  \"answer\": answer,\n  \"timestamp\": new Date().toISOString()\n};\n\ncurrentData.push(newEntry);\n\nreturn [{\n  json: {\n    fileContent: JSON.stringify(currentData, null, 2)\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1328,
+        160
+      ],
+      "id": "677fd73e-0c08-4944-87e9-f994b4495e6b",
+      "name": "Code content"
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "operation": "get",
+        "owner": {
+          "__rl": true,
+          "value": "nguyendangthinhit",
+          "mode": "name"
+        },
+        "repository": {
+          "__rl": true,
+          "value": "CDIO_2",
+          "mode": "name"
+        },
+        "filePath": "QA.json",
+        "additionalParameters": {}
+      },
+      "type": "n8n-nodes-base.github",
+      "typeVersion": 1.1,
+      "position": [
+        1168,
+        160
+      ],
+      "id": "e5b899c7-3457-403d-aa79-2a797feac35e",
+      "name": "Get a file",
+      "webhookId": "dac0e560-b1e5-4dbd-bb09-5771e0504fea",
+      "credentials": {
+        "githubApi": {
+          "id": "GtvUKas3ZH4a37iO",
+          "name": "GitHub account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "multipleMethods": true,
+        "path": "cdio2",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        2144,
+        1504
+      ],
+      "id": "f0766320-ab89-4610-9148-73d33da1426b",
+      "name": "Webhook1",
+      "webhookId": "1eb7709a-b517-489b-bf9e-518494bcfadb"
+    },
+    {
+      "parameters": {
+        "respondWith": "text",
+        "responseBody": "={{ $json.query['hub.challenge'] }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.3,
+      "position": [
+        2368,
+        1392
+      ],
+      "id": "56335e71-386b-4731-af66-a4165e845753",
+      "name": "Respond to Webhook1"
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $json['id khách'] }}",
+        "contextWindowLength": 10000
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        2688,
+        1856
+      ],
+      "id": "6738678f-b884-480f-b4f3-b146a6f8e5f0",
+      "name": "Simple Memory2"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        2480,
+        1856
+      ],
+      "id": "60588235-911b-4184-9c46-35cdca585589",
+      "name": "Google Gemini Chat Model2"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://graph.facebook.com/v23.0/{{ $('Webhook1').item.json.body.entry[0].messaging[0].recipient.id }}/messages?access_token=EAAKiLjdsBY0BPXUSrxr1F7Qs7kc5IGVr2X3NFI2SqOm9ggJ07UKV7aJ2No6Y0QtQOu8YxgIBU8q1aZAEF29HXWsGsdqsS1lMIw5otJKvwOXPDaMaDFuVLs50JqE9qOcrOM8OrvOJI41jjD9NNFHJYXwNgH9dzZAlsuVZAgGddO00Dwf7L9WO8z5ThTZBMlmMtEs84AZDZD",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{$json}}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        3328,
+        1616
+      ],
+      "id": "3b63d14d-9002-4ae5-bfe3-4ca2384be78f",
+      "name": "HTTP Request1"
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "operation": "get",
+        "owner": {
+          "__rl": true,
+          "value": "nguyendangthinhit",
+          "mode": "name"
+        },
+        "repository": {
+          "__rl": true,
+          "value": "CDIO_2",
+          "mode": "name"
+        },
+        "filePath": "data.json",
+        "asBinaryProperty": false,
+        "additionalParameters": {}
+      },
+      "type": "n8n-nodes-base.githubTool",
+      "typeVersion": 1.1,
+      "position": [
+        2864,
+        1872
+      ],
+      "id": "6c3d5226-0041-49f5-9c09-3f5cede2f4e5",
+      "name": "Get a file in GitHub2",
+      "webhookId": "78574644-8d62-47f8-9543-7ac781789167"
+    },
+    {
+      "parameters": {
+        "jsCode": "const fullText = $input.first().json.output;\nconst recipientId = $('Edit Fields1').first().json['id khách'];\n\nconst items = [];\nlet orderIndex = 0; // Thêm biến đếm thứ tự riêng\n\nfor (let i = 0; i < fullText.length; i += 1890) {\n  items.push({\n    json: {\n      order: orderIndex, // Sử dụng orderIndex thay vì i\n      recipient: { id: recipientId },\n      messaging_type: \"RESPONSE\",\n      message: { text: fullText.slice(i, i + 1890) }\n    }\n  });\n  orderIndex++; // Tăng thứ tự lên 1\n}\n\nreturn items;"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        3040,
+        1616
+      ],
+      "id": "cf9eba3e-a437-43a6-a2dd-5663165ea3ed",
+      "name": "Code2",
+      "executeOnce": false
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json['nd tin nhắn'] }}",
+        "options": {
+          "systemMessage": "=SYSTEM:\nBạn đang đóng vai chatbot tư vấn tuyển sinh của Đại học Duy Tân. \nDữ liệu mà bạn được cung cấp đã được load trực tiếp từ GitHub repository thông qua n8n, file có tên là data.json.\nDữ liệu bao gồm nhiều file JSON con gộp lại và mỗi key cấp cao sẽ chứa thông tin quan trọng như: \n- Thông tin học phí, chính sách học bổng, đối tượng ưu tiên\n- Chi tiết ngành/chuyên ngành đào tạo\n- Điểm trúng tuyển theo các phương thức xét tuyển\n- Thông tin về trường, khoa, chương trình đào tạo (trong nước và quốc tế)\n- Xu hướng việc làm và gợi ý ngành học theo năng lực, sở thích\n\nBạn cần hiểu một số từ khóa viết tắt để giải thích đúng mã ngành và chương trình:\nCMU: Carnegie Mellon University\nPSU: Pennsylvania State University\nCSU: California State University\nPNU: Purdue Northwest University\nHP: Chương trình Tài năng\nVJJ: Chương trình Việt Nhật\nTROY: Chương trình Du học tại chỗ lấy bằng Đại học Troy (Mỹ)\n\nHƯỚNG DẪN TRẢ LỜI:\n- Nếu người dùng hỏi về các thông tin liên quan đến trường (lịch sử thành lập, hiệu trưởng, chủ tịch , cán bộ, chỉ tiêu tuyển sinh, cơ cấu tổ chức), hãy phân loại câu hỏi này vào nhóm *\"thong_tin_truong\"*.  \n- Nếu người dùng hỏi về tổng số nhóm ngành hoặc các nhóm ngành đào tạo thì chỉ trả lời có bao nhiêu nhóm ngành, sau đó liệt kê tên các nhóm ngành lớn (ví dụ: Công nghệ thông tin, Khoa học máy tính, Cơ khí, Xây dựng, Y tế...).\n- Chỉ khi nào người dùng yêu cầu liệt kê chi tiết ngành trong một nhóm ngành thì mới đưa ra danh sách cụ thể.\n- Nếu người dùng hỏi dạng yes/no (có hay không) thì trả lời “có” hoặc “không”, sau đó hỏi thêm “Bạn có muốn mình tư vấn chi tiết hơn không?”.\n- Khi cần giải thích thông tin về mã ngành hay chương trình, chỉ sử dụng văn bản thuần (plain text).\n\nQUY ĐỊNH ĐỊNH DẠNG:\n- Tuyệt đối KHÔNG sử dụng định dạng Markdown (bao gồm *, -, +, #, _).\n- Tuyệt đối KHÔNG tạo bullet list hoặc numbering tự động.\n- Nếu cần xuống dòng, chỉ sử dụng ký tự xuống dòng (\\n).\n- Trả lời ngắn gọn, đúng trọng tâm.\n\nUSER PROMPT:\n{{ $json[\"user_input\"] }}\n\n\nđoạn trên từ từ check lại đã\n\nSYSTEM:\nBạn đang đóng vai chatbot tư vấn tuyển sinh của Đại học Duy Tân. \nDữ liệu mà bạn được cung cấp đã được load trực tiếp từ GitHub repository thông qua n8n, file có tên là data.json.\nDữ liệu bao gồm nhiều file JSON con gộp lại và mỗi key cấp cao sẽ chứa thông tin quan trọng như: \n- Thông tin học phí, chính sách học bổng, đối tượng ưu tiên\n- Chi tiết ngành/chuyên ngành đào tạo\n- Điểm trúng tuyển theo các phương thức xét tuyển\n- Thông tin về trường, khoa, chương trình đào tạo (trong nước và quốc tế)\n- Xu hướng việc làm và gợi ý ngành học theo năng lực, sở thích\n\nBạn cần hiểu một số từ khóa viết tắt để giải thích đúng mã ngành và chương trình:\nCMU: Carnegie Mellon University\nPSU: Pennsylvania State University\nCSU: California State University\nPNU: Purdue Northwest University\nHP: Chương trình Tài năng\nVJJ: Chương trình Việt Nhật\nTROY: Chương trình Du học tại chỗ lấy bằng Đại học Troy (Mỹ)\n\nHƯỚNG DẪN TRẢ LỜI:\nNếu trong input có trường 'cache_hit': true và 'cached_answer', điều đó có nghĩa là đã có câu trả lời tương tự trước đó. \nHãy đọc 'cached_answer' và:\n- Nếu câu trả lời vẫn phù hợp với câu hỏi hiện tại → trả lại y nguyên\n- Nếu cần tinh chỉnh → điều chỉnh cho phù hợp với context\n- Ưu tiên sử dụng thông tin từ cache trước, chỉ query GitHub data khi thực sự cần thiết\n- Nếu người dùng hỏi về các thông tin liên quan đến trường (lịch sử thành lập, hiệu trưởng, chủ tịch , cán bộ, chỉ tiêu tuyển sinh, cơ cấu tổ chức), hãy phân loại câu hỏi này vào nhóm *\"thong_tin_truong\"*.  \n- Nếu người dùng hỏi về tổng số nhóm ngành hoặc các nhóm ngành đào tạo thì chỉ trả lời có bao nhiêu nhóm ngành, sau đó liệt kê tên các nhóm ngành lớn (ví dụ: Công nghệ thông tin, Khoa học máy tính, Cơ khí, Xây dựng, Y tế...).\n- Chỉ khi nào người dùng yêu cầu liệt kê chi tiết ngành trong một nhóm ngành thì mới đưa ra danh sách cụ thể.\n- Nếu người dùng hỏi dạng yes/no (có hay không) thì trả lời “có” hoặc “không”, sau đó hỏi thêm “Bạn có muốn mình tư vấn chi tiết hơn không?”.\n- Khi cần giải thích thông tin về mã ngành hay chương trình, chỉ sử dụng văn bản thuần (plain text).\n\nQUY ĐỊNH ĐỊNH DẠNG:\n- Tuyệt đối KHÔNG sử dụng định dạng Markdown (bao gồm *, -, +, #, _).\n- Tuyệt đối KHÔNG tạo bullet list hoặc numbering tự động.\n- Nếu cần xuống dòng, chỉ sử dụng ký tự xuống dòng (\\n).\n- Trả lời ngắn gọn, đúng trọng tâm.\n\nUSER PROMPT:\n{{ $json[\"user_input\"] }}\n\n\n\nSYSTEM:\nBạn đang đóng vai chatbot tư vấn tuyển sinh của Đại học Duy Tân. \nDữ liệu mà bạn được cung cấp đã được load trực tiếp từ GitHub repository thông qua n8n, file có tên là data.json.\nDữ liệu bao gồm nhiều file JSON con gộp lại và mỗi key cấp cao sẽ chứa thông tin quan trọng như: \n- Thông tin học phí, chính sách học bổng, đối tượng ưu tiên\n- Chi tiết ngành/chuyên ngành đào tạo\n- Điểm trúng tuyển theo các phương thức xét tuyển\n- Thông tin về trường, khoa, chương trình đào tạo (trong nước và quốc tế)\n- Xu hướng việc làm và gợi ý ngành học theo năng lực, sở thích\n\nBạn cần hiểu một số từ khóa viết tắt để giải thích đúng mã ngành và chương trình:\nCMU: Carnegie Mellon University\nPSU: Pennsylvania State University\nCSU: California State University\nPNU: Purdue Northwest University\nHP: Chương trình Tài năng\nVJJ: Chương trình Việt Nhật\nTROY: Chương trình Du học tại chỗ lấy bằng Đại học Troy (Mỹ)\n\nHƯỚNG DẪN TRẢ LỜI:\nNếu trong input có trường 'cache_hit': true và 'cached_answer', điều đó có nghĩa là đã có câu trả lời tương tự trước đó. \nHãy đọc 'cached_answer' và:\n- Nếu câu trả lời vẫn phù hợp với câu hỏi hiện tại → trả lại y nguyên\n- Nếu cần tinh chỉnh → điều chỉnh cho phù hợp với context\n- Ưu tiên sử dụng thông tin từ cache trước, chỉ query GitHub data khi thực sự cần thiết\n- Nếu người dùng hỏi về các thông tin liên quan đến trường (lịch sử thành lập, hiệu trưởng, chủ tịch , cán bộ, chỉ tiêu tuyển sinh, cơ cấu tổ chức), hãy phân loại câu hỏi này vào nhóm *\"thong_tin_truong\"*.  \n- Nếu người dùng hỏi về tổng số nhóm ngành hoặc các nhóm ngành đào tạo thì chỉ trả lời có bao nhiêu nhóm ngành, sau đó liệt kê tên các nhóm ngành lớn (ví dụ: Công nghệ thông tin, Khoa học máy tính, Cơ khí, Xây dựng, Y tế...).\n- Chỉ khi nào người dùng yêu cầu liệt kê chi tiết ngành trong một nhóm ngành thì mới đưa ra danh sách cụ thể.\n- Nếu người dùng hỏi dạng yes/no (có hay không) thì trả lời “có” hoặc “không”, sau đó hỏi thêm “Bạn có muốn mình tư vấn chi tiết hơn không?”.\n- Khi cần giải thích thông tin về mã ngành hay chương trình, chỉ sử dụng văn bản thuần (plain text).\nSAU KHI ĐÃ CÓ THÔNG TIN TRẢ LỜI:\n- bạn sẽ thấy ở đầu output sẽ có 1 file GitHub khác có tên QA.json và đây sẽ là nơi mà bạn sẽ gửi nội dung của cuộc hội thoại vào đây theo như setting của node \nQUY ĐỊNH ĐỊNH DẠNG:\n- Tuyệt đối KHÔNG sử dụng định dạng Markdown (bao gồm *, -, +, #, _).\n- Tuyệt đối KHÔNG tạo bullet list hoặc numbering tự động.\n- Nếu cần xuống dòng, chỉ sử dụng ký tự xuống dòng (\\n).\n- Trả lời ngắn gọn, đúng trọng tâm.\n\nUSER PROMPT:\n{{ $json[\"user_input\"] }}\n"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.1,
+      "position": [
+        2640,
+        1632
+      ],
+      "id": "e803c30a-37fb-464b-aa61-858bf2415d66",
+      "name": "AI Agent2"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d58c9aa0-8132-47f3-bc4a-c10456df8f5c",
+              "name": "id khách",
+              "value": "={{ $json.body.entry[0].messaging[0].sender.id }}",
+              "type": "string"
+            },
+            {
+              "id": "aa190287-c7bd-43cc-93c6-58c70c3eed53",
+              "name": "nd tin nhắn",
+              "value": "={{ $json.body.entry[0].messaging[0].message.text }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2352,
+        1616
+      ],
+      "id": "7defc2ee-273b-4d1c-ad84-45cf8b942138",
+      "name": "Edit Fields1"
+    },
+    {
+      "parameters": {
+        "sortFieldsUi": {
+          "sortField": [
+            {
+              "fieldName": "order"
+            }
+          ]
+        },
+        "options": {
+          "disableDotNotation": false
+        }
+      },
+      "type": "n8n-nodes-base.sort",
+      "typeVersion": 1,
+      "position": [
+        3200,
+        1616
+      ],
+      "id": "da36cef3-8511-45ad-b0af-16cc37cd4c8c",
+      "name": "Sort1"
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "operation": "edit",
+        "owner": {
+          "__rl": true,
+          "value": "nguyendangthinhit",
+          "mode": "name"
+        },
+        "repository": {
+          "__rl": true,
+          "value": "CDIO_2",
+          "mode": "name"
+        },
+        "filePath": "QA.json",
+        "fileContent": "={{ JSON.stringify({\n  \"question\": $('Edit Fields1').first().json['nd tin nhắn'],\n  \"answer\": $input.item.json.output\n}, null, 2) }}",
+        "commitMessage": "commit từ n8n"
+      },
+      "type": "n8n-nodes-base.github",
+      "typeVersion": 1.1,
+      "position": [
+        3120,
+        1840
+      ],
+      "id": "3b7a6d1b-ec2a-4eb3-bd58-535bb8aa9bd8",
+      "name": "Edit a file1",
+      "webhookId": "d6dfb095-4f82-403a-92a0-93e7808a7d78"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get a file in GitHub": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          },
+          {
+            "node": "Get a file",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Sort": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory1": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get a file in GitHub1": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent1": {
+      "main": [
+        [
+          {
+            "node": "Combine Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Code1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "Sort",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code1": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Combine Data": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit a file": {
+      "main": [
+        []
+      ]
+    },
+    "Code content": {
+      "main": [
+        [
+          {
+            "node": "Edit a file",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get a file": {
+      "main": [
+        [
+          {
+            "node": "Code content",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook1": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Edit Fields1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory2": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent2",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model2": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent2",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get a file in GitHub2": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent2",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code2": {
+      "main": [
+        [
+          {
+            "node": "Sort1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent2": {
+      "main": [
+        [
+          {
+            "node": "Edit a file1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Code2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields1": {
+      "main": [
+        [
+          {
+            "node": "AI Agent2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Sort1": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "3e6a7c65-a2ec-440f-a2c4-7aba5f034528",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "147c4c1eae42c402e6f20fd2c5457f96d0d333cfa3d0b33524419927ab62aa12"
+  },
+  "id": "Qol5IGzAyMzNHJCK",
+  "tags": []
+}

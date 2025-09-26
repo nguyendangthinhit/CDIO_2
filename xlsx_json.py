@@ -33,8 +33,49 @@ def excel_to_json(name, sheet_name=0):
 # "de_xuat_viec_lam_theo_nang_luc_va_so_thich"
 # ]
 files = [
-"xu_huong_viec_lam_2025",
-"de_xuat_viec_lam_theo_nang_luc_va_so_thich"
-]
+"truong_khoa_truc_thuoc"]
 for file in files:
     excel_to_json(file)
+
+
+
+
+
+
+
+
+import json
+from datetime import datetime
+
+# items: danh sách input từ các node trước (Merge node)
+item = items[0]          # Lấy item đầu tiên
+data = item["json"]      # Lấy phần json
+
+# Lấy dữ liệu file cũ
+raw_data = data.get("data")
+try:
+    current_data = json.loads(raw_data) if raw_data else []
+    if not isinstance(current_data, list):
+        current_data = []
+except Exception:
+    current_data = []
+
+# Lấy thông tin user và câu trả lời từ input
+user_question = data.get("nd tin nhắn")
+ai_answer = data.get("output")
+
+# Tạo entry mới
+new_entry = {
+    "question": user_question,
+    "answer": ai_answer,
+}
+
+# Append vào mảng cũ
+current_data.append(new_entry)
+
+# Trả về dữ liệu mới để node Edit a file2 sử dụng
+return [{
+    "json": {
+        "fileContent": json.dumps(current_data, ensure_ascii=False, indent=2)
+    }
+}]
