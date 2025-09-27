@@ -1,10 +1,5 @@
 [
-  {
-    "user_id": "30924032227244032",
-    "question": "mã ngành của ngành nha khoa",
-    "answer": "Mã ngành của ngành Răng-Hàm-Mặt (Nha khoa) là 7720501.",
-    "timestamp": "2025-09-25T12:53:53.693Z"
-  },
+  
   {
     "user_id": "30924032227244032",
     "question": "học phí của nha khoa",
@@ -13,57 +8,9 @@
   },
   {
     "user_id": "30924032227244032",
-    "question": "học phí của ngành khoa học máy tinh",
-    "answer": "Để biết học phí của ngành Khoa học Máy tính, bạn cần cung cấp thêm thông tin về chương trình đào tạo mà bạn quan tâm (ví dụ: chương trình đại trà, chương trình tài năng, chương trình quốc tế...). Mỗi chương trình sẽ có mức học phí khác nhau.",
-    "timestamp": "2025-09-25T16:20:59.843Z"
-  },
-  {
-    "user_id": "30924032227244032",
-    "question": "mình muốn biết học phí của ct đại trà",
-    "answer": "Học phí của chương trình đại trà thay đổi tùy theo từng chuyên ngành. Để mình kiểm tra và thông báo cụ thể cho bạn nhé.\n\nDưới đây là học phí chương trình đại trà cho một số chuyên ngành:\n\nQuản trị Du lịch & Lữ hành: 1.035.000 VNĐ\nQuản trị Du lịch & Lữ hành chuẩn PSU: 1.200.000 VNĐ\nQuản trị Du lịch & Khách sạn: 1.035.000 VNĐ\nQuản trị Sự kiện & Giải trí: 1.100.000 VNĐ\nSmart Tourism (Du lịch thông minh): 785.000 VNĐ\nQuản trị Khách sạn Quốc tế (PSU): 1.250.000 VNĐ\nQuản trị Nhà hàng Quốc tế (PSU): 1.035.000 VNĐ\nHướng dẫn Du lịch Quốc tế (tiếng Anh): 785.000 VNĐ\nHướng dẫn Du lịch Quốc tế (tiếng Hàn): 785.000 VNĐ\nHướng dẫn Du lịch Quốc tế (tiếng Trung): 785.000 VNĐ\nQuản trị Du lịch & Dịch vụ Hàng không: 1.250.000 VNĐ\nQuản lý & Khởi sự Doanh nghiệp Nhỏ & Vừa (SME): 785.000 VNĐ\nQuản trị Kinh doanh Tổng hợp: 875.000 VNĐ\nQuản trị Kinh doanh Marketing: 1.035.000 VNĐ\nDigital Marketing: 1.155.000 VNĐ\nTài chính Doanh nghiệp: 785.000 VNĐ\nNgân hàng: 785.000 VNĐ\nKế toán Kiểm toán: 785.000 VNĐ\nKế toán Doanh nghiệp: 785.000 VNĐ\nKế toán Quản trị (HP): 875.000 VNĐ\nKinh doanh Thương mại: 845.000 VNĐ\nQuản trị Kinh doanh Quốc tế (Ngoại thương): 845.000 VNĐ\nLogistics & Quản lý Chuỗi cung ứng: 1.155.000 VNĐ\nQuản trị Nhân lực: 785.000 VNĐ\nQuản trị Kinh doanh Bất động sản: 785.000 VNĐ\nThương mại điện tử: 875.000 VNĐ\nKinh tế Đầu tư: 825.000 VNĐ\nCông nghệ Tài chính (Fintech): 1.035.000 VNĐ\nPhân tích Kinh doanh (Business Analytics): 875.000 VNĐ\nKinh tế Quốc tế: 825.000 VNĐ\nViệt Nam học: 700.000 VNĐ\nVăn Báo chí: 700.000 VNĐ\nLuật học: 875.000 VNĐ\nTruyền thông Đa phương tiện: 1.100.000 VNĐ\nQuan hệ Quốc tế (Chương trình Tiếng Anh): 785.000 VNĐ\nQuan hệ Quốc tế (HP): 940.000 VNĐ\nLuật Kinh tế: 875.000 VNĐ\nLuật Kinh doanh (HP): 1.000.000 VNĐ\nQuan hệ Công chúng: 1.100.000 VNĐ\nTiếng Anh Biên - Phiên dịch: 940.000 VNĐ\nTiếng Anh Du lịch: 845.000 VNĐ\nTiếng Trung Biên - Phiên dịch: 1.100.000 VNĐ\nTiếng Nhật Biên - Phiên dịch: 940.000 VNĐ\nTiếng Hàn Biên - Phiên dịch: 940.000 VNĐ\nTiếng Hàn Du lịch: 845.000 VNĐ\nTiếng Trung Du lịch: 940.000 VNĐ\nTiếng Nhật Du lịch: 845.000 VNĐ\nTiếng Anh Thương mại: 940.000 VNĐ\nTiếng Trung Thương mại: 1.000.000 VNĐ\nTiếng Nhật Thương mại: 845.000 VNĐ\nTiếng Hàn Thương mại: 845.000 VNĐ\nAn ninh mạng chuyên ngành CMU: 1.100.000 VNĐ\nCông nghệ phần mềm chuyên ngành CMU (Đạt kiểm định ABET): 1.200.000 VNĐ\nXây dựng Dân dụng & Công nghiệp chuyên ngành CSU: 680.000 VNĐ (Đã giảm 20%)\nKiến trúc Công trình chuyên ngành CSU: 680.000 VNĐ (Đã giảm 20%)\nQuản trị Kinh doanh chuyên ngành PSU: 1.100.000 VNĐ\nTài chính - Ngân hàng chuyên ngành PSU: 1.000.000 VNĐ\nKế toán Kiểm toán chuyên ngành PSU: 1.000.000 VNĐ\nHệ thống Thông tin Quản lý chuyên ngành CMU (Đạt kiểm định ABET): 940.000 VNĐ\nĐiều dưỡng Đa khoa: 770.000 VNĐ\nDược sĩ (Đại học): 1.155.000 VNĐ\nRăng - Hàm - Mặt: 3.090.000 VNĐ\nBác sĩ Đa khoa: 2.950.000 VNĐ\nCông nghệ Sinh học: 720.000 VNĐ (Đã giảm 30%)\nKỹ thuật Y sinh: 720.000 VNĐ\nY học Dự phòng: 1.155.000 VNĐ\nXét nghiệm Y học: 940.000 VNĐ\nLogistics & Quản lý Chuỗi cung ứng (HP): 1.250.000 VNĐ\nQuản trị Doanh nghiệp (HP): 940.000 VNĐ\nQuản trị Marketing & Chiến lược (HP): 1.100.000 VNĐ\nQuản trị Tài chính (HP): 940.000 VNĐ\nCông nghệ phần mềm: 1.225.000 VNĐ\nXây dựng Dân dụng & Công nghiệp: 805.000 VNĐ (Đã giảm 30%)\nKiến trúc Công trình: 710.000 VNĐ (Đã giảm 30%)\nĐiện tử - Viễn thông: 950.000 VNĐ\nThiết kế Đồ họa: 1.280.000 VNĐ\nCông nghệ Kỹ thuật Ô tô: 1.280.000 VNĐ\nKỹ thuật Điều khiển & Tự động hóa: 1.065.000 VNĐ\nĐiều dưỡng Đa khoa: 895.000 VNĐ\nCông nghệ Thực phẩm: 910.000 VNĐ\nXây dựng Dân dụng & Công nghiệp: 585.000 VNĐ (Đã giảm 30%)\nXây dựng Cầu đường: 585.000 VNĐ (Đã giảm 30%)\nKiến trúc Công trình: 585.000 VNĐ (Đã giảm 30%)\nĐiện tử - Viễn thông: 825.000 VNĐ\nĐiện tử Điều khiển: 825.000 VNĐ\nThiết kế Đồ họa: 1.155.000 VNĐ\nThiết kế Mỹ thuật số: 1.155.000 VNĐ\nCơ điện tử chuyên ngành PNU: 940.000 VNĐ\nĐiện - Điện tử chuyên ngành PNU: 940.000 VNĐ\nCông nghệ Kỹ thuật Ô tô: 1.155.000 VNĐ\nKỹ thuật Điều khiển & Tự động hóa: 940.000 VNĐ\nThiết kế Thời trang: 940.000 VNĐ\nThiết kế Nội thất: 585.000 VNĐ\nCông nghệ Chế tạo Máy: 940.000 VNĐ\nThiết kế Vi mạch Bán dẫn: 940.000 VNĐ\nĐiện Cơ Ô tô: 940.000 VNĐ\nKỹ thuật Điện: 845.000 VNĐ\nCông nghệ Quản lý Xây dựng: 585.000 VNĐ (Đã giảm 30%)\nCông nghệ Thực phẩm (Đạt kiểm định ABET): 785.000 VNĐ\nCông nghệ & Kỹ thuật Môi trường: 585.000 VNĐ (Đã giảm 30%)\nQuản lý Tài nguyên & Môi trường: 585.000 VNĐ (Đã giảm 30%)\nKỹ thuật Mạng (Đạt kiểm định ABET): 940.000 VNĐ\nCông nghệ Phần mềm (Đạt kiểm định ABET): 1.100.000 VNĐ\nBig Data & Machine Learning (HP): 875.000 VNĐ\nTrí tuệ Nhân tạo (HP): 940.000 VNĐ\nThiết kế Games và Multimedia: 1.035.000 VNĐ\nAn toàn Thông tin: 940.000 VNĐ\nKỹ thuật máy tính: 875.000 VNĐ\nKhoa học Máy tính: 1.035.000 VNĐ\nKhoa học Dữ liệu: 875.000 VNĐ\nMạng Máy tính và Truyền thông Dữ liệu: 1.250.000 VNĐ\nNgành Khoa học Máy tính (TROY): 3.200.000 VNĐ\nNgành Quản trị Kinh doanh (TROY): 3.200.000 VNĐ\nNgành Quản trị Khách sạn (TROY): 3.200.000 VNĐ",
-    "timestamp": "2025-09-25T16:42:01.117Z"
-  },
-  {
-    "user_id": "30924032227244032",
     "question": "mình muốn biết học phí của ngành khoa học máy tính",
     "answer": "Học phí của ngành Khoa học Máy tính là 1.035.000 VNĐ.\nNgành Khoa học Máy tính (TROY) có học phí là 3.200.000 VNĐ.",
     "timestamp": "2025-09-25T16:42:59.598Z"
-  },
-  {
-    "user_id": "24360928576926305",
-    "question": "học phí của ngành khoa học máy tính",
-    "answer": "Để tìm thông tin học phí ngành Khoa học Máy tính, tôi cần biết bạn muốn hỏi về chương trình đào tạo Khoa học Máy tính nào (ví dụ: chương trình Khoa học Máy tính thông thường, chương trình Khoa học Máy tính Tài năng HP, hoặc chương trình liên kết quốc tế CMU, PSU, TROY)?\n\nBạn có muốn mình tư vấn chi tiết hơn không?",
-    "timestamp": "2025-09-25T16:48:50.899Z"
-  },
-  {
-    "user_id": "24360928576926305",
-    "question": "mình muốn biết thông tin học phí của chương trình thông thường",
-    "answer": "Để biết thông tin học phí của chương trình Khoa học Máy tính thông thường, bạn vui lòng đợi trong giây lát để tôi kiểm tra dữ liệu.",
-    "timestamp": "2025-09-25T16:49:03.718Z"
-  },
-  {
-    "user_id": "24360928576926305",
-    "question": "bạn đã tìm ra chưa",
-    "answer": "Học phí của chương trình Khoa học Máy tính thông thường là:\nĐơn giá tín chỉ: 1.035.000 VNĐ\nHọc phí/kỳ: 16.560.000 VNĐ\nHọc phí/năm: 33.120.000 VNĐ",
-    "timestamp": "2025-09-25T16:50:11.404Z"
-  },
-  {
-    "user_id": "24360928576926305",
-    "question": "mã ngành của ngành nha khoa",
-    "answer": "Ngành Nha khoa có mã ngành là 7720501. Chuyên ngành là Bác sĩ Răng Hàm Mặt.",
-    "timestamp": "2025-09-25T16:51:26.680Z"
-  },
-  {
-    "user_id": "24471930822440690",
-    "question": "học phí của ngành khoa học máy tính",
-    "answer": "Để biết học phí chính xác của ngành Khoa học Máy tính, bạn vui lòng cho mình biết bạn muốn hỏi về chương trình đào tạo Khoa học Máy tính thông thường hay các chương trình liên kết quốc tế (như CMU, PSU, CSU) hoặc chương trình tài năng (HP)?",
-    "timestamp": "2025-09-25T16:56:32.715Z"
-  },
-  {
-    "user_id": "24471930822440690",
-    "question": "học phí của ngành khoa học máy tính",
-    "answer": "Để biết học phí chính xác của ngành Khoa học Máy tính, bạn vui lòng cho mình biết bạn muốn hỏi về chương trình đào tạo Khoa học Máy tính thông thường hay các chương trình liên kết quốc tế (như CMU, PSU, CSU) hoặc chương trình tài năng (HP)?",
-    "timestamp": "2025-09-25T16:56:44.488Z"
   },
   {
     "user_id": "24471930822440690",
@@ -106,11 +53,5 @@
     "question": "trường khoa học máy tính có những ngành nào",
     "answer": "Khoa Khoa học Máy tính có những ngành đào tạo sau: KHMT, Trí tuệ nhân tạo, Big data, khoa học dữ liệu.",
     "timestamp": "2025-09-26T18:44:45.860Z"
-  },
-  {
-    "user_id": "24360928576926305",
-    "question": "hello",
-    "answer": "Chào bạn, mình là chatbot tư vấn tuyển sinh của Đại học Duy Tân. Mình có thể giúp gì cho bạn?",
-    "timestamp": "2025-09-27T02:22:20.675Z"
   }
 ]
