@@ -1,5 +1,4 @@
 [
-  
   {
     "user_id": "30924032227244032",
     "question": "học phí của nha khoa",
@@ -47,5 +46,11 @@
     "question": "khoa học máy tính có những ngành nào",
     "answer": "Khoa Khoa học Máy tính có những ngành đào tạo sau: Khoa học máy tính, Trí tuệ nhân tạo, Big data, Khoa học dữ liệu.",
     "timestamp": "2025-09-26T18:44:45.860Z"
+  },
+  {
+    "user_id": "24360928576926305",
+    "question": "trường khoa học máy tính có những ngành nào vậy",
+    "answer": "Tại Khoa Khoa học Máy tính, có các ngành đào tạo sau:\n\nKỹ thuật phần mềm\n\nTrí tuệ nhân tạo\n\nBig Data và Khoa học dữ liệu\n\nKhoa học máy tính\n\nAn toàn thông tin\n\nMạng máy tính và Truyền thông dữ liệu\n\nBạn có muốn mình tư vấn chi tiết hơn không?",
+    "timestamp": "2025-09-27T02:52:21.771Z"
   }
 ]
