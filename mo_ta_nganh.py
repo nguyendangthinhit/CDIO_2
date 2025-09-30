@@ -17,18 +17,37 @@ def read_docx(path: str) -> str:
     return "\n".join(p.text for p in doc.paragraphs if p.text.strip())
 
 
-def format_ma_cn(ma_cn: str) -> str:
-    """Format mã CN thành dạng compact: 116 (CMU) -> 116CMU"""
-    if not ma_cn:
-        return ""
+def normalize_nganh_name(ten_nganh: str) -> str:
+    """Chuẩn hóa tên ngành: viết hoa chữ cái đầu mỗi từ chính và xóa từ 'Ngành' thừa"""
+    # Xóa từ "Ngành" thừa nếu xuất hiện 2 lần
+    # Pattern: tìm "Ngành" + space + "Ngành"
+    ten_nganh = re.sub(r'\bNgành\s+Ngành\b', 'Ngành', ten_nganh, flags=re.IGNORECASE)
     
-    # Remove spaces and parentheses, keep only letters and numbers
-    formatted = re.sub(r'[\s\(\)]', '', ma_cn.strip())
-    return formatted
+    # Danh sách từ không viết hoa
+    lowercase_words = {'và', 'của', '-'}
+    
+    words = ten_nganh.split()
+    normalized = []
+    
+    for i, word in enumerate(words):
+        # Giữ nguyên dấu gạch ngang
+        if word == '-':
+            normalized.append(word)
+        # Từ đầu tiên luôn viết hoa
+        elif i == 0:
+            normalized.append(word.capitalize())
+        # Các từ đặc biệt giữ nguyên chữ thường
+        elif word.lower() in lowercase_words:
+            normalized.append(word.lower())
+        # Các từ khác viết hoa chữ cái đầu
+        else:
+            normalized.append(word.capitalize())
+    
+    return ' '.join(normalized)
 
 
 def parse_structured_data(raw_text: str) -> dict:
-    """Parse dữ liệu thành cấu trúc ngành -> chuyên ngành."""
+    """Parse dữ liệu thành cấu trúc, gộp theo mã ngành."""
     
     # Tìm tất cả các pattern "Ngành ... Mã ngành: XXX"
     nganh_pattern = r'Ngành\s+(.+?)\s*-\s*Mã ngành:\s*(\d+)'
@@ -37,14 +56,18 @@ def parse_structured_data(raw_text: str) -> dict:
     
     if not nganh_matches:
         print("Không tìm thấy ngành nào!")
-        return {"nganh": []}
+        return {}
     
-    result = {"nganh": []}
+    # Dictionary để lưu tạm theo mã ngành
+    temp_dict = {}
     
     # Xử lý từng ngành
     for i, nganh_match in enumerate(nganh_matches):
         ten_nganh = nganh_match.group(1).strip()
         ma_nganh = nganh_match.group(2).strip()
+        
+        # Chuẩn hóa tên ngành
+        ten_nganh_normalized = normalize_nganh_name(ten_nganh)
         
         # Tìm vị trí bắt đầu và kết thúc của ngành này
         start_pos = nganh_match.start()
@@ -58,18 +81,26 @@ def parse_structured_data(raw_text: str) -> dict:
         nganh_text = raw_text[start_pos:end_pos]
         
         # Tìm tất cả chuyên ngành trong text này
-        chuyen_nganh_list = find_chuyen_nganh_in_text(nganh_text, ten_nganh, ma_nganh)
+        chuyen_nganh_list = find_chuyen_nganh_in_text(nganh_text, ten_nganh_normalized, ma_nganh)
         
-        # Mỗi chuyên ngành tạo thành một object riêng biệt với keys chuẩn
-        for chuyen_nganh_data in chuyen_nganh_list:
-            nganh_obj = {
-                "Ngành": ten_nganh,
-                "Mã Ngành": ma_nganh,
-                "Chuyên Ngành": chuyen_nganh_data["Tên"],
-                "Mã CN": chuyen_nganh_data["Mã CN"],
-                **{k: v for k, v in chuyen_nganh_data.items() if k not in ["Tên", "Mã CN"]}
-            }
-            result["nganh"].append(nganh_obj)
+        # Gộp theo mã ngành
+        if chuyen_nganh_list:
+            if ma_nganh not in temp_dict:
+                temp_dict[ma_nganh] = {
+                    'ten_nganh': ten_nganh_normalized,
+                    'chuyen_nganh': []
+                }
+            
+            temp_dict[ma_nganh]['chuyen_nganh'].extend(chuyen_nganh_list)
+    
+    # Chuyển từ dict tạm sang dict cuối cùng với key là tên ngành
+    result = {}
+    for ma_nganh, data in temp_dict.items():
+        ten_nganh = data['ten_nganh']
+        # Xóa chữ "Ngành" ở đầu nếu có (vì sẽ thêm lại sau)
+        ten_nganh = re.sub(r'^Ngành\s+', '', ten_nganh, flags=re.IGNORECASE)
+        nganh_key = f"Ngành {ten_nganh}"
+        result[nganh_key] = data['chuyen_nganh']
     
     return result
 
@@ -77,7 +108,7 @@ def parse_structured_data(raw_text: str) -> dict:
 def find_chuyen_nganh_in_text(nganh_text: str, ten_nganh: str, ma_nganh: str) -> list:
     """Tìm tất cả chuyên ngành trong text của một ngành."""
     
-    # Patterns để tìm chuyên ngành - Cải thiện để tránh lấy thêm text
+    # Patterns để tìm chuyên ngành
     chuyen_nganh_patterns = [
         r'(?:Tên\s+)?Chuyên ngành[:\s]+(.+?)\s*-\s*Mã chuyên ngành[:\s]*([A-Za-z0-9\s\(\)]+?)(?=\s*[:\n]|$)',
         r'Chuyên ngành[:\s]+(.+?)\s*-\s*Mã[:\s]*([A-Za-z0-9\s\(\)]+?)(?=\s*[:\n]|$)'
@@ -93,7 +124,7 @@ def find_chuyen_nganh_in_text(nganh_text: str, ten_nganh: str, ma_nganh: str) ->
             break
     
     if not chuyen_nganh_matches:
-        print(f"Không tìm thấy chuyên ngành nào trong ngành {ten_nganh}")
+        print(f"  Không tìm thấy chuyên ngành nào trong mã ngành {ma_nganh}")
         return []
     
     result = []
@@ -103,17 +134,13 @@ def find_chuyen_nganh_in_text(nganh_text: str, ten_nganh: str, ma_nganh: str) ->
         ten_chuyen_nganh = match.group(1).strip()
         ma_chuyen_nganh = match.group(2).strip()
         
-        # Format mã CN thành dạng compact
-        ma_chuyen_nganh_formatted = format_ma_cn(ma_chuyen_nganh)
-        
         # Tìm nội dung của chuyên ngành này
         content_start = match.end()
         
-        # Tìm điểm kết thúc (trước chuyên ngành tiếp theo hoặc cuối text)
+        # Tìm điểm kết thúc
         if i + 1 < len(chuyen_nganh_matches):
             content_end = chuyen_nganh_matches[i + 1].start()
         else:
-            # Tìm điểm kết thúc khác (ngành mới, hoặc cuối text)
             next_nganh = re.search(r'Ngành\s+.+?\s*-\s*Mã ngành:', nganh_text[content_start:], re.IGNORECASE)
             if next_nganh:
                 content_end = content_start + next_nganh.start()
@@ -126,49 +153,37 @@ def find_chuyen_nganh_in_text(nganh_text: str, ten_nganh: str, ma_nganh: str) ->
         # Parse các field content
         content_fields = parse_content_fields(content_text)
         
-        # Tạo object chuyên ngành với keys có dấu viết hoa
+        # Tạo object chuyên ngành - CHỈ GIỮ LẠI Chuyên Ngành và các field content
         chuyen_nganh_obj = {
-            "Tên": ten_chuyen_nganh,
-            "Mã CN": ma_chuyen_nganh_formatted,
+            "Chuyên Ngành": ten_chuyen_nganh,
             **content_fields
         }
         
-        # Xóa các trường không cần thiết
-        fields_to_remove = ["Tuyển Sinh", "Liên Hệ"]
-        for field in fields_to_remove:
-            if field in chuyen_nganh_obj:
-                del chuyen_nganh_obj[field]
-        
         result.append(chuyen_nganh_obj)
-        print(f"  ✅ Tìm thấy chuyên ngành: {ten_chuyen_nganh} ({ma_chuyen_nganh} -> {ma_chuyen_nganh_formatted})")
+        print(f"  ✅ Mã {ma_nganh} - {ten_nganh} - CN: {ten_chuyen_nganh}")
     
     return result
 
 
 def parse_content_fields(content_text: str) -> dict:
-    """Parse các field: Giới thiệu, Mục tiêu, Chương trình, etc."""
+    """Parse các field: Giới thiệu, Mục tiêu, Chương trình, Cơ hội."""
     
     keyword_map = {
         "Giới thiệu:": "Giới Thiệu",
         "Mục tiêu:": "Mục Tiêu",
         "Chương trình:": "Chương Trình", 
-        "Cơ hội:": "Cơ Hội",
-        "Liên hệ:": "Liên Hệ",
-        "Tuyển sinh:": "Tuyển Sinh"
+        "Cơ hội:": "Cơ Hội"
     }
     
     result = {}
     
     # Normalize content first
-    content_text = re.sub(r'\n+', ' ', content_text)  # Replace multiple newlines with space
-    content_text = re.sub(r'\s+', ' ', content_text)  # Normalize whitespace
-    
-    # Tạo pattern để tìm tất cả sections
-    all_keywords = list(keyword_map.keys())
+    content_text = re.sub(r'\n+', ' ', content_text)
+    content_text = re.sub(r'\s+', ' ', content_text)
     
     # Tìm positions của tất cả keywords
     keyword_positions = []
-    for keyword in all_keywords:
+    for keyword in keyword_map.keys():
         pattern = rf'\b{re.escape(keyword)}[:\s]'
         for match in re.finditer(pattern, content_text, re.IGNORECASE):
             keyword_positions.append((match.start(), match.end(), keyword))
@@ -178,7 +193,6 @@ def parse_content_fields(content_text: str) -> dict:
     
     # Extract content cho từng keyword
     for i, (start, end, keyword) in enumerate(keyword_positions):
-        # Tìm điểm kết thúc cho keyword này
         if i + 1 < len(keyword_positions):
             next_start = keyword_positions[i + 1][0]
             section_text = content_text[end:next_start].strip()
@@ -214,53 +228,33 @@ def clean_section_content(text: str, keyword: str) -> str:
     # Remove bullet points
     text = re.sub(r'^\s*•\s*', '', text, flags=re.MULTILINE)
     
-    # Handle special cases for "Liên hệ"
-    if keyword == "Liên hệ:":
-        return format_contact_info(text)
+    # Truncate nếu có dấu hiệu của section tiếp theo
+    skip_keywords = ["Liên hệ:", "Tuyển sinh:", "Website:", "Email:", "Điện thoại:"]
+    for skip_kw in skip_keywords:
+        pos = text.find(skip_kw)
+        if pos > 0:
+            text = text[:pos].strip()
+            break
     
-    # Truncate if text is too long and seems to contain next section
+    # Truncate if text is too long
     if len(text) > 1000:
-        # Look for signs of next section
-        for next_keyword in ["Ngành", "Chuyên ngành", "Website:", "Email:", "Điện thoại:"]:
+        for next_keyword in ["Ngành", "Chuyên ngành"]:
             pos = text.find(next_keyword)
-            if pos > 100:  # Only truncate if found after reasonable content
+            if pos > 100:
                 text = text[:pos].strip()
                 break
     
     return text.strip()
 
 
-def format_contact_info(text: str) -> str:
-    """Format lại thông tin liên hệ."""
-    # Extract contact details
-    website_match = re.search(r'Website:\s*([^\s\n]+)', text, re.IGNORECASE)
-    email_match = re.search(r'Email:\s*([^\s\n]+)', text, re.IGNORECASE)
-    phone_match = re.search(r'Điện thoại:\s*([^\n\r]+?)(?=\s*(?:Ngành|Chuyên ngành|$))', text, re.IGNORECASE)
-    
-    if not (website_match or email_match or phone_match):
-        return text.strip()
-    
-    formatted_parts = []
-    if website_match:
-        formatted_parts.append(f"Website: {website_match.group(1)}")
-    if email_match:
-        formatted_parts.append(f"Email: {email_match.group(1)}")
-    if phone_match:
-        phone_text = phone_match.group(1).strip()
-        phone_text = re.sub(r'\s*–\s*', ' - ', phone_text)  # Normalize dashes
-        formatted_parts.append(f"Điện thoại: {phone_text}")
-    
-    return " | ".join(formatted_parts)
-
-
 if __name__ == "__main__":
     files = [
         "TRƯỜNG CÔNG NGHỆ.docx",
-        "KHOA ĐTQT.docx",
+        "KHOA ĐÀO TẠO QUỐC TẾ.docx",
         "TRƯỜNG DU LỊCH.docx", 
-        "TRƯỜNG KHMT.docx",
+        "TRƯỜNG KHOA HỌC MÁY TÍNH.docx",
         "TRƯỜNG KINH TẾ&KINH DOANH.docx",
-        "TRƯỜNG NN&XHNV.docx",
+        "TRƯỜNG NGÔN NGỮ & XÃ HỘI NHÂN VĂN.docx",
         "TRUNG TÂM KT&CN VIỆT-NHẬT.docx",
         "KHOA Y-DƯỢC.docx"
     ]
@@ -274,11 +268,14 @@ if __name__ == "__main__":
             if text.strip():
                 result = parse_structured_data(text)
                 file_key = file.replace(".docx", "")
-                all_data[file_key] = result
                 
-                # Thống kê đúng - mỗi item trong nganh array là 1 chuyên ngành
-                total_chuyen_nganh = len(result.get('nganh', []))
-                print(f"✅ {file}: {total_chuyen_nganh} chuyên ngành")
+                # Chỉ thêm vào nếu có dữ liệu
+                if result:
+                    all_data[file_key] = result
+                    
+                    # Đếm số chuyên ngành
+                    total_chuyen_nganh = sum(len(v) for v in result.values())
+                    print(f"✅ {file}: {len(result)} ngành, {total_chuyen_nganh} chuyên ngành")
             else:
                 print(f"⚠️  {file}: No content found")
         except Exception as e:
@@ -289,10 +286,15 @@ if __name__ == "__main__":
         with open("mo_ta_nganh.json", "w", encoding="utf-8") as f:
             json.dump(all_data, f, ensure_ascii=False, indent=2)
         
-        print(f"\n✅ Đã xử lý và lưu vào mo_ta_nganh_final.json")
+        print(f"\n✅ Đã xử lý và lưu vào mo_ta_nganh.json")
         
-        # Thống kê tổng đúng
-        total_chuyen_nganh = sum(len(school.get('nganh', [])) for school in all_data.values())
-        print(f"📊 Tổng cộng: {len(all_data)} trường, {total_chuyen_nganh} chuyên ngành")
+        # Thống kê tổng
+        total_truong = len(all_data)
+        total_nganh = sum(len(school) for school in all_data.values())
+        total_chuyen_nganh = sum(
+            sum(len(v) for v in school.values()) 
+            for school in all_data.values()
+        )
+        print(f"📊 Tổng cộng: {total_truong} trường, {total_nganh} ngành, {total_chuyen_nganh} chuyên ngành")
     else:
         print("❌ Không có dữ liệu được xử lý thành công")
