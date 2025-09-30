@@ -1,35 +1,57 @@
 CHATBOT TUYỂN SINH ĐẠI HỌC DUY TÂN
-├── Thông tin chung
+│
+├── Thông tin chung (data_thong_tin_chung.json)
 │   ├── thong_tin_dai_hoc_duy_tan.json
+│   │   → Cung cấp thông tin tổng quan về ĐH Duy Tân: mã trường, địa chỉ, sứ mệnh, tầm nhìn, giới thiệu trường.
+│   │
 │   ├── truong_khoa_truc_thuoc.json
-│   └── chuong_trinh_dao_tao_trong_va_sau_dai_hoc.json
-├── Mô tả ngành
-│   ├── 20250319-MÔ TẢ NGÀNH- CHUYÊN NGÀNH -TRƯỜNG CÔNG NGHỆ.json
-│   ├── 20250319-MÔ TẢ NGÀNH- CHUYÊN NGÀNH -TRƯỜNG DU LỊCH.json
-│   ├── 20250319-MÔ TẢ NGÀNH- CHUYÊN NGÀNH -TRƯỜNG KHMT.json
-│   ├── 20250319-MÔ TẢ NGÀNH- CHUYÊN NGÀNH -TRƯỜNG KINH TẾ&KINH DOANH.json
-│   ├── 20250319-MÔ TẢ NGÀNH- CHUYÊN NGÀNH -TRƯỜNG NN&XHNV.json
-│   └── 20250319-MÔ TẢ NGÀNH- CHUYÊN NGÀNH -TRƯỜNG ĐTQT.json
-└── Tuyển sinh
+│   │   → Danh sách các trường, khoa, viện trực thuộc: tên, chức năng, thông tin liên hệ.
+│   │
+│   ├── chuong_trinh_dao_tao_trong_va_sau_dai_hoc.json
+│   │   → Liệt kê các chương trình đào tạo ở bậc Đại học, Sau đại học (thạc sĩ, tiến sĩ).
+│   │
+│   └── mo_ta_nganh.json
+│       → Mô tả chi tiết từng ngành/chuyên ngành: giới thiệu, mục tiêu đào tạo, kỹ năng, cơ hội nghề nghiệp.
+│
+└── Tuyển sinh (data_thong_tin_tuyen_sinh.json)
     ├── thong_tin_tuyen_sinh_DTU_2025.json
+    │   → Quy định và thông báo tuyển sinh 2025: mã trường, đối tượng, phương thức, điều kiện xét tuyển, 
+    │     thời gian hồ sơ/nhập học, hồ sơ cần nộp, địa điểm nhập học.
     │
     ├── Chương trình đào tạo & Tuyển sinh
     │   ├── Ngành học & Điểm chuẩn
     │   │   ├── chi_tiet_nganh_dtu_2025.json
+    │   │   │   → Danh sách ngành/chuyên ngành: mã ngành, tên ngành, mã CN, tổ hợp xét tuyển.
+    │   │   │
     │   │   ├── to_hop_xet_tuyen.json
+    │   │   │   → Giải thích ý nghĩa từng tổ hợp môn (A00 = Toán, Lý, Hóa; D01 = Văn, Toán, Anh…).
+    │   │   │
     │   │   └── diem_trung_tuyen_theo_cac_phuong_thuc_xet_tuyen.json
+    │   │       → Ngưỡng điểm chuẩn/điều kiện cho từng ngành theo các phương thức: thi THPT, học bạ, ĐGNL, V-SAT.
     │   │
     │   └── Học phí & Học bổng
     │       ├── hoc_phi_full.json
+    │       │   → Bảng học phí chi tiết cho từng chuyên ngành: đơn giá tín chỉ, học phí/kỳ, học phí/năm, giảm trừ.
+    │       │
     │       └── chinh_sach_hoc_bong.json
+    │           → Thông tin học bổng: loại học bổng, tiêu chí, giá trị, số lượng, điều kiện duy trì.
     │
     ├── Ưu tiên
     │   ├── doi_tuong_uu_tien.json
+    │   │   → Danh sách các đối tượng được ưu tiên trong xét tuyển (VD: con thương binh, dân tộc thiểu số…).
+    │   │
     │   └── danh_sach_cac_khu_vuc_tai_cac_tinh_thanh.json
+    │       → Danh sách khu vực ưu tiên theo từng tỉnh/thành phố.
     │
     ├── Việc làm & Cơ hội nghề nghiệp
     │   ├── de_xuat_viec_lam_theo_nang_luc_va_so_thich.json
+    │   │   → Gợi ý việc làm phù hợp dựa trên năng lực & sở thích của thí sinh.
+    │   │
     │   ├── de_xuat_nganh_hoc_theo_nang_luc_ca_nhan.json
+    │   │   → Gợi ý ngành học phù hợp dựa trên khả năng cá nhân.
+    │   │
     │   └── map_xu_huong_theo_CN.json
+    │       → Bản đồ xu hướng nghề nghiệp theo từng chuyên ngành.
     │
     └── chuyen_vien_tu_van.json
+        → Danh sách chuyên viên tư vấn: tên, số điện thoại, email, để thí sinh liên hệ trực tiếp.

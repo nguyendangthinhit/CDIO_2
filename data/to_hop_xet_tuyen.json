@@ -1,0 +1,114 @@
+[
+    {
+        "Tổ hợp":"A00",
+        "Môn học":"Toán, Vật lý, Hóa học"
+    },
+    {
+        "Tổ hợp":"A01",
+        "Môn học":"Toán, Vật lý, Tiếng Anh"
+    },
+    {
+        "Tổ hợp":"A02",
+        "Môn học":"Toán, Vật lí , Sinh học"
+    },
+    {
+        "Tổ hợp":"A07",
+        "Môn học":"Toán, Lịch sử, Địa lí"
+    },
+    {
+        "Tổ hợp":"B00",
+        "Môn học":"Toán, Hóa học, Sinh học"
+    },
+    {
+        "Tổ hợp":"B02",
+        "Môn học":"Toán, Sinh học, Địa lí"
+    },
+    {
+        "Tổ hợp":"B03",
+        "Môn học":"Toán, Sinh học, Văn"
+    },
+    {
+        "Tổ hợp":"C00",
+        "Môn học":"Văn, Lịch sử, Địa lí"
+    },
+    {
+        "Tổ hợp":"C01",
+        "Môn học":"Văn, Toán, Vật lí"
+    },
+    {
+        "Tổ hợp":"C02",
+        "Môn học":"Văn, Toán, Hóa học"
+    },
+    {
+        "Tổ hợp":"C03",
+        "Môn học":"Văn, Toán, Lịch sử"
+    },
+    {
+        "Tổ hợp":"C04",
+        "Môn học":"Văn, Toán, Địa lí"
+    },
+    {
+        "Tổ hợp":"C08",
+        "Môn học":"Văn, Hóa học, Sinh"
+    },
+    {
+        "Tổ hợp":"D01",
+        "Môn học":"Văn, Toán, tiếng Anh"
+    },
+    {
+        "Tổ hợp":"D08",
+        "Môn học":"Toán, Sinh học, Tiếng Anh"
+    },
+    {
+        "Tổ hợp":"D09",
+        "Môn học":"Toán, Lịch sử, Tiếng Anh"
+    },
+    {
+        "Tổ hợp":"D10",
+        "Môn học":"Toán, Địa lí, Tiếng Anh"
+    },
+    {
+        "Tổ hợp":"D14",
+        "Môn học":"Văn, Lịch sử, Tiếng Anh"
+    },
+    {
+        "Tổ hợp":"D15",
+        "Môn học":"Văn, Địa lí, Tiếng Anh"
+    },
+    {
+        "Tổ hợp":"V00",
+        "Môn học":"Toán, Vật lí, Vẽ Hình họa mỹ thuật"
+    },
+    {
+        "Tổ hợp":"V01",
+        "Môn học":"Toán, Văn, Vẽ Hình họa mỹ thuật"
+    },
+    {
+        "Tổ hợp":"V02",
+        "Môn học":"Vẽ mỹ thuật, Toán, Tiếng Anh"
+    },
+    {
+        "Tổ hợp":"V06",
+        "Môn học":"Toán, Địa lí, Vẽ mỹ thuật"
+    },
+    {
+        "Tổ hợp":"X01",
+        "Môn học":"Ngữ văn, Toán, Giáo dục Kinh tế và Pháp luật"
+    },
+    {
+        "Tổ hợp":"X06",
+        "Môn học":"Toán, Lý, Tin học"
+    },
+    {
+        "Tổ hợp":"X07",
+        "Môn học":"Toán, Lý, Công nghệ"
+    },
+    {
+        "Tổ hợp":"X14",
+        "Môn học":"Toán, Sinh học, Tin học"
+    },
+    {
+        "Tổ hợp":"X26",
+        "Môn học":"Toán, tiếng Anh, Tin học"
+    }
+]

@@ -1,0 +1,1028 @@
+[
+    {
+        "STT":62,
+        "Chuyên ngành":"Bác sĩ Răng - Hàm - Mặt",
+        "Mã CN":"304",
+        "ĐGTC":3090000.0,
+        "HP\/kỳ":49200000,
+        "HP\/năm":98880000,
+        "Ghi chú":null
+    },
+    {
+        "STT":63,
+        "Chuyên ngành":"Bác sĩ Đa khoa",
+        "Mã CN":"305",
+        "ĐGTC":2950000.0,
+        "HP\/kỳ":47200000,
+        "HP\/năm":94400000,
+        "Ghi chú":null
+    },
+    {
+        "STT":112,
+        "Chuyên ngành":"Ngành Khoa học Máy tính (TROY)",
+        "Mã CN":"102(TROY)",
+        "ĐGTC":null,
+        "HP\/kỳ":32000000,
+        "HP\/năm":64000000,
+        "Ghi chú":null
+    },
+    {
+        "STT":113,
+        "Chuyên ngành":"Ngành Quản trị Kinh doanh (TROY)",
+        "Mã CN":"400(TROY)",
+        "ĐGTC":null,
+        "HP\/kỳ":32000000,
+        "HP\/năm":64000000,
+        "Ghi chú":null
+    },
+    {
+        "STT":114,
+        "Chuyên ngành":"Ngành Quản trị Khách sạn (TROY)",
+        "Mã CN":"407(TROY)",
+        "ĐGTC":null,
+        "HP\/kỳ":32000000,
+        "HP\/năm":64000000,
+        "Ghi chú":null
+    },
+    {
+        "STT":76,
+        "Chuyên ngành":"Thiết kế Đồ họa",
+        "Mã CN":"111(VJJ)",
+        "ĐGTC":1280000.0,
+        "HP\/kỳ":20480000,
+        "HP\/năm":40960000,
+        "Ghi chú":null
+    },
+    {
+        "STT":77,
+        "Chuyên ngành":"Công nghệ Kỹ thuật Ô tô",
+        "Mã CN":"117(VJJ)",
+        "ĐGTC":1280000.0,
+        "HP\/kỳ":20480000,
+        "HP\/năm":40960000,
+        "Ghi chú":null
+    },
+    {
+        "STT":6,
+        "Chuyên ngành":"Quản trị Khách sạn Quốc tế (PSU)",
+        "Mã CN":"414(PSU)",
+        "ĐGTC":1250000.0,
+        "HP\/kỳ":20000000,
+        "HP\/năm":40000000,
+        "Ghi chú":null
+    },
+    {
+        "STT":11,
+        "Chuyên ngành":"Quản trị Du lịch & Dịch vụ Hàng không",
+        "Mã CN":"444",
+        "ĐGTC":1250000.0,
+        "HP\/kỳ":20000000,
+        "HP\/năm":40000000,
+        "Ghi chú":null
+    },
+    {
+        "STT":68,
+        "Chuyên ngành":"Logistics & Quản lý Chuỗi cung ứng (HP)",
+        "Mã CN":"416(HP)",
+        "ĐGTC":1250000.0,
+        "HP\/kỳ":20000000,
+        "HP\/năm":40000000,
+        "Ghi chú":null
+    },
+    {
+        "STT":111,
+        "Chuyên ngành":"Mạng Máy tính và Truyền thông Dữ liệu",
+        "Mã CN":"140",
+        "ĐGTC":1250000.0,
+        "HP\/kỳ":20000000,
+        "HP\/năm":40000000,
+        "Ghi chú":null
+    },
+    {
+        "STT":72,
+        "Chuyên ngành":"Công nghệ Phần mềm",
+        "Mã CN":"102(VJJ)",
+        "ĐGTC":1225000.0,
+        "HP\/kỳ":19600000,
+        "HP\/năm":39200000,
+        "Ghi chú":null
+    },
+    {
+        "STT":2,
+        "Chuyên ngành":"Quản trị Du lịch & Lữ hành chuẩn PSU",
+        "Mã CN":"408(PSU)",
+        "ĐGTC":1200000.0,
+        "HP\/kỳ":19200000,
+        "HP\/năm":38400000,
+        "Ghi chú":null
+    },
+    {
+        "STT":53,
+        "Chuyên ngành":"Công nghệ phần mềm chuẩn CMU (Đạt kiểm định ABET)",
+        "Mã CN":"102(CMU)",
+        "ĐGTC":1200000.0,
+        "HP\/kỳ":19200000,
+        "HP\/năm":38400000,
+        "Ghi chú":null
+    },
+    {
+        "STT":15,
+        "Chuyên ngành":"Digital Marketing ",
+        "Mã CN":402,
+        "ĐGTC":1155000.0,
+        "HP\/kỳ":18480000,
+        "HP\/năm":36960000,
+        "Ghi chú":null
+    },
+    {
+        "STT":23,
+        "Chuyên ngành":"Logistics & Quản lý Chuỗi Cung Ứng",
+        "Mã CN":"416",
+        "ĐGTC":1155000.0,
+        "HP\/kỳ":18480000,
+        "HP\/năm":36960000,
+        "Ghi chú":null
+    },
+    {
+        "STT":61,
+        "Chuyên ngành":"Dược sĩ (Đại học)",
+        "Mã CN":"303",
+        "ĐGTC":1155000.0,
+        "HP\/kỳ":18480000,
+        "HP\/năm":36960000,
+        "Ghi chú":null
+    },
+    {
+        "STT":66,
+        "Chuyên ngành":"Y học Cổ truyền",
+        "Mã CN":"325",
+        "ĐGTC":1155000.0,
+        "HP\/kỳ":18480000,
+        "HP\/năm":36960000,
+        "Ghi chú":null
+    },
+    {
+        "STT":86,
+        "Chuyên ngành":"Thiết kế Đồ họa",
+        "Mã CN":"111",
+        "ĐGTC":1155000.0,
+        "HP\/kỳ":18480000,
+        "HP\/năm":36960000,
+        "Ghi chú":null
+    },
+    {
+        "STT":87,
+        "Chuyên ngành":"Thiết kế Mỹ thuật số",
+        "Mã CN":"129",
+        "ĐGTC":1155000.0,
+        "HP\/kỳ":18480000,
+        "HP\/năm":36960000,
+        "Ghi chú":null
+    },
+    {
+        "STT":90,
+        "Chuyên ngành":"Công nghệ Kỹ thuật Ô tô",
+        "Mã CN":"117",
+        "ĐGTC":1155000.0,
+        "HP\/kỳ":18480000,
+        "HP\/năm":36960000,
+        "Ghi chú":null
+    },
+    {
+        "STT":4,
+        "Chuyên ngành":"Quản trị Sự kiện & Giải trí",
+        "Mã CN":"413",
+        "ĐGTC":1100000.0,
+        "HP\/kỳ":17600000,
+        "HP\/năm":35200000,
+        "Ghi chú":null
+    },
+    {
+        "STT":34,
+        "Chuyên ngành":"Truyền thông Đa phương tiện",
+        "Mã CN":"607",
+        "ĐGTC":1100000.0,
+        "HP\/kỳ":17600000,
+        "HP\/năm":35200000,
+        "Ghi chú":null
+    },
+    {
+        "STT":39,
+        "Chuyên ngành":"Quan hệ Công chúng",
+        "Mã CN":"610",
+        "ĐGTC":1100000.0,
+        "HP\/kỳ":17600000,
+        "HP\/năm":35200000,
+        "Ghi chú":null
+    },
+    {
+        "STT":42,
+        "Chuyên ngành":"Tiếng Trung Biên - Phiên dịch",
+        "Mã CN":"703",
+        "ĐGTC":1100000.0,
+        "HP\/kỳ":17600000,
+        "HP\/năm":35200000,
+        "Ghi chú":null
+    },
+    {
+        "STT":52,
+        "Chuyên ngành":"An ninh mạng chuẩn CMU",
+        "Mã CN":"116(CMU)",
+        "ĐGTC":1100000.0,
+        "HP\/kỳ":17600000,
+        "HP\/năm":35200000,
+        "Ghi chú":null
+    },
+    {
+        "STT":56,
+        "Chuyên ngành":"Quản trị Kinh doanh chuẩn PSU",
+        "Mã CN":"400(PSU)",
+        "ĐGTC":1100000.0,
+        "HP\/kỳ":17600000,
+        "HP\/năm":35200000,
+        "Ghi chú":null
+    },
+    {
+        "STT":70,
+        "Chuyên ngành":"Quản trị Marketing & Chiến lược (HP)",
+        "Mã CN":"401(HP)",
+        "ĐGTC":1100000.0,
+        "HP\/kỳ":17600000,
+        "HP\/năm":35200000,
+        "Ghi chú":null
+    },
+    {
+        "STT":103,
+        "Chuyên ngành":"Công nghệ Phần mềm (Đạt kiểm định ABET)",
+        "Mã CN":"102",
+        "ĐGTC":1100000.0,
+        "HP\/kỳ":17600000,
+        "HP\/năm":35200000,
+        "Ghi chú":null
+    },
+    {
+        "STT":78,
+        "Chuyên ngành":"Kỹ thuật Điều khiển & Tự động hóa",
+        "Mã CN":"118(VJJ)",
+        "ĐGTC":1065000.0,
+        "HP\/kỳ":17040000,
+        "HP\/năm":34080000,
+        "Ghi chú":null
+    },
+    {
+        "STT":1,
+        "Chuyên ngành":"Quản trị Du lịch & Lữ hành",
+        "Mã CN":"408",
+        "ĐGTC":1035000.0,
+        "HP\/kỳ":16560000,
+        "HP\/năm":33120000,
+        "Ghi chú":null
+    },
+    {
+        "STT":3,
+        "Chuyên ngành":"Quản trị Du lịch & Khách Sạn",
+        "Mã CN":"407",
+        "ĐGTC":1035000.0,
+        "HP\/kỳ":16560000,
+        "HP\/năm":33120000,
+        "Ghi chú":null
+    },
+    {
+        "STT":7,
+        "Chuyên ngành":"Quản trị Nhà hàng Quốc tế (PSU)",
+        "Mã CN":"425(PSU)",
+        "ĐGTC":1035000.0,
+        "HP\/kỳ":16560000,
+        "HP\/năm":33120000,
+        "Ghi chú":null
+    },
+    {
+        "STT":14,
+        "Chuyên ngành":"Quản trị Kinh doanh Marketing",
+        "Mã CN":"401",
+        "ĐGTC":1035000.0,
+        "HP\/kỳ":16560000,
+        "HP\/năm":33120000,
+        "Ghi chú":null
+    },
+    {
+        "STT":28,
+        "Chuyên ngành":"Công nghệ Tài chính (Fintech)",
+        "Mã CN":"435",
+        "ĐGTC":1035000.0,
+        "HP\/kỳ":16560000,
+        "HP\/năm":33120000,
+        "Ghi chú":null
+    },
+    {
+        "STT":106,
+        "Chuyên ngành":"Thiết kế Games và Multimedia",
+        "Mã CN":"122",
+        "ĐGTC":1035000.0,
+        "HP\/kỳ":16560000,
+        "HP\/năm":33120000,
+        "Ghi chú":null
+    },
+    {
+        "STT":109,
+        "Chuyên ngành":"Khoa học Máy tính",
+        "Mã CN":"130",
+        "ĐGTC":1035000.0,
+        "HP\/kỳ":16560000,
+        "HP\/năm":33120000,
+        "Ghi chú":null
+    },
+    {
+        "STT":38,
+        "Chuyên ngành":"Luật Kinh doanh (HP)",
+        "Mã CN":"609(HP)",
+        "ĐGTC":1000000.0,
+        "HP\/kỳ":16000000,
+        "HP\/năm":32000000,
+        "Ghi chú":null
+    },
+    {
+        "STT":49,
+        "Chuyên ngành":"Tiếng Trung Thương mại",
+        "Mã CN":"803",
+        "ĐGTC":1000000.0,
+        "HP\/kỳ":16000000,
+        "HP\/năm":32000000,
+        "Ghi chú":null
+    },
+    {
+        "STT":57,
+        "Chuyên ngành":"Tài chính - Ngân hàng chuẩn PSU",
+        "Mã CN":"404(PSU)",
+        "ĐGTC":1000000.0,
+        "HP\/kỳ":16000000,
+        "HP\/năm":32000000,
+        "Ghi chú":null
+    },
+    {
+        "STT":58,
+        "Chuyên ngành":"Kế toán Kiểm toán chuẩn PSU",
+        "Mã CN":"405(PSU)",
+        "ĐGTC":1000000.0,
+        "HP\/kỳ":16000000,
+        "HP\/năm":32000000,
+        "Ghi chú":null
+    },
+    {
+        "STT":75,
+        "Chuyên ngành":"Điện tử - Viễn thông",
+        "Mã CN":"109(VJJ)",
+        "ĐGTC":950000.0,
+        "HP\/kỳ":15200000,
+        "HP\/năm":30400000,
+        "Ghi chú":null
+    },
+    {
+        "STT":36,
+        "Chuyên ngành":"Quan hệ Quốc tế (HP)",
+        "Mã CN":"608(HP)",
+        "ĐGTC":940000.0,
+        "HP\/kỳ":15040000,
+        "HP\/năm":30080000,
+        "Ghi chú":null
+    },
+    {
+        "STT":40,
+        "Chuyên ngành":"Tiếng Anh Biên - Phiên dịch",
+        "Mã CN":"701",
+        "ĐGTC":940000.0,
+        "HP\/kỳ":15040000,
+        "HP\/năm":30080000,
+        "Ghi chú":null
+    },
+    {
+        "STT":43,
+        "Chuyên ngành":"Tiếng Nhật Biên - Phiên dịch",
+        "Mã CN":"704",
+        "ĐGTC":940000.0,
+        "HP\/kỳ":15040000,
+        "HP\/năm":30080000,
+        "Ghi chú":null
+    },
+    {
+        "STT":44,
+        "Chuyên ngành":"Tiếng Hàn Biên - Phiên dịch",
+        "Mã CN":"705",
+        "ĐGTC":940000.0,
+        "HP\/kỳ":15040000,
+        "HP\/năm":30080000,
+        "Ghi chú":null
+    },
+    {
+        "STT":46,
+        "Chuyên ngành":"Tiếng Trung Du lịch",
+        "Mã CN":"707",
+        "ĐGTC":940000.0,
+        "HP\/kỳ":15040000,
+        "HP\/năm":30080000,
+        "Ghi chú":null
+    },
+    {
+        "STT":48,
+        "Chuyên ngành":"Tiếng Anh Thương mại",
+        "Mã CN":"801",
+        "ĐGTC":940000.0,
+        "HP\/kỳ":15040000,
+        "HP\/năm":30080000,
+        "Ghi chú":null
+    },
+    {
+        "STT":59,
+        "Chuyên ngành":"Hệ thống Thông tin Quản lý chuẩn CMU (Đạt kiểm định ABET)",
+        "Mã CN":"410(CMU)",
+        "ĐGTC":940000.0,
+        "HP\/kỳ":15040000,
+        "HP\/năm":30080000,
+        "Ghi chú":null
+    },
+    {
+        "STT":67,
+        "Chuyên ngành":"Xét nghiệm Y học",
+        "Mã CN":"330",
+        "ĐGTC":940000.0,
+        "HP\/kỳ":15040000,
+        "HP\/năm":30080000,
+        "Ghi chú":null
+    },
+    {
+        "STT":69,
+        "Chuyên ngành":"Quản trị Doanh nghiệp (HP)",
+        "Mã CN":"400(HP)",
+        "ĐGTC":940000.0,
+        "HP\/kỳ":15040000,
+        "HP\/năm":30080000,
+        "Ghi chú":null
+    },
+    {
+        "STT":71,
+        "Chuyên ngành":"Quản trị Tài chính (HP)",
+        "Mã CN":"403(HP)",
+        "ĐGTC":940000.0,
+        "HP\/kỳ":15040000,
+        "HP\/năm":30080000,
+        "Ghi chú":null
+    },
+    {
+        "STT":88,
+        "Chuyên ngành":"Cơ điện tử chuẩn PNU",
+        "Mã CN":"112(PNU)",
+        "ĐGTC":940000.0,
+        "HP\/kỳ":15040000,
+        "HP\/năm":30080000,
+        "Ghi chú":null
+    },
+    {
+        "STT":89,
+        "Chuyên ngành":"Điện - Điện tử chuẩn PNU",
+        "Mã CN":"113(PNU)",
+        "ĐGTC":940000.0,
+        "HP\/kỳ":15040000,
+        "HP\/năm":30080000,
+        "Ghi chú":null
+    },
+    {
+        "STT":91,
+        "Chuyên ngành":"Kỹ thuật Điều khiển & Tự động hóa",
+        "Mã CN":"118",
+        "ĐGTC":940000.0,
+        "HP\/kỳ":15040000,
+        "HP\/năm":30080000,
+        "Ghi chú":null
+    },
+    {
+        "STT":92,
+        "Chuyên ngành":"Thiết kế Thời trang",
+        "Mã CN":"119",
+        "ĐGTC":940000.0,
+        "HP\/kỳ":15040000,
+        "HP\/năm":30080000,
+        "Ghi chú":null
+    },
+    {
+        "STT":94,
+        "Chuyên ngành":"Công nghệ Chế tạo Máy",
+        "Mã CN":125,
+        "ĐGTC":940000.0,
+        "HP\/kỳ":15040000,
+        "HP\/năm":30080000,
+        "Ghi chú":null
+    },
+    {
+        "STT":95,
+        "Chuyên ngành":"Thiết kế Vi Mạch Bán dẫn",
+        "Mã CN":127,
+        "ĐGTC":940000.0,
+        "HP\/kỳ":15040000,
+        "HP\/năm":30080000,
+        "Ghi chú":null
+    },
+    {
+        "STT":96,
+        "Chuyên ngành":"Điện Cơ Ô tô",
+        "Mã CN":"145",
+        "ĐGTC":940000.0,
+        "HP\/kỳ":15040000,
+        "HP\/năm":30080000,
+        "Ghi chú":null
+    },
+    {
+        "STT":102,
+        "Chuyên ngành":"Kỹ thuật Mạng (Đạt kiểm định ABET)",
+        "Mã CN":"101",
+        "ĐGTC":940000.0,
+        "HP\/kỳ":15040000,
+        "HP\/năm":30080000,
+        "Ghi chú":null
+    },
+    {
+        "STT":105,
+        "Chuyên ngành":"Trí tuệ Nhân tạo (HP)",
+        "Mã CN":"121(HP)",
+        "ĐGTC":940000.0,
+        "HP\/kỳ":15040000,
+        "HP\/năm":30080000,
+        "Ghi chú":null
+    },
+    {
+        "STT":107,
+        "Chuyên ngành":"An toàn Thông tin",
+        "Mã CN":"124",
+        "ĐGTC":940000.0,
+        "HP\/kỳ":15040000,
+        "HP\/năm":30080000,
+        "Ghi chú":null
+    },
+    {
+        "STT":80,
+        "Chuyên ngành":"Công nghệ Thực phẩm",
+        "Mã CN":"306(VJJ)",
+        "ĐGTC":910000.0,
+        "HP\/kỳ":14560000,
+        "HP\/năm":29120000,
+        "Ghi chú":null
+    },
+    {
+        "STT":79,
+        "Chuyên ngành":"Điều dưỡng Đa khoa",
+        "Mã CN":"302(VJJ)",
+        "ĐGTC":895000.0,
+        "HP\/kỳ":14320000,
+        "HP\/năm":28640000,
+        "Ghi chú":null
+    },
+    {
+        "STT":13,
+        "Chuyên ngành":"Quản trị Kinh doanh Tổng hợp",
+        "Mã CN":"400",
+        "ĐGTC":875000.0,
+        "HP\/kỳ":14000000,
+        "HP\/năm":28000000,
+        "Ghi chú":null
+    },
+    {
+        "STT":20,
+        "Chuyên ngành":"Kế toán Quản trị (HP)",
+        "Mã CN":"406(HP)",
+        "ĐGTC":875000.0,
+        "HP\/kỳ":14000000,
+        "HP\/năm":28000000,
+        "Ghi chú":null
+    },
+    {
+        "STT":26,
+        "Chuyên ngành":"Thương mại Điện tử",
+        "Mã CN":"422",
+        "ĐGTC":875000.0,
+        "HP\/kỳ":14000000,
+        "HP\/năm":28000000,
+        "Ghi chú":null
+    },
+    {
+        "STT":29,
+        "Chuyên ngành":"Phân tích Kinh doanh (Business Analytics)",
+        "Mã CN":"427",
+        "ĐGTC":875000.0,
+        "HP\/kỳ":14000000,
+        "HP\/năm":28000000,
+        "Ghi chú":null
+    },
+    {
+        "STT":33,
+        "Chuyên ngành":"Luật học",
+        "Mã CN":"606",
+        "ĐGTC":875000.0,
+        "HP\/kỳ":14000000,
+        "HP\/năm":28000000,
+        "Ghi chú":null
+    },
+    {
+        "STT":37,
+        "Chuyên ngành":"Luật Kinh tế",
+        "Mã CN":"609",
+        "ĐGTC":875000.0,
+        "HP\/kỳ":14000000,
+        "HP\/năm":28000000,
+        "Ghi chú":null
+    },
+    {
+        "STT":104,
+        "Chuyên ngành":"Big Data & Machine Learning (HP)",
+        "Mã CN":"115(HP)",
+        "ĐGTC":875000.0,
+        "HP\/kỳ":14000000,
+        "HP\/năm":28000000,
+        "Ghi chú":null
+    },
+    {
+        "STT":108,
+        "Chuyên ngành":"Kỹ thuật máy tính",
+        "Mã CN":128,
+        "ĐGTC":875000.0,
+        "HP\/kỳ":14000000,
+        "HP\/năm":28000000,
+        "Ghi chú":null
+    },
+    {
+        "STT":110,
+        "Chuyên ngành":"Khoa học Dữ liệu",
+        "Mã CN":"135",
+        "ĐGTC":875000.0,
+        "HP\/kỳ":14000000,
+        "HP\/năm":28000000,
+        "Ghi chú":null
+    },
+    {
+        "STT":21,
+        "Chuyên ngành":"Kinh doanh Thương mại",
+        "Mã CN":"412",
+        "ĐGTC":845000.0,
+        "HP\/kỳ":13520000,
+        "HP\/năm":27040000,
+        "Ghi chú":null
+    },
+    {
+        "STT":22,
+        "Chuyên ngành":"Quản trị Kinh doanh Quốc tế (Ngoại Thương)",
+        "Mã CN":"411",
+        "ĐGTC":845000.0,
+        "HP\/kỳ":13520000,
+        "HP\/năm":27040000,
+        "Ghi chú":null
+    },
+    {
+        "STT":41,
+        "Chuyên ngành":"Tiếng Anh Du lịch",
+        "Mã CN":"702",
+        "ĐGTC":845000.0,
+        "HP\/kỳ":13520000,
+        "HP\/năm":27040000,
+        "Ghi chú":null
+    },
+    {
+        "STT":45,
+        "Chuyên ngành":"Tiếng Hàn Du lịch",
+        "Mã CN":"706",
+        "ĐGTC":845000.0,
+        "HP\/kỳ":13520000,
+        "HP\/năm":27040000,
+        "Ghi chú":null
+    },
+    {
+        "STT":47,
+        "Chuyên ngành":"Tiếng Nhật Du lịch",
+        "Mã CN":"708",
+        "ĐGTC":845000.0,
+        "HP\/kỳ":13520000,
+        "HP\/năm":27040000,
+        "Ghi chú":null
+    },
+    {
+        "STT":50,
+        "Chuyên ngành":"Tiếng Nhật Thương mại",
+        "Mã CN":"804",
+        "ĐGTC":845000.0,
+        "HP\/kỳ":13520000,
+        "HP\/năm":27040000,
+        "Ghi chú":null
+    },
+    {
+        "STT":51,
+        "Chuyên ngành":"Tiếng Hàn Thương mại",
+        "Mã CN":"805",
+        "ĐGTC":845000.0,
+        "HP\/kỳ":13520000,
+        "HP\/năm":27040000,
+        "Ghi chú":null
+    },
+    {
+        "STT":97,
+        "Chuyên ngành":"Kỹ thuật Điện",
+        "Mã CN":"150",
+        "ĐGTC":845000.0,
+        "HP\/kỳ":13520000,
+        "HP\/năm":27040000,
+        "Ghi chú":null
+    },
+    {
+        "STT":27,
+        "Chuyên ngành":"Kinh tế Đầu tư",
+        "Mã CN":"433",
+        "ĐGTC":825000.0,
+        "HP\/kỳ":13200000,
+        "HP\/năm":26400000,
+        "Ghi chú":null
+    },
+    {
+        "STT":30,
+        "Chuyên ngành":"Kinh tế Quốc tế",
+        "Mã CN":"418",
+        "ĐGTC":825000.0,
+        "HP\/kỳ":13200000,
+        "HP\/năm":26400000,
+        "Ghi chú":null
+    },
+    {
+        "STT":84,
+        "Chuyên ngành":"Điện tử - Viễn thông",
+        "Mã CN":"109",
+        "ĐGTC":825000.0,
+        "HP\/kỳ":13200000,
+        "HP\/năm":26400000,
+        "Ghi chú":null
+    },
+    {
+        "STT":85,
+        "Chuyên ngành":"Điện Tự động",
+        "Mã CN":"110",
+        "ĐGTC":825000.0,
+        "HP\/kỳ":13200000,
+        "HP\/năm":26400000,
+        "Ghi chú":null
+    },
+    {
+        "STT":73,
+        "Chuyên ngành":"Xây dựng Dân dụng & Công nghiệp",
+        "Mã CN":"105(VJJ)",
+        "ĐGTC":805000.0,
+        "HP\/kỳ":12880000,
+        "HP\/năm":25760000,
+        "Ghi chú":"Đã giảm 30%"
+    },
+    {
+        "STT":5,
+        "Chuyên ngành":"Smart Tourism (Du lịch thông minh)",
+        "Mã CN":"445",
+        "ĐGTC":785000.0,
+        "HP\/kỳ":12560000,
+        "HP\/năm":25120000,
+        "Ghi chú":null
+    },
+    {
+        "STT":8,
+        "Chuyên ngành":"Hướng dẫn Du lịch Quốc tế (tiếng Anh)",
+        "Mã CN":"440",
+        "ĐGTC":785000.0,
+        "HP\/kỳ":12560000,
+        "HP\/năm":25120000,
+        "Ghi chú":null
+    },
+    {
+        "STT":9,
+        "Chuyên ngành":"Hướng dẫn Du lịch Quốc tế (tiếng Hàn)",
+        "Mã CN":"441",
+        "ĐGTC":785000.0,
+        "HP\/kỳ":12560000,
+        "HP\/năm":25120000,
+        "Ghi chú":null
+    },
+    {
+        "STT":10,
+        "Chuyên ngành":"Hướng dẫn Du lịch Quốc tế (tiếng Trung)",
+        "Mã CN":"442",
+        "ĐGTC":785000.0,
+        "HP\/kỳ":12560000,
+        "HP\/năm":25120000,
+        "Ghi chú":null
+    },
+    {
+        "STT":12,
+        "Chuyên ngành":"Quản lý & Khởi sự Doanh nghiệp Nhỏ & Vừa (SME)",
+        "Mã CN":"446",
+        "ĐGTC":785000.0,
+        "HP\/kỳ":12560000,
+        "HP\/năm":25120000,
+        "Ghi chú":null
+    },
+    {
+        "STT":16,
+        "Chuyên ngành":"Tài chính Doanh nghiệp",
+        "Mã CN":"403",
+        "ĐGTC":785000.0,
+        "HP\/kỳ":12560000,
+        "HP\/năm":25120000,
+        "Ghi chú":null
+    },
+    {
+        "STT":17,
+        "Chuyên ngành":"Ngân hàng",
+        "Mã CN":"404",
+        "ĐGTC":785000.0,
+        "HP\/kỳ":12560000,
+        "HP\/năm":25120000,
+        "Ghi chú":null
+    },
+    {
+        "STT":18,
+        "Chuyên ngành":"Kế toán Kiểm toán",
+        "Mã CN":"405",
+        "ĐGTC":785000.0,
+        "HP\/kỳ":12560000,
+        "HP\/năm":25120000,
+        "Ghi chú":null
+    },
+    {
+        "STT":19,
+        "Chuyên ngành":"Kế toán Doanh nghiệp",
+        "Mã CN":"406",
+        "ĐGTC":785000.0,
+        "HP\/kỳ":12560000,
+        "HP\/năm":25120000,
+        "Ghi chú":null
+    },
+    {
+        "STT":24,
+        "Chuyên ngành":"Quản trị Nhân lực",
+        "Mã CN":"417",
+        "ĐGTC":785000.0,
+        "HP\/kỳ":12560000,
+        "HP\/năm":25120000,
+        "Ghi chú":null
+    },
+    {
+        "STT":25,
+        "Chuyên ngành":"Quản trị Kinh doanh Bất động sản",
+        "Mã CN":"415",
+        "ĐGTC":785000.0,
+        "HP\/kỳ":12560000,
+        "HP\/năm":25120000,
+        "Ghi chú":null
+    },
+    {
+        "STT":35,
+        "Chuyên ngành":"Quan hệ Quốc tế (Chương trình Tiếng Anh)",
+        "Mã CN":"608",
+        "ĐGTC":785000.0,
+        "HP\/kỳ":12560000,
+        "HP\/năm":25120000,
+        "Ghi chú":null
+    },
+    {
+        "STT":99,
+        "Chuyên ngành":"Công nghệ Thực phẩm (Đạt kiểm định ABET)",
+        "Mã CN":"306",
+        "ĐGTC":785000.0,
+        "HP\/kỳ":12560000,
+        "HP\/năm":25120000,
+        "Ghi chú":null
+    },
+    {
+        "STT":60,
+        "Chuyên ngành":"Điều dưỡng Đa khoa",
+        "Mã CN":"302",
+        "ĐGTC":770000.0,
+        "HP\/kỳ":12320000,
+        "HP\/năm":24640000,
+        "Ghi chú":null
+    },
+    {
+        "STT":64,
+        "Chuyên ngành":"Công nghệ Sinh học",
+        "Mã CN":"310",
+        "ĐGTC":720000.0,
+        "HP\/kỳ":11520000,
+        "HP\/năm":23040000,
+        "Ghi chú":"Đã giảm 30%"
+    },
+    {
+        "STT":65,
+        "Chuyên ngành":"Kỹ thuật Y sinh",
+        "Mã CN":"320",
+        "ĐGTC":720000.0,
+        "HP\/kỳ":11520000,
+        "HP\/năm":23040000,
+        "Ghi chú":null
+    },
+    {
+        "STT":74,
+        "Chuyên ngành":"Kiến trúc Công trình",
+        "Mã CN":"107(VJJ)",
+        "ĐGTC":710000.0,
+        "HP\/kỳ":11360000,
+        "HP\/năm":22720000,
+        "Ghi chú":"Đã giảm 30%"
+    },
+    {
+        "STT":31,
+        "Chuyên ngành":"Việt Nam học",
+        "Mã CN":"600",
+        "ĐGTC":700000.0,
+        "HP\/kỳ":11200000,
+        "HP\/năm":22400000,
+        "Ghi chú":null
+    },
+    {
+        "STT":32,
+        "Chuyên ngành":"Văn Báo chí",
+        "Mã CN":"601",
+        "ĐGTC":700000.0,
+        "HP\/kỳ":11200000,
+        "HP\/năm":22400000,
+        "Ghi chú":null
+    },
+    {
+        "STT":54,
+        "Chuyên ngành":"Xây dựng Dân dụng & Công nghiệp chuẩn CSU",
+        "Mã CN":"105(CSU)",
+        "ĐGTC":680000.0,
+        "HP\/kỳ":10880000,
+        "HP\/năm":21760000,
+        "Ghi chú":"Đã giảm 20%"
+    },
+    {
+        "STT":55,
+        "Chuyên ngành":"Kiến trúc chuẩn CSU",
+        "Mã CN":"107(CSU)",
+        "ĐGTC":680000.0,
+        "HP\/kỳ":10880000,
+        "HP\/năm":21760000,
+        "Ghi chú":"Đã giảm 20%"
+    },
+    {
+        "STT":81,
+        "Chuyên ngành":"Xây dựng Dân dụng & Công nghiệp",
+        "Mã CN":"105",
+        "ĐGTC":585000.0,
+        "HP\/kỳ":9360000,
+        "HP\/năm":18720000,
+        "Ghi chú":"Đã giảm 30%"
+    },
+    {
+        "STT":82,
+        "Chuyên ngành":"Xây dựng Cầu đường",
+        "Mã CN":"106",
+        "ĐGTC":585000.0,
+        "HP\/kỳ":9360000,
+        "HP\/năm":18720000,
+        "Ghi chú":"Đã giảm 30%"
+    },
+    {
+        "STT":83,
+        "Chuyên ngành":"Kiến trúc Công trình",
+        "Mã CN":"107",
+        "ĐGTC":585000.0,
+        "HP\/kỳ":9360000,
+        "HP\/năm":18720000,
+        "Ghi chú":"Đã giảm 30%"
+    },
+    {
+        "STT":93,
+        "Chuyên ngành":"Thiết kế Nội thất",
+        "Mã CN":"123",
+        "ĐGTC":585000.0,
+        "HP\/kỳ":9360000,
+        "HP\/năm":18720000,
+        "Ghi chú":null
+    },
+    {
+        "STT":98,
+        "Chuyên ngành":"Công nghệ Quản lý Xây dựng",
+        "Mã CN":"206",
+        "ĐGTC":585000.0,
+        "HP\/kỳ":9360000,
+        "HP\/năm":18720000,
+        "Ghi chú":"Đã giảm 30%"
+    },
+    {
+        "STT":100,
+        "Chuyên ngành":"Công nghệ & Kỹ thuật Môi trường",
+        "Mã CN":"301",
+        "ĐGTC":585000.0,
+        "HP\/kỳ":9360000,
+        "HP\/năm":18720000,
+        "Ghi chú":"Đã giảm 30%"
+    },
+    {
+        "STT":101,
+        "Chuyên ngành":"Quản lý Tài nguyên & Môi trường",
+        "Mã CN":"307",
+        "ĐGTC":585000.0,
+        "HP\/kỳ":9360000,
+        "HP\/năm":18720000,
+        "Ghi chú":"Đã giảm 30%"
+    }
+]

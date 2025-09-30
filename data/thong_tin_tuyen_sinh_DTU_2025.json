@@ -1,0 +1,69 @@
+{
+  "ma_truong": "DDT",
+  "vung_tuyen_sinh": "Tuyển sinh trong nước và nước ngoài",
+  "doi_tuong_tuyen_sinh": [
+    "Thí sinh tốt nghiệp THPT hoặc tương đương trong/ngoài nước đủ điều kiện theo quy chế tuyển sinh của Bộ GDĐT",
+    "Thí sinh có bằng trung cấp cùng nhóm ngành và đã hoàn thành đủ yêu cầu khối lượng kiến thức văn hóa THPT"
+  ],
+  "phuong_thuc_tuyen_sinh": [
+    "Xét tuyển thẳng theo quy chế Bộ GDĐT",
+    "Xét kết quả thi tốt nghiệp THPT 2025",
+    "Xét kết quả học tập lớp 12 (học bạ)",
+    "Xét kết quả kỳ thi Đánh giá năng lực của ĐHQG TP.HCM (trừ ngành Kiến trúc)",
+    "Xét kết quả kỳ thi V-SAT + môn Vẽ Mỹ thuật (đối với ngành Kiến trúc)"
+  ],
+  "diem_xet_tuyen": {
+    "thi_thpt": {
+      "chung": "Tổng điểm thi >= 15",
+      "kien_truc": "Tổng 2 môn >= 12, Điểm xét tuyển >= 20 (môn Vẽ * 2)",
+      "y_duoc": ">= 24 điểm, học lực lớp 12 xếp loại Giỏi",
+      "dieu_duong_xet_nghiem": ">= 19.5 điểm, học lực lớp 12 xếp loại Khá"
+    },
+    "hoc_ba": {
+      "chung": "Tổng điểm 3 môn >= 18",
+      "kien_truc": "Tổng 2 môn >= 12, Điểm xét tuyển = (môn1 + môn2 + vẽ*2)",
+      "y_duoc": ">= 24 điểm, học lực lớp 12 xếp loại Giỏi hoặc điểm xét tốt nghiệp >= 8.0",
+      "dieu_duong_xet_nghiem": ">= 19.5 điểm, học lực lớp 12 xếp loại Khá hoặc điểm xét tốt nghiệp >= 6.5"
+    },
+    "dgnl": {
+      "chung": ">= 600 điểm",
+      "y_duoc": ">= 700 điểm, học lực Giỏi hoặc xét tốt nghiệp >= 8.0",
+      "dieu_duong_xet_nghiem": ">= 650 điểm, học lực Khá hoặc xét tốt nghiệp >= 6.5",
+      "kien_truc": "Không xét ĐGNL"
+    }
+  },
+  "quy_doi_ielts": [
+    { "ielts": "5.5", "diem_quy_doi": 8.0 },
+    { "ielts": "6.0", "diem_quy_doi": 8.5 },
+    { "ielts": "6.5", "diem_quy_doi": 9.0 },
+    { "ielts": "7.0", "diem_quy_doi": 9.5 },
+    { "ielts": "7.5+", "diem_quy_doi": 10 }
+  ],
+  "thoi_gian_nhan_ho_so": {
+    "xet_tuyen_thang": "Đến 30/06/2025",
+    "xet_hoc_ba_va_dgnl": "Theo thời gian quy định của Bộ GDĐT",
+    "dang_ky_thi_ve": {
+      "dot1": "Đến 21/04/2025",
+      "dot2": "Đến 05/07/2025"
+    }
+  },
+  "thoi_gian_nhap_hoc": {
+    "dot_chinh": "22/08 - 30/08/2025",
+    "bo_sung": {
+      "nhan_ho_so": "26/08 - 06/09/2025",
+      "nhap_hoc": "09/09 - 15/09/2025"
+    }
+  },
+  "ho_so_nhap_hoc": [
+    "Giấy báo trúng tuyển bản chính",
+    "Giấy chứng nhận kết quả thi tốt nghiệp THPT 2025 (nếu xét điểm thi)",
+    "Học bạ THPT bản sao công chứng",
+    "Giấy chứng nhận tốt nghiệp tạm thời hoặc Bằng tốt nghiệp bản sao công chứng",
+    "Giấy khai sinh bản sao",
+    "Giấy tờ xác nhận đối tượng ưu tiên (nếu có)",
+    "Chứng nhận giải thưởng, học sinh giỏi (nếu có)",
+    "Chứng chỉ ngoại ngữ (IELTS, TOEIC, TOEFL, HSK, TOPIK...) (nếu có)",
+    "Giấy xác nhận nghĩa vụ quân sự (đối với nam)"
+  ],
+  "dia_diem_nhap_hoc": "ĐH Duy Tân, 254 Nguyễn Văn Linh, P. Thanh Khê, Đà Nẵng"
+}
