@@ -1,0 +1,878 @@
+{
+  "name": "My workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "multipleMethods": true,
+        "path": "cdio2",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -304,
+        -128
+      ],
+      "id": "2ab00dd7-09ae-4e40-bd20-41fc4a62698c",
+      "name": "Webhook",
+      "webhookId": "1eb7709a-b517-489b-bf9e-518494bcfadb"
+    },
+    {
+      "parameters": {
+        "respondWith": "text",
+        "responseBody": "={{ $json.query['hub.challenge'] }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.3,
+      "position": [
+        -80,
+        -224
+      ],
+      "id": "b90df58e-b801-4e63-be40-6321cefb6714",
+      "name": "Respond to Webhook"
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $json['nd tin nhắn'] }}",
+        "contextWindowLength": 10000
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        1040,
+        112
+      ],
+      "id": "1cce4986-6967-4968-abd3-824ad891d1e2",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json['nd tin nhắn'] }}",
+        "options": {
+          "systemMessage": "=SYSTEM:\nBạn đang đóng vai chatbot tư vấn tuyển sinh của Đại học Duy Tân.\nDữ liệu mà bạn được cung cấp đã được load trực tiếp từ GitHub repository thông qua n8n, file có tên là data.json.\n\nDữ liệu của bạn được tổ chức thành 2 nhánh chính:\n- File data_thong_tin_chung.json: chứa toàn bộ dữ liệu của nhánh Thông tin chung (giới thiệu trường, cơ cấu tổ chức, chương trình đào tạo, mô tả ngành).\n- File data_thong_tin_tuyen_sinh.json: chứa toàn bộ dữ liệu của nhánh Tuyển sinh (quy chế tuyển sinh, ngành học, điểm chuẩn, tổ hợp xét tuyển, học phí, học bổng, ưu tiên, cơ hội việc làm, tư vấn).\nKhi gặp câu hỏi liên quan đến chủ đề nào, bạn hãy tìm thông tin trong nhánh dữ liệu tương ứng.\n\nCÂY TỔ CHỨC DỮ LIỆU:\n\nCHATBOT TUYỂN SINH ĐẠI HỌC DUY TÂN\n│\n├── Thông tin chung (data_thong_tin_chung.json)\n│   ├── thong_tin_dai_hoc_duy_tan → Thông tin tổng quan về trường: mã trường, địa chỉ, sứ mệnh, tầm nhìn.  \n│   ├── truong_khoa_truc_thuoc → Danh sách các trường, khoa, viện trực thuộc. \n│   ├── chuong_trinh_dao_tao_trong_va_sau_dai_hoc → Danh mục các chương trình đào tạo Đại học và Sau Đại học.  \n│   └── mo_ta_nganh → Mô tả chi tiết ( Giới Thiệu, Mục Tiêu, Chương Trình, Cơ Hội ) các ngành/chuyên ngành.\n│       \n│\n└── Tuyển sinh (data_thong_tin_tuyen_sinh.json)\n    ├── thong_tin_tuyen_sinh_DTU_2025 → Quy định và thông báo tuyển sinh 2025.\n    │   \n    ├── Chương trình đào tạo & Tuyển sinh\n    │   ├── Ngành học & Điểm chuẩn\n    │   │   ├── chi_tiet_nganh_dtu_2025 → Danh sách ngành/chuyên ngành với mã ngành, mã CN, tổ hợp xét tuyển.   \n    │   │   ├── to_hop_xet_tuyen → Giải thích tổ hợp môn xét tuyển.  \n    │   │   └── diem_trung_tuyen_theo_cac_phuong_thuc_xet_tuyen → Điểm chuẩn cho từng phương thức xét tuyển.     \n    │   └── Học phí & Học bổng\n    │       ├── hoc_phi_full → Học phí chi tiết theo tín chỉ, kỳ, năm.\n    │       └── chinh_sach_hoc_bong  → Thông tin chính sách học bổng.\n    │          \n    ├── Ưu tiên\n    │   ├── doi_tuong_uu_tien → Danh sách đối tượng ưu tiên.  \n    │   └── danh_sach_cac_khu_vuc_tai_cac_tinh_thanh → Thông tin khu vực ưu tiên.      \n    ├── Đề xuất ngành học & việc làm dựa vào năng lực hoặc sở thích\n    │   ├── de_xuat_viec_lam_theo_nang_luc_va_so_thich → Gợi ý việc làm theo năng lực và sở thích.  \n    │   ├── de_xuat_nganh_hoc_theo_nang_luc_ca_nhan → Gợi ý ngành học theo năng lực cá nhân.  \n    │   └── map_xu_huong_theo_CN → Xu hướng nghề nghiệp theo chuyên ngành.      \n    └── chuyen_vien_tu_van → Danh sách chuyên viên tư vấn tuyển sinh.\n        \n\nBạn cần hiểu một số từ khóa viết tắt để giải thích đúng mã ngành và chương trình:\nCMU: Carnegie Mellon University\nPSU: Pennsylvania State University\nCSU: California State University\nPNU: Purdue Northwest University\nHP: Chương trình Tài năng\nVJJ: Chương trình Việt Nhật\nTROY: Chương trình Du học tại chỗ lấy bằng Đại học Troy (Mỹ)\n\nHƯỚNG DẪN TRẢ LỜI:\n- Chỉ trả lời những câu hỏi có liên quan đến thông tin về đại học Duy Tân . \n- Nếu người dùng hỏi về các thông tin liên quan đến trường (lịch sử thành lập, hiệu trưởng, chủ tịch, cán bộ, chỉ tiêu tuyển sinh, cơ cấu tổ chức), hãy phân loại câu hỏi này vào nhóm \"thong_tin_truong\".\n- Nếu người dùng hỏi về tổng số nhóm ngành hoặc các nhóm ngành đào tạo thì chỉ trả lời có bao nhiêu nhóm ngành, sau đó liệt kê tên các nhóm ngành lớn.\n- Chỉ khi nào người dùng yêu cầu liệt kê chi tiết ngành trong một nhóm ngành thì mới đưa ra danh sách cụ thể.\n- Nếu người dùng hỏi dạng yes/no (có hay không) thì trả lời \"có\" hoặc \"không\", sau đó hỏi thêm \"Bạn có muốn mình tư vấn chi tiết hơn không?\".\n- Khi cần giải thích thông tin về mã ngành hay chương trình, chỉ sử dụng văn bản thuần (plain text).\n- Hãy truy cập GitHub tool để lấy thông tin từ data_thong_tin_chung.json hoặc data_thong_tin_tuyen_sinh.json khi cần thiết để trả lời câu hỏi.\n- Nếu có câu hỏi về xu hướng việc làm, hãy tìm dữ liệu ở nhánh Tuyển sinh, phần việc Đề xuất ngành học & việc làm dựa vào năng lực hoặc sở thích ở file xu hướng việc làm, trả lời các ngành đang hot và lý do vì sao. Nếu người dùng cần thêm số liệu về tăng trưởng tuyển dụng, mức lương, hãy bổ sung thông tin có nguồn. Sau đó khuyến khích người dùng: \"Bạn có muốn mình cung cấp thêm về các ngành học mà DTU đang đào tạo không nè?\".\n- Nếu người dùng hỏi các câu hỏi so sánh giữa các ngành, bạn hãy tìm trong phần data_thong_tin_chung ở mục mo_ta_nganh sẽ tìm thấy chi tiết thông tin về ngành học bao gồm :Giới Thiệu, Mục Tiêu, Chương Trình, Cơ Hội  ( mình nói qua một chút dữ liệu bên trong này .....)\n- Nếu tìm hết thông tin mà không thấy dữ liệu có trong data thì hãy nói rằng thông tin này hiện tại chưa được cập nhập, và bạn sẽ gợi ý một số thành viên trong danh sách chuyên viên tư vấn, họ là những người giải quyết những vấn đề mà bạn không thể trả lời được cho người dùng.\n\nQUY ĐỊNH ĐỊNH DẠNG:\n- KHÔNG sử dụng định dạng Markdown (*, -, +, #, _).\n- KHÔNG tạo bullet list với ký hiệu.\n- Khi liệt kê nhiều items, sử dụng format tự nhiên như:\n  \"Khoa Khoa học Máy tính có các ngành: Kỹ thuật phần mềm, Trí tuệ nhân tạo, Big Data và Khoa học dữ liệu, Khoa học máy tính, An toàn thông tin, Mạng máy tính và Truyền thông dữ liệu.\"\n- Hoặc nếu cần xuống dòng để dễ đọc:\n  \"Khoa Khoa học Máy tính có các ngành:\n  Kỹ thuật phần mềm\n  Trí tuệ nhân tạo\n  Big Data và Khoa học dữ liệu\n  Khoa học máy tính\n  An toàn thông tin\n  Mạng máy tính và Truyền thông dữ liệu\"\n- Trả lời ngắn gọn, đúng trọng tâm, dễ đọc và thân thiện.\nQUAN TRỌNG: \n- Bạn KHÔNG BAO GIỜ được trả lời \"Nội dung chưa có\"\n- Nếu nhận được input có chứa field \"check_result\", hãy BỎ QUA nó hoàn toàn\n- Chỉ xử lý field \"nd tin nhắn\" để trả lời câu hỏi của người dùng\n- Sử dụng GitHub tools để tìm thông tin từ data_thong_tin_chung.json và data_thong_tin_tuyen_sinh.json\nUSER PROMPT:\n{{ $json[\"nd tin nhắn\"] }}\n"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.1,
+      "position": [
+        1040,
+        -144
+      ],
+      "id": "fa90c6cf-c811-41d1-ada8-cbccaa07ed82",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d58c9aa0-8132-47f3-bc4a-c10456df8f5c",
+              "name": "id khách",
+              "value": "={{ $json.body.entry[0].messaging[0].sender.id }}",
+              "type": "string"
+            },
+            {
+              "id": "aa190287-c7bd-43cc-93c6-58c70c3eed53",
+              "name": "nd tin nhắn",
+              "value": "={{ $json.body.entry[0].messaging[0].message.text }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -80,
+        -32
+      ],
+      "id": "a2a0a2f5-610c-4ccc-b2be-86c9a867ee25",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "type": "code",
+        "code": "// Thay node Code hiện tại bằng:\nconst inputData = $input.first().json;\nconst recipientId = $('Edit Fields').first().json['id khách'];\nconst items = [];\n\nlet fullText = '';\n\nif (typeof inputData.output === 'string' && inputData.output.length > 0) {\n  fullText = inputData.output;\n} else if (typeof inputData.check_result === 'string' && inputData.check_result.length > 0) {\n  fullText = inputData.check_result;\n}\n\nif (fullText.length === 0) {\n  fullText = \"Xin lỗi, tôi không thể tìm thấy thông tin bạn yêu cầu lúc này.\";\n}\n\nfor (let i = 0; i < fullText.length; i += 1890) {\n  const orderIndex = Math.floor(i / 1890);\n  items.push({\n    json: {\n      order: orderIndex,\n      delayMs: orderIndex * 800, // Delay tăng dần: 0ms, 800ms, 1600ms...\n      recipient: { id: recipientId },\n      messaging_type: \"RESPONSE\",\n      message: { text: fullText.slice(i, i + 1890) }\n    }\n  });\n}\n\nreturn items;"
+      },
+      "type": "n8n-nodes-base.sort",
+      "typeVersion": 1,
+      "position": [
+        2368,
+        -272
+      ],
+      "id": "3ff45dbf-e57e-4cd3-bf51-f5c60c92d116",
+      "name": "Sort"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json['nd tin nhắn'] }}",
+        "options": {
+          "systemMessage": "=SYSTEM:\nBạn là một trợ lý AI của Đại học Duy Tân trong công tác hỗ trợ tuyển sinh đại học.\nBạn có nhiệm vụ kiểm tra dữ liệu trong file QA.json (được load từ GitHub thông qua GitHub tool).\n\nQUAN TRỌNG: Bạn PHẢI sử dụng GitHub tool để lấy dữ liệu QA.json trước khi trả lời.\n\nTỪ KHÓA VIẾT TẮT QUAN TRỌNG:\nCMU: Carnegie Mellon University\nPSU: Pennsylvania State University  \nCSU: California State University\nPNU: Purdue Northwest University\nHP: Chương trình Tài năng\nVJJ: Chương trình Việt Nhật\nTROY: Chương trình Du học tại chỗ lấy bằng Đại học Troy (Mỹ)\n\nLƯU Ý VỀ TÊN NGÀNH TƯƠNG TỰ:\n- \"Công nghệ thông tin\" ≠ \"Công nghệ phần mềm (chuẩn CMU)\" ≠ \"Công nghệ thông tin (TROY)\"\n- Các ngành cùng tên nhưng khác chương trình đào tạo là HOÀN TOÀN KHÁC NHAU\n- Phải chú ý đến từ khóa chương trình đào tạo (CMU, PSU, CSU, PNU, HP, VJJ, TROY)\n- Khi người dùng hỏi về một ngành, cần phân biệt rõ họ muốn biết về chương trình nào\n\nQUY ĐỊNH MATCHING CHÍNH XÁC:\n- \"trường khoa học máy tính\" ≠ \"ngành khoa học máy tính\" ≠ \"khoa khoa học máy tính\"\n- \"trường\" = School/Faculty level (tổ chức lớn)\n- \"ngành\" = Major/Department level (chương trình học cụ thể) \n- \"khoa\" = Department/Faculty level\n- \"chuyên ngành\" = Specialization level (chuyên môn hóa trong ngành)\n\nCÁC TỪ KHÓA QUAN TRỌNG PHẢI PHÂN BIỆT:\n- \"trường có những ngành nào\" → về cấu trúc tổ chức\n- \"ngành có những chuyên ngành nào\" → về chuyên môn hóa\n- \"khoa có những ngành nào\" → về đào tạo của khoa\n- \"điểm chuẩn ngành X\" ≠ \"học phí ngành X\" ≠ \"chương trình đào tạo ngành X\"\n\nLOGIC MATCHING:\n1. Đọc TOÀN BỘ câu hỏi, không chỉ từ khóa chính\n2. Xác định CHÍNH XÁC ý định câu hỏi\n3. Kiểm tra có từ khóa chương trình đào tạo (CMU, PSU, CSU, PNU, HP, VJJ, TROY) không\n4. Nếu không có từ khóa chương trình cụ thể:\n   - Tìm tất cả các chương trình có tên tương tự\n   - Nếu có nhiều chương trình → \"Nội dung chưa có\" (để AI Agent chính xử lý)\n   - Nếu chỉ có 1 chương trình → match chính xác\n5. So sánh với \"question\" field trong QA.json\n6. CHỈ match khi ý nghĩa HOÀN TOÀN khớp (bao gồm cả chương trình đào tạo)\n7. Nếu có nghi ngờ → trả về \"Nội dung chưa có\"\n\nVÍ DỤ MATCHING:\n- \"ngành công nghệ thông tin\" (không rõ chương trình) → \"Nội dung chưa có\"\n- \"ngành công nghệ thông tin CMU\" → match với record có CMU\n- \"ngành công nghệ thông tin TROY\" → match với record có TROY\n- \"ngành công nghệ phần mềm\" → match chính xác (vì chỉ có 1 loại)\n\nQUY ĐỊNH TRẢ LỜI:\n- Nếu tìm thấy câu hỏi CHÍNH XÁC tương tự trong QA.json:\n    - Trả về answer + timestamp ( tuyệt đối không bịa trường thời gian, phải lấy chính xác)\n- Nếu KHÔNG chắc chắn hoặc chỉ tương tự một phần:\n    - Trả về \"Nội dung chưa có\"\n- TUYỆT ĐỐI không tự bịa hoặc combine nhiều câu trả lời\n\nCÁCH XỬ LÝ:\n1. Sử dụng GitHub tool để lấy QA.json\n2. Phân tích CHÍNH XÁC ý nghĩa câu hỏi người dùng\n3. Tìm match CHÍNH XÁC trong QA.json\n4. Nếu không chắc → \"Nội dung chưa có\"\n\nUSER PROMPT:\n{{ $json[\"nd tin nhắn\"] }}"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.2,
+      "position": [
+        128,
+        -32
+      ],
+      "id": "fc190c31-5660-445b-b235-975a824f9c07",
+      "name": "AI Agent1"
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $json['nd tin nhắn'] }}",
+        "contextWindowLength": 10000
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        192,
+        128
+      ],
+      "id": "b6d9c647-51d1-4477-9add-4c8614cc5849",
+      "name": "Simple Memory1"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "f4ada44d-cc4b-4733-af12-fb308ca3ff8f",
+              "leftValue": "={{ $json.check_result }}",
+              "rightValue": "Nội dung chưa có",
+              "operator": {
+                "type": "string",
+                "operation": "notContains"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        624,
+        -32
+      ],
+      "id": "89ab4377-b3c8-4494-9523-3d4fadf9f584",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://graph.facebook.com/v23.0/{{ $('Webhook').item.json.body.entry[0].messaging[0].recipient.id }}/messages?access_token=EAAKiLjdsBY0BPkAlBeS0xBxbyqjN5NHpo0GrH94D74P0iJOZADjZBhbKK7FzhGyH5t1dYFjzD9BDtUObsagO66KOu72Tbe1fTEeVjoSjgjrELbKPl31LDjbO3FifZAZBBYWGnemaDiHS5Rx7PblrqiixRZBLBy2ZAY4v7UMEe3f7SIMbY4iwbzV4YVIUK4LDs1cO8DswZDZD",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{$json}}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2544,
+        -272
+      ],
+      "id": "fd06e4a5-8a9d-40ee-8feb-4de9ccf21f4f",
+      "name": "HTTP Request"
+    },
+    {
+      "parameters": {
+        "jsCode": "const inputData = $input.first().json;\nconst recipientId = $('Edit Fields').first().json['id khách'];\nconst accessToken = 'EAAKiLjdsBY0BPkAlBeS0xBxbyqjN5NHpo0GrH94D74P0iJOZADjZBhbKK7FzhGyH5t1dYFjzD9BDtUObsagO66KOu72Tbe1fTEeVjoSjgjrELbKPl31LDjbO3FifZAZBBBYWGnemaDiHS5Rx7PblrqiixRZBLBy2ZAY4v7UMEe3f7SIMbY4iwbzV4YVIUK4LDs1cO8DswZDZD';\n\nlet fullText = '';\n\nif (typeof inputData.output === 'string' && inputData.output.length > 0) {\n  fullText = inputData.output;\n} else if (typeof inputData.check_result === 'string' && inputData.check_result.length > 0) {\n  fullText = inputData.check_result;\n}\n\nif (fullText.length === 0) {\n  fullText = \"Xin lỗi, tôi không thể tìm thấy thông tin bạn yêu cầu lúc này.\";\n}\n\n// Chia nhỏ text thành các chunks\nconst chunks = [];\nfor (let i = 0; i < fullText.length; i += 1890) {\n  chunks.push(fullText.slice(i, i + 1890));\n}\n\n// GỬI TUẦN TỰ từng chunk\nconst pageId = $('Webhook').item.json.body.entry[0].messaging[0].recipient.id;\nconst apiUrl = `https://graph.facebook.com/v23.0/${pageId}/messages`;\n\nfor (let i = 0; i < chunks.length; i++) {\n  const payload = {\n    recipient: { id: recipientId },\n    messaging_type: \"RESPONSE\",\n    message: { text: chunks[i] }\n  };\n\n  await $http.request({\n    method: 'POST',\n    url: apiUrl,\n    headers: {\n      'Content-Type': 'application/json'\n    },\n    body: payload,\n    qs: {\n      access_token: accessToken\n    }\n  });\n\n  // Thêm delay 500ms giữa các request để tránh rate limit\n  if (i < chunks.length - 1) {\n    await new Promise(resolve => setTimeout(resolve, 500));\n  }\n}\n\nreturn [{ json: { success: true, chunks_sent: chunks.length } }];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2192,
+        -272
+      ],
+      "id": "effc5f3b-e1ae-410e-9888-fa3792955b79",
+      "name": "Code",
+      "executeOnce": false
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "fdd4d80e-e644-4a26-841d-1c9ad0740b9a",
+              "name": "check_result",
+              "value": "={{ $json.output }}",
+              "type": "string"
+            },
+            {
+              "id": "abc123-def4-5678-9abc-def123456789",
+              "name": "nd tin nhắn",
+              "value": "={{ $('Edit Fields').first().json['nd tin nhắn'] }}",
+              "type": "string"
+            },
+            {
+              "id": "xyz789-abc1-2345-6789-abc123456def",
+              "name": "id khách",
+              "value": "={{ $('Edit Fields').first().json['id khách'] }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        448,
+        -32
+      ],
+      "id": "95f165cd-07b6-45a3-8bd5-b0592dd2f565",
+      "name": "Combine Data"
+    },
+    {
+      "parameters": {
+        "jsCode": "const agent = $('AI Agent').first().json || {};\nconst edit  = $('Edit Fields').first().json || {};\nconst ghOut = $('Get file QA1').first().json || {};\n\nconst answer   = agent.output || agent.answer || agent.text || '';\nconst question = edit['nd tin nhắn'] || 'Câu hỏi không xác định';\nconst userId   = edit['id khách'] || '';\n\n// THÊM CHECK NÀY để không lưu câu trả lời \"Nội dung chưa có\"\nif (answer === \"Nội dung chưa có\" || answer.includes(\"Không tìm thấy\") || answer.includes(\"không tìm thấy\")) {\n  return [{ json: { skip: true, message: \"Bỏ qua lưu câu trả lời không có nội dung\" } }];\n}\n\nlet raw =\n  ghOut.data ||\n  ghOut.fileContent ||\n  (ghOut.content ? Buffer.from(ghOut.content, 'base64').toString('utf-8') : '[]');\n\nif (!raw || !raw.trim()) raw = '[]';\n\nlet arr;\ntry { arr = JSON.parse(raw); if (!Array.isArray(arr)) arr = []; }\ncatch { arr = []; }\n\narr.push({ user_id: userId, question, answer, timestamp: new Date().toISOString() });\n\nreturn [{ json: { fileContent: JSON.stringify(arr, null, 2) } }];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1792,
+        -32
+      ],
+      "id": "76261569-4cad-4c34-a866-d2fabf134a8f",
+      "name": "Code content"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        1632,
+        -32
+      ],
+      "id": "133923de-586e-4c93-8bc3-43c4a26eccef",
+      "name": "Merge2"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "25a00f54-15c5-42da-8905-9a485201bd1d",
+              "leftValue": "={{ $json.skip }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1952,
+        -32
+      ],
+      "id": "8e6e8d68-6684-4f2c-b2ea-23c486f1b5d6",
+      "name": "If1"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        1472,
+        -768
+      ],
+      "id": "8e2cf8f8-e556-4249-b67c-080287568723",
+      "name": "Merge"
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "operation": "get",
+        "owner": {
+          "__rl": true,
+          "value": "nguyendangthinhit",
+          "mode": "name"
+        },
+        "repository": {
+          "__rl": true,
+          "value": "CDIO_2",
+          "mode": "name"
+        },
+        "filePath": "data_thong_tin_chung.json",
+        "asBinaryProperty": false,
+        "additionalParameters": {}
+      },
+      "type": "n8n-nodes-base.githubTool",
+      "typeVersion": 1.1,
+      "position": [
+        1152,
+        16
+      ],
+      "id": "01cee551-7ab8-4ba5-9f03-8efe2d6da961",
+      "name": "Get a file in thong tin chung",
+      "webhookId": "78574644-8d62-47f8-9543-7ac781789167",
+      "credentials": {
+        "githubApi": {
+          "id": "GtvUKas3ZH4a37iO",
+          "name": "GitHub account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "operation": "get",
+        "owner": {
+          "__rl": true,
+          "value": "nguyendangthinhit",
+          "mode": "name"
+        },
+        "repository": {
+          "__rl": true,
+          "value": "CDIO_2",
+          "mode": "name"
+        },
+        "filePath": "data_thong_tin_tuyen_sinh.json",
+        "asBinaryProperty": false,
+        "additionalParameters": {}
+      },
+      "type": "n8n-nodes-base.githubTool",
+      "typeVersion": 1.1,
+      "position": [
+        1264,
+        96
+      ],
+      "id": "183c402e-a55f-4942-bd2a-17f32a23da1f",
+      "name": "Get a file in thong tin tuyen sinh",
+      "webhookId": "78574644-8d62-47f8-9543-7ac781789167",
+      "credentials": {
+        "githubApi": {
+          "id": "GtvUKas3ZH4a37iO",
+          "name": "GitHub account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "operation": "edit",
+        "owner": {
+          "__rl": true,
+          "value": "nguyendangthinhit",
+          "mode": "name"
+        },
+        "repository": {
+          "__rl": true,
+          "value": "CDIO_2",
+          "mode": "name"
+        },
+        "filePath": "QA.json",
+        "fileContent": "={{ $json.fileContent }}",
+        "commitMessage": "commit từ n8n"
+      },
+      "type": "n8n-nodes-base.github",
+      "typeVersion": 1.1,
+      "position": [
+        2144,
+        -16
+      ],
+      "id": "fb841d53-06eb-4545-b925-644fce58f815",
+      "name": "Edit QA",
+      "webhookId": "d6dfb095-4f82-403a-92a0-93e7808a7d78",
+      "credentials": {
+        "githubApi": {
+          "id": "GtvUKas3ZH4a37iO",
+          "name": "GitHub account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "operation": "get",
+        "owner": {
+          "__rl": true,
+          "value": "nguyendangthinhit",
+          "mode": "name"
+        },
+        "repository": {
+          "__rl": true,
+          "value": "CDIO_2",
+          "mode": "name"
+        },
+        "filePath": "QA.json",
+        "asBinaryProperty": false,
+        "additionalParameters": {}
+      },
+      "type": "n8n-nodes-base.githubTool",
+      "typeVersion": 1.1,
+      "position": [
+        336,
+        128
+      ],
+      "id": "3f030399-68bd-4bd4-8cc7-c054b3025e8d",
+      "name": "Get file QA",
+      "webhookId": "78574644-8d62-47f8-9543-7ac781789167",
+      "credentials": {
+        "githubApi": {
+          "id": "GtvUKas3ZH4a37iO",
+          "name": "GitHub account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "operation": "get",
+        "owner": {
+          "__rl": true,
+          "value": "nguyendangthinhit",
+          "mode": "name"
+        },
+        "repository": {
+          "__rl": true,
+          "value": "CDIO_2",
+          "mode": "name"
+        },
+        "filePath": "QA.json",
+        "asBinaryProperty": false,
+        "additionalParameters": {}
+      },
+      "type": "n8n-nodes-base.github",
+      "typeVersion": 1.1,
+      "position": [
+        1104,
+        272
+      ],
+      "id": "094dd7e1-8d9e-48a3-ac20-56cba465b405",
+      "name": "Get file QA1",
+      "webhookId": "f9bbca14-fc0a-40f7-970d-b92e05b40882",
+      "credentials": {
+        "githubApi": {
+          "id": "GtvUKas3ZH4a37iO",
+          "name": "GitHub account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        912,
+        64
+      ],
+      "id": "ea70bf3e-bf0e-4743-8cb0-d8bfea90477d",
+      "name": "Google Gemini Chat Model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "lnWpZ2aGTa7uMud4",
+          "name": "Google Gemini(PaLM) Api account thinhit"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        64,
+        144
+      ],
+      "id": "599832b6-4129-464e-b79c-584831f5f0ec",
+      "name": "Google Gemini Chat Model1",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "lnWpZ2aGTa7uMud4",
+          "name": "Google Gemini(PaLM) Api account thinhit"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const inputData = $input.first().json;\nconst recipientId = $('Edit Fields').first().json['id khách'];\nconst items = [];\n\nlet fullText = '';\n\nif (typeof inputData.output === 'string' && inputData.output.length > 0) {\n  fullText = inputData.output;\n} else if (typeof inputData.check_result === 'string' && inputData.check_result.length > 0) {\n  fullText = inputData.check_result;\n}\n\nif (fullText.length === 0) {\n  fullText = \"Xin lỗi, tôi không thể tìm thấy thông tin bạn yêu cầu lúc này.\";\n}\n\nfor (let i = 0; i < fullText.length; i += 1890) {\n  const orderIndex = Math.floor(i / 1890);\n  items.push({\n    json: {\n      order: orderIndex,\n      delaySeconds: orderIndex * 1, // 0s, 1s, 2s, 3s...\n      recipient: { id: recipientId },\n      messaging_type: \"RESPONSE\",\n      message: { text: fullText.slice(i, i + 1890) }\n    }\n  });\n}\n\nreturn items;"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1648,
+        -496
+      ],
+      "id": "a28074ef-c7d9-4e1c-b65c-994a0d0f72df",
+      "name": "Split Text into Chunks"
+    },
+    {
+      "parameters": {
+        "sortFieldsUi": {
+          "sortField": [
+            {
+              "fieldName": "order"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.sort",
+      "typeVersion": 1,
+      "position": [
+        1824,
+        -496
+      ],
+      "id": "e78542f5-09ef-4c1a-bdb6-40c4505cd522",
+      "name": "Sort by Order"
+    },
+    {
+      "parameters": {
+        "amount": "={{ $json.delayMs }}"
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        2000,
+        -496
+      ],
+      "id": "7af1dfaa-7f93-4335-95fd-3fa297dcdefc",
+      "name": "Wait",
+      "webhookId": "ee1a1ef1-b690-4bf7-9b83-61ba4a3c7da8"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://graph.facebook.com/v23.0/{{ $('Webhook').item.json.body.entry[0].messaging[0].recipient.id }}/messages?access_token=EAAKiLjdsBY0BPkAlBeS0xBxbyqjN5NHpo0GrH94D74P0iJOZADjZBhbKK7FzhGyH5t1dYFjzD9BDtUObsagO66KOu72Tbe1fTEeVjoSjgjrELbKPl31LDjbO3FifZAZBBBYWGnemaDiHS5Rx7PblrqiixRZBLBy2ZAY4v7UMEe3f7SIMbY4iwbzV4YVIUK4LDs1cO8DswZDZD",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ { \"recipient\": $json.recipient, \"messaging_type\": $json.messaging_type, \"message\": $json.message } }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2176,
+        -496
+      ],
+      "id": "35c816b7-c00a-4e3a-8a66-4f3bafdbed92",
+      "name": "Send to Facebook",
+      "continueOnFail": true
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Merge2",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Sort": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory1": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent1": {
+      "main": [
+        [
+          {
+            "node": "Combine Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Get file QA1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "Sort",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Combine Data": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code content": {
+      "main": [
+        [
+          {
+            "node": "If1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge2": {
+      "main": [
+        [
+          {
+            "node": "Code content",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If1": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Edit QA",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "Split Text into Chunks",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get a file in thong tin chung": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get a file in thong tin tuyen sinh": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get file QA": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get file QA1": {
+      "main": [
+        [
+          {
+            "node": "Merge2",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split Text into Chunks": {
+      "main": [
+        [
+          {
+            "node": "Sort by Order",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Sort by Order": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "Send to Facebook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "d27987f4-01dc-4c86-a98e-cfa31e057730",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "147c4c1eae42c402e6f20fd2c5457f96d0d333cfa3d0b33524419927ab62aa12"
+  },
+  "id": "Qol5IGzAyMzNHJCK",
+  "tags": []
+}
