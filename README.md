@@ -5,7 +5,7 @@
 
 Đây là đồ án môn học xây dựng một chatbot tuyển sinh dành cho Đại học Duy Tân. Mục tiêu của dự án là tạo một kênh giao tiếp tự động, thân thiện và phản hồi nhanh cho thí sinh, phụ huynh và người quan tâm, giúp cung cấp thông tin tuyển sinh, chương trình đào tạo, học phí, lịch thi, và các câu hỏi thường gặp.
 
-Chatbot có giao diện người dùng giống Messenger để tạo trải nghiệm quen thuộc cho người dùng. Hệ thống được triển khai dựa trên nền tảng n8n được host trên cloud làm framework orchestration, cho phép thiết kế luồng xử lý, tích hợp API và tự động hoá mà không cần quá nhiều mã nguồn tùy chỉnh.
+Chatbot sử dụng Messenger làm giao diện  để tạo trải nghiệm quen thuộc cho người dùng. Hệ thống được triển khai dựa trên nền tảng n8n được host trên cloud làm framework orchestration, cho phép thiết kế luồng xử lý, tích hợp API và tự động hoá mà không cần quá nhiều mã nguồn tùy chỉnh.
 
 Kiến trúc xử lý ngữ nghĩa của chatbot sử dụng phương pháp Retrieval-Augmented Generation (RAG) để nạp và truy vấn dữ liệu. Dữ liệu dùng cho RAG được thu thập và cập nhật động thông qua API (bao gồm cả việc kéo dữ liệu từ GitHub) và được tổ chức để chatbot có thể trả lời chính xác, dựa trên nguồn thông tin thực tế.
 
@@ -24,7 +24,3 @@ Dữ liệu đầu vào được tổng hợp từ nhiều nguồn:
 - Xây dựng prototype chatbot có thể trả lời các câu hỏi tuyển sinh phổ biến.
 - Thiết kế pipeline thu thập dữ liệu tự động và cập nhật cho mô hình RAG.
 - Triển khai demo với UI Messenger và backend vận hành bằng n8n trên cloud.
-
----
-
-Phần tiếp theo trong README có thể bao gồm: Hướng dẫn cài đặt & chạy nhanh, Kiến trúc chi tiết, Mô tả các luồng n8n, Cách nạp & làm mới dữ liệu từ GitHub/API, và Hướng dẫn đóng góp. Nếu bạn muốn, mình sẽ soạn tiếp các mục này theo cấu trúc chi tiết (cài đặt, cấu hình cloud, cách tạo credentials cho n8n, cấu trúc data ingestion, v.v.). 
