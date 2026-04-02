@@ -1,5 +1,5 @@
 {
-    "thong_tin_tuyen_sinh_DTU_2025": {
+    "thong_tin_tuyen_sinh_DTU_2026": {
         "ma_truong": "DDT",
         "vung_tuyen_sinh": "Tuyển sinh trong nước và nước ngoài",
         "doi_tuong_tuyen_sinh": [
@@ -8,7 +8,7 @@
         ],
         "phuong_thuc_tuyen_sinh": [
             "Xét tuyển thẳng theo quy chế Bộ GDĐT",
-            "Xét kết quả thi tốt nghiệp THPT 2025",
+            "Xét kết quả thi tốt nghiệp THPT 2026",
             "Xét kết quả học tập lớp 12 (học bạ)",
             "Xét kết quả kỳ thi Đánh giá năng lực của ĐHQG TP.HCM (trừ ngành Kiến trúc)",
             "Xét kết quả kỳ thi V-SAT + môn Vẽ Mỹ thuật (đối với ngành Kiến trúc)"
@@ -56,23 +56,23 @@
             }
         ],
         "thoi_gian_nhan_ho_so": {
-            "xet_tuyen_thang": "Đến 30/06/2025",
+            "xet_tuyen_thang": "Đến 30/06/2026",
             "xet_hoc_ba_va_dgnl": "Theo thời gian quy định của Bộ GDĐT",
             "dang_ky_thi_ve": {
-                "dot1": "Đến 21/04/2025",
-                "dot2": "Đến 05/07/2025"
+                "dot1": "Đến 21/04/2026",
+                "dot2": "Đến 05/07/2026"
             }
         },
         "thoi_gian_nhap_hoc": {
-            "dot_chinh": "22/08 - 30/08/2025",
+            "dot_chinh": "22/08 - 30/08/2026",
             "bo_sung": {
-                "nhan_ho_so": "26/08 - 06/09/2025",
-                "nhap_hoc": "09/09 - 15/09/2025"
+                "nhan_ho_so": "26/08 - 06/09/2026",
+                "nhap_hoc": "09/09 - 15/09/2026"
             }
         },
         "ho_so_nhap_hoc": [
             "Giấy báo trúng tuyển bản chính",
-            "Giấy chứng nhận kết quả thi tốt nghiệp THPT 2025 (nếu xét điểm thi)",
+            "Giấy chứng nhận kết quả thi tốt nghiệp THPT 2026 (nếu xét điểm thi)",
             "Học bạ THPT bản sao công chứng",
             "Giấy chứng nhận tốt nghiệp tạm thời hoặc Bằng tốt nghiệp bản sao công chứng",
             "Giấy khai sinh bản sao",
@@ -4467,37 +4467,30 @@
         {
             "TT": 1,
             "Tên": "Trương Đức Quốc Huy",
-            "SĐT": 399984665,
+            "SĐT": "0399984665",
             "Email": "johnnypors2@gmail.com",
             "Chương trình tư vấn": "HP, Normal"
         },
         {
             "TT": 2,
             "Tên": "Nguyễn Đăng Thịnh",
-            "SĐT": 708173610,
+            "SĐT": "0708173610",
             "Email": "nguyendangthinh.it@gmail.com",
             "Chương trình tư vấn": "TROY"
         },
         {
             "TT": 3,
             "Tên": "Nguyễn Bá Thiện",
-            "SĐT": 707908942,
+            "SĐT": "0707908942",
             "Email": "nguyenbathien.3112@gmail.com",
             "Chương trình tư vấn": "CMU"
         },
         {
             "TT": 4,
-            "Tên": "Quách Tú Mỹ",
-            "SĐT": 764483786,
-            "Email": "qtumy1825@gmail.com",
+            "Tên": "Lê Thành Quang",
+            "SĐT": "0705465483",
+            "Email": "thanhquangk2@gmail.com",
             "Chương trình tư vấn": "PSU, PNU"
-        },
-        {
-            "TT": 5,
-            "Tên": "Trương Duy Phúc Hưng",
-            "SĐT": 705129698,
-            "Email": "phuchungtruongduy@gmail.com",
-            "Chương trình tư vấn": "VJJ, CSU"
         }
     ]
 }
